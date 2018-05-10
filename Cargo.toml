@@ -1,0 +1,16 @@
+[package]
+name = "bullet3-sys"
+version = "0.1.0"
+authors = ["Oleg Khryptul <okreptul@yahoo.com>"]
+build = "build.rs"
+
+[dependencies]
+
+[build-dependencies]
+bindgen = "0.36.1"
+cc = { version = "1.0.15" }
+walkdir = "2.1.4"
+
+[features]
+build = []
+bind = []
