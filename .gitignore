@@ -13,3 +13,5 @@ Cargo.lock
 /target
 **/*.rs.bk
 Cargo.lock
+__bindgen.cpp
+__bindgen.ii

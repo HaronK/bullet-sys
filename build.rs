@@ -4,7 +4,6 @@ extern crate cmake;
 extern crate walkdir;
 
 use cmake::Config;
-use std::env;
 use std::path::PathBuf;
 
 fn main() {
@@ -26,10 +25,12 @@ fn main() {
         println!("cargo:rustc-link-lib=bullet3");
 
         let bindings = bindgen::Builder::default()
+            .clang_arg("-v")
             .clang_arg("-x")
             .clang_arg("c++")
             .clang_arg("-Ibullet3/src")
             .header("bullet3.h")
+            //.dump_preprocessed_input()
             .generate()
             .expect("Unable to generate bindings");
 
