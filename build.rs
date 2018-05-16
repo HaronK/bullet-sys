@@ -3,18 +3,36 @@ extern crate cmake;
 
 use cmake::Config;
 use std::path::PathBuf;
+use std::process::Command;
 
 fn main() {
     if cfg!(feature = "build") {
+        let build_examples = if cfg!(feature = "examples") {
+            "ON"
+        } else {
+            "OFF"
+        };
+        let run_tests = cfg!(feature = "examples") && cfg!(feature = "tests");
+        let build_tests = if run_tests { "ON" } else { "OFF" };
+
         let dst = Config::new("bullet3")
             .define("BUILD_PYBULLET", "OFF")
             .define("BUILD_PYBULLET_NUMPY", "OFF")
-            .define("BUILD_UNIT_TESTS", "OFF")
-            .define("BUILD_CPU_DEMOS", "OFF")
-            .define("BUILD_BULLET2_DEMOS", "OFF")
+            .define("BUILD_UNIT_TESTS", build_tests)
+            .define("BUILD_CPU_DEMOS", build_examples)
+            .define("BUILD_BULLET2_DEMOS", build_examples)
+            .define("USE_GRAPHICAL_BENCHMARK", "OFF")
             .define("USE_DOUBLE_PRECISION", "ON")
+            //.target("x86_64-pc-windows-gnu")
             //.generator("Visual Studio 14 2015 Win64")
             .build();
+
+        if run_tests {
+            let _ = Command::new("ctest")
+                .current_dir(dst.join("build"))
+                .spawn()
+                .unwrap();
+        }
 
         println!(
             "cargo:rustc-link-search=native={}",
@@ -49,8 +67,6 @@ fn main() {
     }
 
     if cfg!(feature = "bind") {
-        println!("cargo:rustc-link-lib=bullet3");
-
         let bindings = bindgen::Builder::default()
             .clang_arg("-v")
             .clang_arg("-x")
