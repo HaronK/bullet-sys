@@ -1,7 +1,5 @@
 extern crate bindgen;
-extern crate cc;
 extern crate cmake;
-extern crate walkdir;
 
 use cmake::Config;
 use std::path::PathBuf;
@@ -59,11 +57,9 @@ fn main() {
             .clang_arg("c++")
             .clang_arg("-Ibullet3/src")
             .header("bullet3.h")
-            //.dump_preprocessed_input()
             .generate()
             .expect("Unable to generate bindings");
 
-        //let out_path = PathBuf::from(env::var("OUT_DIR").unwrap());
         let out_path = PathBuf::from("src/");
         bindings
             .write_to_file(out_path.join("bullet3.rs"))
