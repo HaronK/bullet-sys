@@ -7,13 +7,14 @@ build = "build.rs"
 [dependencies]
 
 [build-dependencies]
+cmake = "0.1.31"
 bindgen = "0.36.1"
 #cc = { version = "1.0.15", features = ["parallel"] }
 cc = { version = "1.0.15" }
 walkdir = "2.1.4"
 
 [features]
-default = ["bind"]
+default = ["build","bind"]
 build = []
 bind = []
 examples = []
