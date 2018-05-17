@@ -138,8 +138,3 @@ fn cmake_build_windows(build_tests: &str, build_examples: &str) -> (PathBuf, Pat
 
     (dst.join("bullet3"), dst.join(libs_path))
 }
-
-// trait BindgenWitelister {
-//     fn whitelist_types<T: AsRef<Path>>(self, arg: T) -> Self;
-//     fn whitelist_functions<T: AsRef<Path>>(self, arg: T) -> Self;
-// }
