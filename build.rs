@@ -101,6 +101,8 @@ fn cmake_build_windows(build_tests: &str, build_examples: &str) -> (PathBuf, Pat
     let dst = Config::new("bullet3_wrapper")
         .define("BUILD_PYBULLET", "OFF")
         .define("BUILD_PYBULLET_NUMPY", "OFF")
+        .define("CMAKE_DEBUG_POSTFIX", "")
+        .define("CMAKE_RELEASE_POSTFIX", "")
         .define("BUILD_UNIT_TESTS", build_tests)
         .define("BUILD_CPU_DEMOS", build_examples)
         .define("BUILD_BULLET2_DEMOS", build_examples)
