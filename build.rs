@@ -20,6 +20,9 @@ fn main() {
             .clang_arg(r"-Ibullet3/src")
             .clang_arg(r"-DBT_NO_SIMD_OPERATOR_OVERLOADS")
             .header(r"bullet3.h")
+            .whitelist_type(r"bt.+")
+            .whitelist_function(r"bt.+")
+            .whitelist_var(r"bt.+")
             .generate()
             .expect("Unable to generate bindings");
 
@@ -135,3 +138,8 @@ fn cmake_build_windows(build_tests: &str, build_examples: &str) -> (PathBuf, Pat
 
     (dst.join("bullet3"), dst.join(libs_path))
 }
+
+// trait BindgenWitelister {
+//     fn whitelist_types<T: AsRef<Path>>(self, arg: T) -> Self;
+//     fn whitelist_functions<T: AsRef<Path>>(self, arg: T) -> Self;
+// }
