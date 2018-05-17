@@ -16,6 +16,7 @@ fn main() {
             .clang_arg("-x")
             .clang_arg("c++")
             .clang_arg("-Ibullet3/src")
+            .clang_arg("-DBT_NO_SIMD_OPERATOR_OVERLOADS")
             .header("bullet3.h")
             .generate()
             .expect("Unable to generate bindings");
@@ -28,17 +29,17 @@ fn main() {
 }
 
 fn cmake_build() {
-        let run_tests = cfg!(feature = "tests");
-        let build_tests = if run_tests { "ON" } else { "OFF" };
+    let run_tests = cfg!(feature = "tests");
+    let build_tests = if run_tests { "ON" } else { "OFF" };
 
-        // NOTE: unit testsdepend on some libraries in examples so we have to build them as well
-        let build_examples = if run_tests || cfg!(feature = "examples") {
-            "ON"
-        } else {
-            "OFF"
-        };
+    // NOTE: unit testsdepend on some libraries in examples so we have to build them as well
+    let build_examples = if run_tests || cfg!(feature = "examples") {
+        "ON"
+    } else {
+        "OFF"
+    };
 
-    let dst = if cfg!(target_os = "linux") {
+    let (tests_path, libs_path) = if cfg!(target_os = "linux") {
         cmake_build_linux(build_tests, build_examples)
     } else if cfg!(target_os = "windows") {
         cmake_build_windows(build_tests, build_examples)
@@ -48,15 +49,12 @@ fn cmake_build() {
 
     if run_tests {
         let _ = Command::new("ctest")
-            .current_dir(dst.join("build"))
+            .current_dir(tests_path)
             .spawn()
             .unwrap();
     }
 
-    println!(
-        "cargo:rustc-link-search=native={}",
-        dst.join("lib").display()
-    );
+    println!("cargo:rustc-link-search=native={}", libs_path.display());
 
     let libs = vec![
         "Bullet2FileLoader",
@@ -85,8 +83,8 @@ fn cmake_build() {
     }
 }
 
-fn cmake_build_linux(build_tests: &str, build_examples: &str) -> PathBuf {
-    Config::new("bullet3")
+fn cmake_build_linux(build_tests: &str, build_examples: &str) -> (PathBuf, PathBuf) {
+    let dst = Config::new("bullet3")
         .define("BUILD_PYBULLET", "OFF")
         .define("BUILD_PYBULLET_NUMPY", "OFF")
         .define("BUILD_UNIT_TESTS", build_tests)
@@ -94,11 +92,13 @@ fn cmake_build_linux(build_tests: &str, build_examples: &str) -> PathBuf {
         .define("BUILD_BULLET2_DEMOS", build_examples)
         .define("USE_GRAPHICAL_BENCHMARK", "OFF")
         .define("USE_DOUBLE_PRECISION", "ON")
-        .build()
+        .build();
+
+    (dst.join("build"), dst.join("lib"))
 }
 
-fn cmake_build_windows(build_tests: &str, build_examples: &str) -> PathBuf {
-    Config::new("bullet3_wrapper")
+fn cmake_build_windows(build_tests: &str, build_examples: &str) -> (PathBuf, PathBuf) {
+    let dst = Config::new("bullet3_wrapper")
         .define("BUILD_PYBULLET", "OFF")
         .define("BUILD_PYBULLET_NUMPY", "OFF")
         .define("BUILD_UNIT_TESTS", build_tests)
@@ -111,5 +111,13 @@ fn cmake_build_windows(build_tests: &str, build_examples: &str) -> PathBuf {
         //.define("WIN32", "ON")
         //.target("x86_64-pc-windows-gnu")
         .generator("Visual Studio 14 2015 Win64")
-        .build()
+        .build();
+
+    let libs_path = if cfg!(debug_assertions) {
+        r"build\lib\Debug"
+    } else {
+        r"build\lib\Release"
+    };
+
+    (dst.join("bullet3"), dst.join(libs_path))
 }

@@ -11,7 +11,7 @@ cmake = "0.1.31"
 bindgen = "0.36.1"
 
 [features]
-default = ["build","bind"]
+default = ["build","bind","tests"]
 build = []
 bind = []
 examples = []
