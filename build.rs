@@ -12,19 +12,31 @@ fn main() {
 
     if cfg!(feature = "bind") {
         let bindings = bindgen::Builder::default()
-            .clang_arg("-v")
-            .clang_arg("-x")
-            .clang_arg("c++")
-            .clang_arg("-Ibullet3/src")
-            .clang_arg("-DBT_NO_SIMD_OPERATOR_OVERLOADS")
-            .header("bullet3.h")
+            .enable_cxx_namespaces()
+            .layout_tests(false)
+            .clang_arg(r"-v")
+            .clang_arg(r"-xc++")
+            .clang_arg(r"-std=c++11")
+            .clang_arg(r"-Ibullet3/src")
+            .clang_arg(r"-DBT_NO_SIMD_OPERATOR_OVERLOADS")
+            .header(r"bullet3.h")
             .generate()
             .expect("Unable to generate bindings");
 
-        let out_path = PathBuf::from("src/");
+        let out_path = PathBuf::from("src").join(format!("bullet3_{}.rs", get_os_name()));
         bindings
-            .write_to_file(out_path.join("bullet3.rs"))
+            .write_to_file(out_path)
             .expect("Couldn't write bindings!");
+    }
+}
+
+fn get_os_name() -> String {
+    if cfg!(target_os = "linux") {
+        "linux".to_owned()
+    } else if cfg!(target_os = "windows") {
+        "windows".to_owned()
+    } else {
+        panic!("Unsupported OS!");
     }
 }
 
@@ -32,7 +44,7 @@ fn cmake_build() {
     let run_tests = cfg!(feature = "tests");
     let build_tests = if run_tests { "ON" } else { "OFF" };
 
-    // NOTE: unit testsdepend on some libraries in examples so we have to build them as well
+    // NOTE: unit tests depend on some libraries in examples so we have to build them as well
     let build_examples = if run_tests || cfg!(feature = "examples") {
         "ON"
     } else {
