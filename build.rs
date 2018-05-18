@@ -17,16 +17,16 @@ fn main() {
             .clang_arg(r"-v")
             .clang_arg(r"-xc++")
             .clang_arg(r"-std=c++14")
-            .clang_arg(r"-Ibullet3/src")
+            .clang_arg(r"-Ibullet/src")
             .clang_arg(r"-DBT_NO_SIMD_OPERATOR_OVERLOADS")
-            .header(r"bullet3.h")
+            .header(r"bullet.h")
             .whitelist_type(r"bt.+")
             .whitelist_function(r"bt.+")
             .whitelist_var(r"bt.+")
             .generate()
             .expect("Unable to generate bindings");
 
-        let out_path = PathBuf::from("src").join(format!("bullet3_{}.rs", get_os_name()));
+        let out_path = PathBuf::from("src").join(format!("bullet_{}.rs", get_os_name()));
         bindings
             .write_to_file(out_path)
             .expect("Couldn't write bindings!");
@@ -99,7 +99,7 @@ fn cmake_build() {
 }
 
 fn cmake_build_linux(build_tests: &str, build_examples: &str) -> (PathBuf, PathBuf) {
-    let dst = Config::new("bullet3")
+    let dst = Config::new("bullet")
         .define("BUILD_PYBULLET", "OFF")
         .define("BUILD_PYBULLET_NUMPY", "OFF")
         .define("BUILD_UNIT_TESTS", build_tests)
@@ -113,7 +113,7 @@ fn cmake_build_linux(build_tests: &str, build_examples: &str) -> (PathBuf, PathB
 }
 
 fn cmake_build_windows(build_tests: &str, build_examples: &str) -> (PathBuf, PathBuf) {
-    let dst = Config::new("bullet3_wrapper")
+    let dst = Config::new("bullet_wrapper")
         .define("BUILD_PYBULLET", "OFF")
         .define("BUILD_PYBULLET_NUMPY", "OFF")
         .define("CMAKE_DEBUG_POSTFIX", "")
@@ -136,5 +136,5 @@ fn cmake_build_windows(build_tests: &str, build_examples: &str) -> (PathBuf, Pat
         r"build\lib\Release"
     };
 
-    (dst.join("bullet3"), dst.join(libs_path))
+    (dst.join("bullet"), dst.join(libs_path))
 }
