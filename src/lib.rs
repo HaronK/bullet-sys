@@ -11,4 +11,3 @@ mod bullet_windows;
 
 #[cfg(target_os = "windows")]
 pub use bullet_windows::*;
-
