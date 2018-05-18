@@ -16,7 +16,7 @@ fn main() {
             .layout_tests(false)
             .clang_arg(r"-v")
             .clang_arg(r"-xc++")
-            .clang_arg(r"-std=c++11")
+            .clang_arg(r"-std=c++14")
             .clang_arg(r"-Ibullet3/src")
             .clang_arg(r"-DBT_NO_SIMD_OPERATOR_OVERLOADS")
             .header(r"bullet3.h")
