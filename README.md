@@ -1,6 +1,6 @@
 # bullet-sys
 
-Bullet3 wrapper for the Rust language. Inspired by [bulletrs](https://github.com/not-fl3/bulletrs/).
+[Bullet3](https://github.com/bulletphysics/bullet3) low level wrapper for the Rust language. Inspired by [bulletrs](https://github.com/not-fl3/bulletrs/).
 
 ## Building
 
@@ -11,6 +11,7 @@ Clone and compile project:
 ```bash
 git clone https://github.com/HaronK/bullet-sys.git
 cd ./bullet-sys
+git submodule update --init
 cargo build --release
 ```
 
