@@ -12,8 +12,7 @@ fn main() {
 
     if cfg!(feature = "bind") {
         let bindings = bindgen::Builder::default()
-            .enable_cxx_namespaces()
-            .layout_tests(false)
+            .layout_tests(cfg!(feature = "layout_tests"))
             .clang_arg(r"-v")
             .clang_arg(r"-xc++")
             .clang_arg(r"-std=c++14")
@@ -44,7 +43,7 @@ fn get_os_name() -> String {
 }
 
 fn cmake_build() {
-    let run_tests = cfg!(feature = "tests");
+    let run_tests = cfg!(feature = "ctest");
     let build_tests = if run_tests { "ON" } else { "OFF" };
 
     // NOTE: unit tests depend on some libraries in examples so we have to build them as well

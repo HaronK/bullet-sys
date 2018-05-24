@@ -15,6 +15,26 @@ git submodule update --init
 cargo build --release
 ```
 
+### Build features
+
+- **build** - recompile Bulletphysics with CMake.
+- **bind** - generate FFI code using Bindgen.
+- **examples** - compile Bulletphysics examples.
+- **ctest** - run Bulletphysics tests (using ctest).
+- **layout_tests** - generate Bindgen tests.
+
+Command:
+
+```bash
+cargo build --features "build,bind,examples,ctest,layout_tests"
+```
+
+Use **-vv** flag to visualize detailed build progress:
+
+```bash
+cargo build -vv
+```
+
 ### Linux dependencies
 
 ```bash
