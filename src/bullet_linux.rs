@@ -27440,6 +27440,11 @@ extern "C" {
         result: *mut btVehicleRaycaster_btVehicleRaycasterResult,
     ) -> *mut ::std::os::raw::c_void;
 }
+pub type btSizeType = ::std::os::raw::c_int;
+pub type wint_t = ::std::os::raw::c_uint;
+extern "C" {
+    pub fn btowc(__c: ::std::os::raw::c_int) -> wint_t;
+}
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct btSoftBodyDoubleData {
