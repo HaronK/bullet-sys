@@ -79,31 +79,33 @@ where
         }
     }
 }
-pub const btVector3DataName: &'static [u8; 19usize] = b"btVector3FloatData\0";
-pub const btQuaternionDataName: &'static [u8; 22usize] = b"btQuaternionFloatData\0";
-pub const btPersistentManifoldDataName: &'static [u8; 30usize] = b"btPersistentManifoldFloatData\0";
-pub const btCollisionObjectDataName: &'static [u8; 27usize] = b"btCollisionObjectFloatData\0";
-pub const btQuantizedBvhDataName: &'static [u8; 24usize] = b"btQuantizedBvhFloatData\0";
-pub const btRigidBodyDataName: &'static [u8; 21usize] = b"btRigidBodyFloatData\0";
-pub const btTypedConstraintDataName: &'static [u8; 27usize] = b"btTypedConstraintFloatData\0";
-pub const btMultiBodyDataName: &'static [u8; 21usize] = b"btMultiBodyFloatData\0";
-pub const btMultiBodyLinkDataName: &'static [u8; 25usize] = b"btMultiBodyLinkFloatData\0";
-pub const btMultiBodyLinkColliderDataName: &'static [u8; 33usize] =
-    b"btMultiBodyLinkColliderFloatData\0";
+pub const btVector3DataName: &'static [u8; 20usize] = b"btVector3DoubleData\0";
+pub const btQuaternionDataName: &'static [u8; 23usize] = b"btQuaternionDoubleData\0";
+pub const btPersistentManifoldDataName: &'static [u8; 31usize] =
+    b"btPersistentManifoldDoubleData\0";
+pub const btCollisionObjectDataName: &'static [u8; 28usize] = b"btCollisionObjectDoubleData\0";
+pub const btQuantizedBvhDataName: &'static [u8; 25usize] = b"btQuantizedBvhDoubleData\0";
+pub const btRigidBodyDataName: &'static [u8; 22usize] = b"btRigidBodyDoubleData\0";
+pub const btTypedConstraintDataName: &'static [u8; 28usize] = b"btTypedConstraintDoubleData\0";
+pub const btMultiBodyDataName: &'static [u8; 22usize] = b"btMultiBodyDoubleData\0";
+pub const btMultiBodyLinkDataName: &'static [u8; 26usize] = b"btMultiBodyLinkDoubleData\0";
+pub const btMultiBodyLinkColliderDataName: &'static [u8; 34usize] =
+    b"btMultiBodyLinkColliderDoubleData\0";
 pub const btSoftBodyDataName: &'static [u8; 20usize] = b"btSoftBodyFloatData\0";
-pub const btPoint2PointConstraintDataName: &'static [u8; 33usize] =
-    b"btPoint2PointConstraintFloatData\0";
-pub const btHingeConstraintDataName: &'static [u8; 27usize] = b"btHingeConstraintFloatData\0";
-pub const btConeTwistConstraintDataName: &'static [u8; 26usize] = b"btConeTwistConstraintData\0";
-pub const btGeneric6DofConstraintDataName: &'static [u8; 28usize] =
-    b"btGeneric6DofConstraintData\0";
-pub const btSliderConstraintDataName: &'static [u8; 23usize] = b"btSliderConstraintData\0";
-pub const btGeneric6DofSpringConstraintDataName: &'static [u8; 34usize] =
-    b"btGeneric6DofSpringConstraintData\0";
-pub const btGeneric6DofSpring2ConstraintDataName: &'static [u8; 35usize] =
-    b"btGeneric6DofSpring2ConstraintData\0";
-pub const btGearConstraintDataName: &'static [u8; 26usize] = b"btGearConstraintFloatData\0";
-pub type btScalar = f32;
+pub const btPoint2PointConstraintDataName: &'static [u8; 35usize] =
+    b"btPoint2PointConstraintDoubleData2\0";
+pub const btHingeConstraintDataName: &'static [u8; 29usize] = b"btHingeConstraintDoubleData2\0";
+pub const btConeTwistConstraintDataName: &'static [u8; 32usize] =
+    b"btConeTwistConstraintDoubleData\0";
+pub const btGeneric6DofConstraintDataName: &'static [u8; 35usize] =
+    b"btGeneric6DofConstraintDoubleData2\0";
+pub const btSliderConstraintDataName: &'static [u8; 29usize] = b"btSliderConstraintDoubleData\0";
+pub const btGeneric6DofSpringConstraintDataName: &'static [u8; 41usize] =
+    b"btGeneric6DofSpringConstraintDoubleData2\0";
+pub const btGeneric6DofSpring2ConstraintDataName: &'static [u8; 42usize] =
+    b"btGeneric6DofSpring2ConstraintDoubleData2\0";
+pub const btGearConstraintDataName: &'static [u8; 27usize] = b"btGearConstraintDoubleData\0";
+pub type btScalar = f64;
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub struct btInfMaskConverter {
@@ -264,16 +266,16 @@ extern "C" {
     ) -> btMatrix3x3;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZNK11btMatrix3x39serializeER20btMatrix3x3FloatData"]
-    pub fn btMatrix3x3_serialize(this: *const btMatrix3x3, dataOut: *mut btMatrix3x3FloatData);
+    #[link_name = "\u{1}_ZNK11btMatrix3x39serializeER21btMatrix3x3DoubleData"]
+    pub fn btMatrix3x3_serialize(this: *const btMatrix3x3, dataOut: *mut btMatrix3x3DoubleData);
 }
 extern "C" {
     #[link_name = "\u{1}_ZNK11btMatrix3x314serializeFloatER20btMatrix3x3FloatData"]
     pub fn btMatrix3x3_serializeFloat(this: *const btMatrix3x3, dataOut: *mut btMatrix3x3FloatData);
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN11btMatrix3x311deSerializeERK20btMatrix3x3FloatData"]
-    pub fn btMatrix3x3_deSerialize(this: *mut btMatrix3x3, dataIn: *const btMatrix3x3FloatData);
+    #[link_name = "\u{1}_ZN11btMatrix3x311deSerializeERK21btMatrix3x3DoubleData"]
+    pub fn btMatrix3x3_deSerialize(this: *mut btMatrix3x3, dataIn: *const btMatrix3x3DoubleData);
 }
 extern "C" {
     #[link_name = "\u{1}_ZN11btMatrix3x316deSerializeFloatERK20btMatrix3x3FloatData"]
@@ -319,7 +321,7 @@ impl btMatrix3x3 {
         btMatrix3x3_timesTranspose(self, m)
     }
     #[inline]
-    pub unsafe fn serialize(&self, dataOut: *mut btMatrix3x3FloatData) {
+    pub unsafe fn serialize(&self, dataOut: *mut btMatrix3x3DoubleData) {
         btMatrix3x3_serialize(self, dataOut)
     }
     #[inline]
@@ -327,7 +329,7 @@ impl btMatrix3x3 {
         btMatrix3x3_serializeFloat(self, dataOut)
     }
     #[inline]
-    pub unsafe fn deSerialize(&mut self, dataIn: *const btMatrix3x3FloatData) {
+    pub unsafe fn deSerialize(&mut self, dataIn: *const btMatrix3x3DoubleData) {
         btMatrix3x3_deSerialize(self, dataIn)
     }
     #[inline]
@@ -370,16 +372,16 @@ extern "C" {
         -> btTransform;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZNK11btTransform9serializeER20btTransformFloatData"]
-    pub fn btTransform_serialize(this: *const btTransform, dataOut: *mut btTransformFloatData);
+    #[link_name = "\u{1}_ZNK11btTransform9serializeER21btTransformDoubleData"]
+    pub fn btTransform_serialize(this: *const btTransform, dataOut: *mut btTransformDoubleData);
 }
 extern "C" {
     #[link_name = "\u{1}_ZNK11btTransform14serializeFloatER20btTransformFloatData"]
     pub fn btTransform_serializeFloat(this: *const btTransform, dataOut: *mut btTransformFloatData);
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN11btTransform11deSerializeERK20btTransformFloatData"]
-    pub fn btTransform_deSerialize(this: *mut btTransform, dataIn: *const btTransformFloatData);
+    #[link_name = "\u{1}_ZN11btTransform11deSerializeERK21btTransformDoubleData"]
+    pub fn btTransform_deSerialize(this: *mut btTransform, dataIn: *const btTransformDoubleData);
 }
 extern "C" {
     #[link_name = "\u{1}_ZN11btTransform17deSerializeDoubleERK21btTransformDoubleData"]
@@ -401,7 +403,7 @@ impl btTransform {
         btTransform_inverseTimes(self, t)
     }
     #[inline]
-    pub unsafe fn serialize(&self, dataOut: *mut btTransformFloatData) {
+    pub unsafe fn serialize(&self, dataOut: *mut btTransformDoubleData) {
         btTransform_serialize(self, dataOut)
     }
     #[inline]
@@ -409,7 +411,7 @@ impl btTransform {
         btTransform_serializeFloat(self, dataOut)
     }
     #[inline]
-    pub unsafe fn deSerialize(&mut self, dataIn: *const btTransformFloatData) {
+    pub unsafe fn deSerialize(&mut self, dataIn: *const btTransformDoubleData) {
         btTransform_deSerialize(self, dataIn)
     }
     #[inline]
@@ -909,14 +911,14 @@ pub struct btManifoldPoint {
 pub union btManifoldPoint__bindgen_ty_1 {
     pub m_contactCFM: btScalar,
     pub m_combinedContactStiffness1: btScalar,
-    _bindgen_union_align: u32,
+    _bindgen_union_align: u64,
 }
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub union btManifoldPoint__bindgen_ty_2 {
     pub m_contactERP: btScalar,
     pub m_combinedContactDamping1: btScalar,
-    _bindgen_union_align: u32,
+    _bindgen_union_align: u64,
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -1547,7 +1549,7 @@ impl btManifoldResult {
     }
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN16btManifoldResult15addContactPointERK9btVector3S2_f"]
+    #[link_name = "\u{1}_ZN16btManifoldResult15addContactPointERK9btVector3S2_d"]
     pub fn btManifoldResult_addContactPoint(
         this: *mut ::std::os::raw::c_void,
         normalOnBInWorld: *const btVector3,
@@ -2213,7 +2215,7 @@ extern "C" {
 }
 extern "C" {
     /// shapes
-    #[link_name = "\u{1}_ZN24btCollisionWorldImporter16createPlaneShapeERK9btVector3f"]
+    #[link_name = "\u{1}_ZN24btCollisionWorldImporter16createPlaneShapeERK9btVector3d"]
     pub fn btCollisionWorldImporter_createPlaneShape(
         this: *mut ::std::os::raw::c_void,
         planeNormal: *const btVector3,
@@ -2228,14 +2230,14 @@ extern "C" {
     ) -> *mut btCollisionShape;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN24btCollisionWorldImporter17createSphereShapeEf"]
+    #[link_name = "\u{1}_ZN24btCollisionWorldImporter17createSphereShapeEd"]
     pub fn btCollisionWorldImporter_createSphereShape(
         this: *mut ::std::os::raw::c_void,
         radius: btScalar,
     ) -> *mut btCollisionShape;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN24btCollisionWorldImporter19createCapsuleShapeXEff"]
+    #[link_name = "\u{1}_ZN24btCollisionWorldImporter19createCapsuleShapeXEdd"]
     pub fn btCollisionWorldImporter_createCapsuleShapeX(
         this: *mut ::std::os::raw::c_void,
         radius: btScalar,
@@ -2243,7 +2245,7 @@ extern "C" {
     ) -> *mut btCollisionShape;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN24btCollisionWorldImporter19createCapsuleShapeYEff"]
+    #[link_name = "\u{1}_ZN24btCollisionWorldImporter19createCapsuleShapeYEdd"]
     pub fn btCollisionWorldImporter_createCapsuleShapeY(
         this: *mut ::std::os::raw::c_void,
         radius: btScalar,
@@ -2251,7 +2253,7 @@ extern "C" {
     ) -> *mut btCollisionShape;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN24btCollisionWorldImporter19createCapsuleShapeZEff"]
+    #[link_name = "\u{1}_ZN24btCollisionWorldImporter19createCapsuleShapeZEdd"]
     pub fn btCollisionWorldImporter_createCapsuleShapeZ(
         this: *mut ::std::os::raw::c_void,
         radius: btScalar,
@@ -2259,7 +2261,7 @@ extern "C" {
     ) -> *mut btCollisionShape;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN24btCollisionWorldImporter20createCylinderShapeXEff"]
+    #[link_name = "\u{1}_ZN24btCollisionWorldImporter20createCylinderShapeXEdd"]
     pub fn btCollisionWorldImporter_createCylinderShapeX(
         this: *mut ::std::os::raw::c_void,
         radius: btScalar,
@@ -2267,7 +2269,7 @@ extern "C" {
     ) -> *mut btCollisionShape;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN24btCollisionWorldImporter20createCylinderShapeYEff"]
+    #[link_name = "\u{1}_ZN24btCollisionWorldImporter20createCylinderShapeYEdd"]
     pub fn btCollisionWorldImporter_createCylinderShapeY(
         this: *mut ::std::os::raw::c_void,
         radius: btScalar,
@@ -2275,7 +2277,7 @@ extern "C" {
     ) -> *mut btCollisionShape;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN24btCollisionWorldImporter20createCylinderShapeZEff"]
+    #[link_name = "\u{1}_ZN24btCollisionWorldImporter20createCylinderShapeZEdd"]
     pub fn btCollisionWorldImporter_createCylinderShapeZ(
         this: *mut ::std::os::raw::c_void,
         radius: btScalar,
@@ -2283,7 +2285,7 @@ extern "C" {
     ) -> *mut btCollisionShape;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN24btCollisionWorldImporter16createConeShapeXEff"]
+    #[link_name = "\u{1}_ZN24btCollisionWorldImporter16createConeShapeXEdd"]
     pub fn btCollisionWorldImporter_createConeShapeX(
         this: *mut ::std::os::raw::c_void,
         radius: btScalar,
@@ -2291,7 +2293,7 @@ extern "C" {
     ) -> *mut btCollisionShape;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN24btCollisionWorldImporter16createConeShapeYEff"]
+    #[link_name = "\u{1}_ZN24btCollisionWorldImporter16createConeShapeYEdd"]
     pub fn btCollisionWorldImporter_createConeShapeY(
         this: *mut ::std::os::raw::c_void,
         radius: btScalar,
@@ -2299,7 +2301,7 @@ extern "C" {
     ) -> *mut btCollisionShape;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN24btCollisionWorldImporter16createConeShapeZEff"]
+    #[link_name = "\u{1}_ZN24btCollisionWorldImporter16createConeShapeZEdd"]
     pub fn btCollisionWorldImporter_createConeShapeZ(
         this: *mut ::std::os::raw::c_void,
         radius: btScalar,
@@ -2355,7 +2357,7 @@ extern "C" {
     ) -> *mut btScaledBvhTriangleMeshShape;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN24btCollisionWorldImporter22createMultiSphereShapeEPK9btVector3PKfi"]
+    #[link_name = "\u{1}_ZN24btCollisionWorldImporter22createMultiSphereShapeEPK9btVector3PKdi"]
     pub fn btCollisionWorldImporter_createMultiSphereShape(
         this: *mut ::std::os::raw::c_void,
         positions: *const btVector3,
@@ -2531,7 +2533,7 @@ extern "C" {
     pub fn btDbvt_update1(this: *mut btDbvt, leaf: *mut btDbvtNode, volume: *mut btDbvtVolume);
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN6btDbvt6updateEP10btDbvtNodeR12btDbvtAabbMmRK9btVector3f"]
+    #[link_name = "\u{1}_ZN6btDbvt6updateEP10btDbvtNodeR12btDbvtAabbMmRK9btVector3d"]
     pub fn btDbvt_update2(
         this: *mut btDbvt,
         leaf: *mut btDbvtNode,
@@ -2550,7 +2552,7 @@ extern "C" {
     ) -> bool;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN6btDbvt6updateEP10btDbvtNodeR12btDbvtAabbMmf"]
+    #[link_name = "\u{1}_ZN6btDbvt6updateEP10btDbvtNodeR12btDbvtAabbMmd"]
     pub fn btDbvt_update4(
         this: *mut btDbvt,
         leaf: *mut btDbvtNode,
@@ -2644,7 +2646,7 @@ extern "C" {
 extern "C" {
     /// rayTestInternal is faster than rayTest, because it uses a persistent stack (to reduce dynamic memory allocations to a minimum) and it uses precomputed signs/rayInverseDirections
     /// ///rayTestInternal is used by btDbvtBroadphase to accelerate world ray casts
-    #[link_name = "\u{1}_ZNK6btDbvt15rayTestInternalEPK10btDbvtNodeRK9btVector3S5_S5_PjfS5_S5_R20btAlignedObjectArrayIS2_ERNS_8ICollideE"]
+    #[link_name = "\u{1}_ZNK6btDbvt15rayTestInternalEPK10btDbvtNodeRK9btVector3S5_S5_PjdS5_S5_R20btAlignedObjectArrayIS2_ERNS_8ICollideE"]
     pub fn btDbvt_rayTestInternal(
         this: *const btDbvt,
         root: *const btDbvtNode,
@@ -2660,7 +2662,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN6btDbvt11collideKDOPEPK10btDbvtNodePK9btVector3PKfiRNS_8ICollideE"]
+    #[link_name = "\u{1}_ZN6btDbvt11collideKDOPEPK10btDbvtNodePK9btVector3PKdiRNS_8ICollideE"]
     pub fn btDbvt_collideKDOP(
         root: *const btDbvtNode,
         normals: *const btVector3,
@@ -2670,7 +2672,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN6btDbvt10collideOCLEPK10btDbvtNodePK9btVector3PKfRS4_iRNS_8ICollideEb"]
+    #[link_name = "\u{1}_ZN6btDbvt10collideOCLEPK10btDbvtNodePK9btVector3PKdRS4_iRNS_8ICollideEb"]
     pub fn btDbvt_collideOCL(
         root: *const btDbvtNode,
         normals: *const btVector3,
@@ -3580,7 +3582,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN17btGjkPairDetectorC1EPK13btConvexShapeS2_iiffP22btVoronoiSimplexSolverP30btConvexPenetrationDepthSolver"]
+    #[link_name = "\u{1}_ZN17btGjkPairDetectorC1EPK13btConvexShapeS2_iiddP22btVoronoiSimplexSolverP30btConvexPenetrationDepthSolver"]
     pub fn btGjkPairDetector_btGjkPairDetector1(
         this: *mut btGjkPairDetector,
         objectA: *const btConvexShape,
@@ -3827,7 +3829,7 @@ pub struct btConvexTriangleCallback {
     pub m_manifoldPtr: *mut btPersistentManifold,
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN24btConvexTriangleCallback22setTimeStepAndCountersEfRK16btDispatcherInfoPK24btCollisionObjectWrapperS5_P16btManifoldResult"]
+    #[link_name = "\u{1}_ZN24btConvexTriangleCallback22setTimeStepAndCountersEdRK16btDispatcherInfoPK24btCollisionObjectWrapperS5_P16btManifoldResult"]
     pub fn btConvexTriangleCallback_setTimeStepAndCounters(
         this: *mut btConvexTriangleCallback,
         collisionMarginTriangle: btScalar,
@@ -4497,7 +4499,7 @@ extern "C" {
 extern "C" {
     /// convexTest performs a swept convex cast on all objects in the btCollisionWorld, and calls the resultCallback
     /// /// This allows for several queries: first hit, all hits, any hit, dependent on the value return by the callback.
-    #[link_name = "\u{1}_ZNK16btCollisionWorld15convexSweepTestEPK13btConvexShapeRK11btTransformS5_RNS_20ConvexResultCallbackEf"]
+    #[link_name = "\u{1}_ZNK16btCollisionWorld15convexSweepTestEPK13btConvexShapeRK11btTransformS5_RNS_20ConvexResultCallbackEd"]
     pub fn btCollisionWorld_convexSweepTest(
         this: *const btCollisionWorld,
         castShape: *const btConvexShape,
@@ -4553,7 +4555,7 @@ extern "C" {
 }
 extern "C" {
     /// objectQuerySingle performs a collision detection query and calls the resultCallback. It is used internally by rayTest.
-    #[link_name = "\u{1}_ZN16btCollisionWorld17objectQuerySingleEPK13btConvexShapeRK11btTransformS5_P17btCollisionObjectPK16btCollisionShapeS5_RNS_20ConvexResultCallbackEf"]
+    #[link_name = "\u{1}_ZN16btCollisionWorld17objectQuerySingleEPK13btConvexShapeRK11btTransformS5_P17btCollisionObjectPK16btCollisionShapeS5_RNS_20ConvexResultCallbackEd"]
     pub fn btCollisionWorld_objectQuerySingle(
         castShape: *const btConvexShape,
         rayFromTrans: *const btTransform,
@@ -4566,7 +4568,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN16btCollisionWorld25objectQuerySingleInternalEPK13btConvexShapeRK11btTransformS5_PK24btCollisionObjectWrapperRNS_20ConvexResultCallbackEf"]
+    #[link_name = "\u{1}_ZN16btCollisionWorld25objectQuerySingleInternalEPK13btConvexShapeRK11btTransformS5_PK24btCollisionObjectWrapperRNS_20ConvexResultCallbackEd"]
     pub fn btCollisionWorld_objectQuerySingleInternal(
         castShape: *const btConvexShape,
         convexFromTrans: *const btTransform,
@@ -4798,7 +4800,7 @@ pub struct btGhostObject {
     pub m_overlappingObjects: btAlignedObjectArray<*mut btCollisionObject>,
 }
 extern "C" {
-    #[link_name = "\u{1}_ZNK13btGhostObject15convexSweepTestEPK13btConvexShapeRK11btTransformS5_RN16btCollisionWorld20ConvexResultCallbackEf"]
+    #[link_name = "\u{1}_ZNK13btGhostObject15convexSweepTestEPK13btConvexShapeRK11btTransformS5_RN16btCollisionWorld20ConvexResultCallbackEd"]
     pub fn btGhostObject_convexSweepTest(
         this: *const btGhostObject,
         castShape: *const btConvexShape,
@@ -5129,7 +5131,7 @@ pub struct btSphereBoxCollisionAlgorithm_CreateFunc {
     pub _base: btCollisionAlgorithmCreateFunc,
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN29btSphereBoxCollisionAlgorithm17getSphereDistanceEPK24btCollisionObjectWrapperR9btVector3S4_RfRKS3_ff"]
+    #[link_name = "\u{1}_ZN29btSphereBoxCollisionAlgorithm17getSphereDistanceEPK24btCollisionObjectWrapperR9btVector3S4_RdRKS3_dd"]
     pub fn btSphereBoxCollisionAlgorithm_getSphereDistance(
         this: *mut btSphereBoxCollisionAlgorithm,
         boxObjWrap: *const btCollisionObjectWrapper,
@@ -5336,7 +5338,7 @@ pub struct btCollisionShape {
 extern "C" {
     /// calculateTemporalAabb calculates the enclosing aabb for the moving object over interval [0..timeStep)
     /// ///result is conservative
-    #[link_name = "\u{1}_ZNK16btCollisionShape21calculateTemporalAabbERK11btTransformRK9btVector3S5_fRS3_S6_"]
+    #[link_name = "\u{1}_ZNK16btCollisionShape21calculateTemporalAabbERK11btTransformRK9btVector3S5_dRS3_S6_"]
     pub fn btCollisionShape_calculateTemporalAabb(
         this: *const btCollisionShape,
         curTrans: *const btTransform,
@@ -5370,7 +5372,7 @@ impl btCollisionShape {
     }
 }
 extern "C" {
-    #[link_name = "\u{1}_ZNK16btCollisionShape17getBoundingSphereER9btVector3Rf"]
+    #[link_name = "\u{1}_ZNK16btCollisionShape17getBoundingSphereER9btVector3Rd"]
     pub fn btCollisionShape_getBoundingSphere(
         this: *mut ::std::os::raw::c_void,
         center: *mut btVector3,
@@ -5383,7 +5385,7 @@ extern "C" {
     pub fn btCollisionShape_getAngularMotionDisc(this: *mut ::std::os::raw::c_void) -> btScalar;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZNK16btCollisionShape27getContactBreakingThresholdEf"]
+    #[link_name = "\u{1}_ZNK16btCollisionShape27getContactBreakingThresholdEd"]
     pub fn btCollisionShape_getContactBreakingThreshold(
         this: *mut ::std::os::raw::c_void,
         defaultContactThresholdFactor: btScalar,
@@ -5494,7 +5496,7 @@ extern "C" {
     pub fn btConvexShape_btConvexShape_destructor(this: *mut btConvexShape);
 }
 extern "C" {
-    #[link_name = "\u{1}_ZNK13btConvexShape7projectERK11btTransformRK9btVector3RfS6_RS3_S7_"]
+    #[link_name = "\u{1}_ZNK13btConvexShape7projectERK11btTransformRK9btVector3RdS6_RS3_S7_"]
     pub fn btConvexShape_project(
         this: *mut ::std::os::raw::c_void,
         trans: *const btTransform,
@@ -5680,7 +5682,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZNK23btPolyhedralConvexShape21calculateLocalInertiaEfR9btVector3"]
+    #[link_name = "\u{1}_ZNK23btPolyhedralConvexShape21calculateLocalInertiaEdR9btVector3"]
     pub fn btPolyhedralConvexShape_calculateLocalInertia(
         this: *mut ::std::os::raw::c_void,
         mass: btScalar,
@@ -5755,7 +5757,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZNK12btBox2dShape21calculateLocalInertiaEfR9btVector3"]
+    #[link_name = "\u{1}_ZNK12btBox2dShape21calculateLocalInertiaEdR9btVector3"]
     pub fn btBox2dShape_calculateLocalInertia(
         this: *mut ::std::os::raw::c_void,
         mass: btScalar,
@@ -5813,7 +5815,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZNK15btConvex2dShape21calculateLocalInertiaEfR9btVector3"]
+    #[link_name = "\u{1}_ZNK15btConvex2dShape21calculateLocalInertiaEdR9btVector3"]
     pub fn btConvex2dShape_calculateLocalInertia(
         this: *mut ::std::os::raw::c_void,
         mass: btScalar,
@@ -5851,7 +5853,7 @@ extern "C" {
     pub fn btConvex2dShape_getLocalScaling(this: *mut ::std::os::raw::c_void) -> *const btVector3;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN15btConvex2dShape9setMarginEf"]
+    #[link_name = "\u{1}_ZN15btConvex2dShape9setMarginEd"]
     pub fn btConvex2dShape_setMargin(this: *mut ::std::os::raw::c_void, margin: btScalar);
 }
 extern "C" {
@@ -5948,7 +5950,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZNK23btConvexPointCloudShape8isInsideERK9btVector3f"]
+    #[link_name = "\u{1}_ZNK23btConvexPointCloudShape8isInsideERK9btVector3d"]
     pub fn btConvexPointCloudShape_isInside(
         this: *mut ::std::os::raw::c_void,
         pt: *const btVector3,
@@ -5993,7 +5995,7 @@ extern "C" {
     pub fn btConvexPolyhedron_testContainment(this: *const btConvexPolyhedron) -> bool;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZNK18btConvexPolyhedron7projectERK11btTransformRK9btVector3RfS6_RS3_S7_"]
+    #[link_name = "\u{1}_ZNK18btConvexPolyhedron7projectERK11btTransformRK9btVector3RdS6_RS3_S7_"]
     pub fn btConvexPolyhedron_project(
         this: *const btConvexPolyhedron,
         trans: *const btTransform,
@@ -6178,7 +6180,7 @@ extern "C" {
     /// Handles the work of constructors so that public constructors can be
     /// backwards-compatible without a lot of copy/paste.
     /// */
-    #[link_name = "\u{1}_ZN25btHeightfieldTerrainShape10initializeEiiPKvfffi14PHY_ScalarTypeb"]
+    #[link_name = "\u{1}_ZN25btHeightfieldTerrainShape10initializeEiiPKvdddi14PHY_ScalarTypeb"]
     pub fn btHeightfieldTerrainShape_initialize(
         this: *mut btHeightfieldTerrainShape,
         heightStickWidth: ::std::os::raw::c_int,
@@ -6199,7 +6201,7 @@ extern "C" {
     /// data types, and allows for a non-zero minimum height value.
     /// heightScale is needed for any integer-based heightfield data types.
     /// */
-    #[link_name = "\u{1}_ZN25btHeightfieldTerrainShapeC1EiiPKvfffi14PHY_ScalarTypeb"]
+    #[link_name = "\u{1}_ZN25btHeightfieldTerrainShapeC1EiiPKvdddi14PHY_ScalarTypeb"]
     pub fn btHeightfieldTerrainShape_btHeightfieldTerrainShape(
         this: *mut btHeightfieldTerrainShape,
         heightStickWidth: ::std::os::raw::c_int,
@@ -6221,7 +6223,7 @@ extern "C" {
     /// compatibility reasons, heightScale is calculated as maxHeight / 65535
     /// (and is only used when useFloatData = false).
     /// */
-    #[link_name = "\u{1}_ZN25btHeightfieldTerrainShapeC1EiiPKvfibb"]
+    #[link_name = "\u{1}_ZN25btHeightfieldTerrainShapeC1EiiPKvdibb"]
     pub fn btHeightfieldTerrainShape_btHeightfieldTerrainShape1(
         this: *mut btHeightfieldTerrainShape,
         heightStickWidth: ::std::os::raw::c_int,
@@ -6362,7 +6364,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZNK25btHeightfieldTerrainShape21calculateLocalInertiaEfR9btVector3"]
+    #[link_name = "\u{1}_ZNK25btHeightfieldTerrainShape21calculateLocalInertiaEdR9btVector3"]
     pub fn btHeightfieldTerrainShape_calculateLocalInertia(
         this: *mut ::std::os::raw::c_void,
         mass: btScalar,
@@ -6560,7 +6562,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZNK19btMinkowskiSumShape21calculateLocalInertiaEfR9btVector3"]
+    #[link_name = "\u{1}_ZNK19btMinkowskiSumShape21calculateLocalInertiaEdR9btVector3"]
     pub fn btMinkowskiSumShape_calculateLocalInertia(
         this: *mut ::std::os::raw::c_void,
         mass: btScalar,
@@ -6740,7 +6742,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZNK19btTriangleMeshShape21calculateLocalInertiaEfR9btVector3"]
+    #[link_name = "\u{1}_ZNK19btTriangleMeshShape21calculateLocalInertiaEdR9btVector3"]
     pub fn btTriangleMeshShape_calculateLocalInertia(
         this: *mut ::std::os::raw::c_void,
         mass: btScalar,
@@ -6958,7 +6960,7 @@ extern "C" {
 }
 extern "C" {
     /// ***************************************** expert/internal use only *************************
-    #[link_name = "\u{1}_ZN14btQuantizedBvh21setQuantizationValuesERK9btVector3S2_f"]
+    #[link_name = "\u{1}_ZN14btQuantizedBvh21setQuantizationValuesERK9btVector3S2_d"]
     pub fn btQuantizedBvh_setQuantizationValues(
         this: *mut btQuantizedBvh,
         bvhAabbMin: *const btVector3,
@@ -7777,7 +7779,7 @@ extern "C" {
     ) -> bool;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN19btSdfCollisionShape10queryPointERK9btVector3RfRS0_"]
+    #[link_name = "\u{1}_ZN19btSdfCollisionShape10queryPointERK9btVector3RdRS0_"]
     pub fn btSdfCollisionShape_queryPoint(
         this: *mut btSdfCollisionShape,
         ptInSDF: *const btVector3,
@@ -7841,7 +7843,7 @@ extern "C" {
     ) -> *const btVector3;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZNK19btSdfCollisionShape21calculateLocalInertiaEfR9btVector3"]
+    #[link_name = "\u{1}_ZNK19btSdfCollisionShape21calculateLocalInertiaEdR9btVector3"]
     pub fn btSdfCollisionShape_calculateLocalInertia(
         this: *mut ::std::os::raw::c_void,
         mass: btScalar,
@@ -7855,7 +7857,7 @@ extern "C" {
     ) -> *const ::std::os::raw::c_char;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN19btSdfCollisionShape9setMarginEf"]
+    #[link_name = "\u{1}_ZN19btSdfCollisionShape9setMarginEd"]
     pub fn btSdfCollisionShape_setMargin(this: *mut ::std::os::raw::c_void, margin: btScalar);
 }
 extern "C" {
@@ -7887,7 +7889,7 @@ extern "C" {
     pub fn btShapeHull_getUnitSpherePoints(highres: ::std::os::raw::c_int) -> *mut btVector3;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN11btShapeHull9buildHullEfi"]
+    #[link_name = "\u{1}_ZN11btShapeHull9buildHullEdi"]
     pub fn btShapeHull_buildHull(
         this: *mut btShapeHull,
         margin: btScalar,
@@ -8009,7 +8011,7 @@ pub struct btTriangleIndexVertexArray {
     pub m_aabbMax: btVector3,
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN26btTriangleIndexVertexArrayC1EiPiiiPfi"]
+    #[link_name = "\u{1}_ZN26btTriangleIndexVertexArrayC1EiPiiiPdi"]
     pub fn btTriangleIndexVertexArray_btTriangleIndexVertexArray(
         this: *mut btTriangleIndexVertexArray,
         numTriangles: ::std::os::raw::c_int,
@@ -8131,7 +8133,7 @@ pub struct btTriangleIndexVertexMaterialArray {
     pub m_materials: MaterialArray,
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN34btTriangleIndexVertexMaterialArrayC1EiPiiiPfiiPhiS0_i"]
+    #[link_name = "\u{1}_ZN34btTriangleIndexVertexMaterialArrayC1EiPiiiPdiiPhiS0_i"]
     pub fn btTriangleIndexVertexMaterialArray_btTriangleIndexVertexMaterialArray(
         this: *mut btTriangleIndexVertexMaterialArray,
         numTriangles: ::std::os::raw::c_int,
@@ -8272,7 +8274,7 @@ extern "C" {
     /// ///"principal" has to be applied inversely to all children transforms in order for the local coordinate system of the compound
     /// ///shape to be centered at the center of mass and to coincide with the principal axes. This also necessitates a correction of the world transform
     /// ///of the collision object by the principal transform.
-    #[link_name = "\u{1}_ZNK15btCompoundShape31calculatePrincipalAxisTransformEPKfR11btTransformR9btVector3"]
+    #[link_name = "\u{1}_ZNK15btCompoundShape31calculatePrincipalAxisTransformEPKdR11btTransformR9btVector3"]
     pub fn btCompoundShape_calculatePrincipalAxisTransform(
         this: *const btCompoundShape,
         masses: *const btScalar,
@@ -8378,7 +8380,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZNK15btCompoundShape21calculateLocalInertiaEfR9btVector3"]
+    #[link_name = "\u{1}_ZNK15btCompoundShape21calculateLocalInertiaEdR9btVector3"]
     pub fn btCompoundShape_calculateLocalInertia(
         this: *mut ::std::os::raw::c_void,
         mass: btScalar,
@@ -8446,7 +8448,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZNK10btBoxShape21calculateLocalInertiaEfR9btVector3"]
+    #[link_name = "\u{1}_ZNK10btBoxShape21calculateLocalInertiaEdR9btVector3"]
     pub fn btBoxShape_calculateLocalInertia(
         this: *mut ::std::os::raw::c_void,
         mass: btScalar,
@@ -8611,7 +8613,7 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZNK16btBU_Simplex1to48isInsideERK9btVector3f"]
+    #[link_name = "\u{1}_ZNK16btBU_Simplex1to48isInsideERK9btVector3d"]
     pub fn btBU_Simplex1to4_isInside(
         this: *mut ::std::os::raw::c_void,
         pt: *const btVector3,
@@ -8661,7 +8663,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN14btGeometryUtil8isInsideERK20btAlignedObjectArrayI9btVector3ERKS1_f"]
+    #[link_name = "\u{1}_ZN14btGeometryUtil8isInsideERK20btAlignedObjectArrayI9btVector3ERKS1_d"]
     pub fn btGeometryUtil_isInside(
         vertices: *const btAlignedObjectArray<btVector3>,
         planeNormal: *const btVector3,
@@ -8669,7 +8671,7 @@ extern "C" {
     ) -> bool;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN14btGeometryUtil19isPointInsidePlanesERK20btAlignedObjectArrayI9btVector3ERKS1_f"]
+    #[link_name = "\u{1}_ZN14btGeometryUtil19isPointInsidePlanesERK20btAlignedObjectArrayI9btVector3ERKS1_d"]
     pub fn btGeometryUtil_isPointInsidePlanes(
         planeEquations: *const btAlignedObjectArray<btVector3>,
         point: *const btVector3,
@@ -8677,7 +8679,7 @@ extern "C" {
     ) -> bool;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN14btGeometryUtil22areVerticesBehindPlaneERK9btVector3RK20btAlignedObjectArrayIS0_Ef"]
+    #[link_name = "\u{1}_ZN14btGeometryUtil22areVerticesBehindPlaneERK9btVector3RK20btAlignedObjectArrayIS0_Ed"]
     pub fn btGeometryUtil_areVerticesBehindPlane(
         planeNormal: *const btVector3,
         vertices: *const btAlignedObjectArray<btVector3>,
@@ -8735,7 +8737,7 @@ pub struct GIM_TRIANGLE_CONTACT {
 }
 extern "C" {
     /// ! classify points that are closer
-    #[link_name = "\u{1}_ZN20GIM_TRIANGLE_CONTACT12merge_pointsERK9btVector4fPK9btVector3i"]
+    #[link_name = "\u{1}_ZN20GIM_TRIANGLE_CONTACT12merge_pointsERK9btVector4dPK9btVector3i"]
     pub fn GIM_TRIANGLE_CONTACT_merge_points(
         this: *mut GIM_TRIANGLE_CONTACT,
         plane: *const btVector4,
@@ -9082,7 +9084,7 @@ pub struct btQuantizedBvhTree {
     pub m_bvhQuantization: btVector3,
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN18btQuantizedBvhTree17calc_quantizationER18GIM_BVH_DATA_ARRAYf"]
+    #[link_name = "\u{1}_ZN18btQuantizedBvhTree17calc_quantizationER18GIM_BVH_DATA_ARRAYd"]
     pub fn btQuantizedBvhTree_calc_quantization(
         this: *mut btQuantizedBvhTree,
         primitive_boxes: *mut GIM_BVH_DATA_ARRAY,
@@ -9303,7 +9305,7 @@ pub struct btGImpactCompoundShape_CompoundPrimitiveManager {
 }
 extern "C" {
     /// ! Calculates the exact inertia tensor for this shape
-    #[link_name = "\u{1}_ZNK22btGImpactCompoundShape21calculateLocalInertiaEfR9btVector3"]
+    #[link_name = "\u{1}_ZNK22btGImpactCompoundShape21calculateLocalInertiaEdR9btVector3"]
     pub fn btGImpactCompoundShape_calculateLocalInertia(
         this: *mut ::std::os::raw::c_void,
         mass: btScalar,
@@ -9380,7 +9382,7 @@ extern "C" {
     pub fn btGImpactMeshShapePart_unlockChildShapes(this: *mut ::std::os::raw::c_void);
 }
 extern "C" {
-    #[link_name = "\u{1}_ZNK22btGImpactMeshShapePart21calculateLocalInertiaEfR9btVector3"]
+    #[link_name = "\u{1}_ZNK22btGImpactMeshShapePart21calculateLocalInertiaEdR9btVector3"]
     pub fn btGImpactMeshShapePart_calculateLocalInertia(
         this: *mut ::std::os::raw::c_void,
         mass: btScalar,
@@ -9421,7 +9423,7 @@ pub struct btGImpactMeshShape {
     pub m_mesh_parts: btAlignedObjectArray<*mut btGImpactMeshShapePart>,
 }
 extern "C" {
-    #[link_name = "\u{1}_ZNK18btGImpactMeshShape21calculateLocalInertiaEfR9btVector3"]
+    #[link_name = "\u{1}_ZNK18btGImpactMeshShape21calculateLocalInertiaEdR9btVector3"]
     pub fn btGImpactMeshShape_calculateLocalInertia(
         this: *mut ::std::os::raw::c_void,
         mass: btScalar,
@@ -9550,7 +9552,7 @@ pub struct btTriangleConvexcastCallback {
     pub m_allowedPenetration: btScalar,
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN28btTriangleConvexcastCallbackC2EPK13btConvexShapeRK11btTransformS5_S5_f"]
+    #[link_name = "\u{1}_ZN28btTriangleConvexcastCallbackC2EPK13btConvexShapeRK11btTransformS5_S5_d"]
     pub fn btTriangleConvexcastCallback_btTriangleConvexcastCallback(
         this: *mut btTriangleConvexcastCallback,
         convexShape: *const btConvexShape,
@@ -9596,7 +9598,7 @@ pub struct btCompoundFromGimpactShape {
     pub _base: btCompoundShape,
 }
 extern "C" {
-    #[link_name = "\u{1}_Z32btCreateCompoundFromGimpactShapePK18btGImpactMeshShapef"]
+    #[link_name = "\u{1}_Z32btCreateCompoundFromGimpactShapePK18btGImpactMeshShaped"]
     pub fn btCreateCompoundFromGimpactShape(
         gimpactMesh: *const btGImpactMeshShape,
         depth: btScalar,
@@ -9660,7 +9662,7 @@ pub struct btStaticPlaneShape {
     pub m_localScaling: btVector3,
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN18btStaticPlaneShapeC1ERK9btVector3f"]
+    #[link_name = "\u{1}_ZN18btStaticPlaneShapeC1ERK9btVector3d"]
     pub fn btStaticPlaneShape_btStaticPlaneShape(
         this: *mut btStaticPlaneShape,
         planeNormal: *const btVector3,
@@ -9698,7 +9700,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZNK18btStaticPlaneShape21calculateLocalInertiaEfR9btVector3"]
+    #[link_name = "\u{1}_ZNK18btStaticPlaneShape21calculateLocalInertiaEdR9btVector3"]
     pub fn btStaticPlaneShape_calculateLocalInertia(
         this: *mut ::std::os::raw::c_void,
         mass: btScalar,
@@ -9750,7 +9752,7 @@ pub struct btPolyhedralContactClipping {
     pub _address: u8,
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN27btPolyhedralContactClipping19clipHullAgainstHullERK9btVector3RK18btConvexPolyhedronS5_RK11btTransformS8_ffR20btAlignedObjectArrayIS0_ESB_RN36btDiscreteCollisionDetectorInterface6ResultE"]
+    #[link_name = "\u{1}_ZN27btPolyhedralContactClipping19clipHullAgainstHullERK9btVector3RK18btConvexPolyhedronS5_RK11btTransformS8_ddR20btAlignedObjectArrayIS0_ESB_RN36btDiscreteCollisionDetectorInterface6ResultE"]
     pub fn btPolyhedralContactClipping_clipHullAgainstHull(
         separatingNormal1: *const btVector3,
         hullA: *const btConvexPolyhedron,
@@ -9765,7 +9767,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN27btPolyhedralContactClipping19clipFaceAgainstHullERK9btVector3RK18btConvexPolyhedronRK11btTransformR20btAlignedObjectArrayIS0_ESB_ffRN36btDiscreteCollisionDetectorInterface6ResultE"]
+    #[link_name = "\u{1}_ZN27btPolyhedralContactClipping19clipFaceAgainstHullERK9btVector3RK18btConvexPolyhedronRK11btTransformR20btAlignedObjectArrayIS0_ESB_ddRN36btDiscreteCollisionDetectorInterface6ResultE"]
     pub fn btPolyhedralContactClipping_clipFaceAgainstHull(
         separatingNormal: *const btVector3,
         hullA: *const btConvexPolyhedron,
@@ -9790,7 +9792,7 @@ extern "C" {
 }
 extern "C" {
     /// the clipFace method is used internally
-    #[link_name = "\u{1}_ZN27btPolyhedralContactClipping8clipFaceERK20btAlignedObjectArrayI9btVector3ERS2_RKS1_f"]
+    #[link_name = "\u{1}_ZN27btPolyhedralContactClipping8clipFaceERK20btAlignedObjectArrayI9btVector3ERS2_RKS1_d"]
     pub fn btPolyhedralContactClipping_clipFace(
         pVtxIn: *const btVertexArray,
         ppVtxOut: *mut btVertexArray,
@@ -10057,7 +10059,7 @@ pub struct btGImpactCollisionAlgorithm_CreateFunc {
     pub _base: btCollisionAlgorithmCreateFunc,
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN27btGImpactCollisionAlgorithm15addContactPointEPK24btCollisionObjectWrapperS2_RK9btVector3S5_f"]
+    #[link_name = "\u{1}_ZN27btGImpactCollisionAlgorithm15addContactPointEPK24btCollisionObjectWrapperS2_RK9btVector3S5_d"]
     pub fn btGImpactCollisionAlgorithm_addContactPoint(
         this: *mut btGImpactCollisionAlgorithm,
         body0Wrap: *const btCollisionObjectWrapper,
@@ -11025,7 +11027,7 @@ extern "C" {
 }
 extern "C" {
     /// continuous collision detection needs prediction
-    #[link_name = "\u{1}_ZN11btRigidBody26predictIntegratedTransformEfR11btTransform"]
+    #[link_name = "\u{1}_ZN11btRigidBody26predictIntegratedTransformEdR11btTransform"]
     pub fn btRigidBody_predictIntegratedTransform(
         this: *mut btRigidBody,
         step: btScalar,
@@ -11033,7 +11035,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN11btRigidBody18saveKinematicStateEf"]
+    #[link_name = "\u{1}_ZN11btRigidBody18saveKinematicStateEd"]
     pub fn btRigidBody_saveKinematicState(this: *mut btRigidBody, step: btScalar);
 }
 extern "C" {
@@ -11045,7 +11047,7 @@ extern "C" {
     pub fn btRigidBody_setGravity(this: *mut btRigidBody, acceleration: *const btVector3);
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN11btRigidBody10setDampingEff"]
+    #[link_name = "\u{1}_ZN11btRigidBody10setDampingEdd"]
     pub fn btRigidBody_setDamping(
         this: *mut btRigidBody,
         lin_damping: btScalar,
@@ -11053,11 +11055,11 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN11btRigidBody12applyDampingEf"]
+    #[link_name = "\u{1}_ZN11btRigidBody12applyDampingEd"]
     pub fn btRigidBody_applyDamping(this: *mut btRigidBody, timeStep: btScalar);
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN11btRigidBody12setMassPropsEfRK9btVector3"]
+    #[link_name = "\u{1}_ZN11btRigidBody12setMassPropsEdRK9btVector3"]
     pub fn btRigidBody_setMassProps(
         this: *mut btRigidBody,
         mass: btScalar,
@@ -11065,7 +11067,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN11btRigidBody19integrateVelocitiesEf"]
+    #[link_name = "\u{1}_ZN11btRigidBody19integrateVelocitiesEd"]
     pub fn btRigidBody_integrateVelocities(this: *mut btRigidBody, step: btScalar);
 }
 extern "C" {
@@ -11098,7 +11100,7 @@ extern "C" {
 }
 extern "C" {
     /// perform implicit force computation in world space
-    #[link_name = "\u{1}_ZNK11btRigidBody38computeGyroscopicImpulseImplicit_WorldEf"]
+    #[link_name = "\u{1}_ZNK11btRigidBody38computeGyroscopicImpulseImplicit_WorldEd"]
     pub fn btRigidBody_computeGyroscopicImpulseImplicit_World(
         this: *const btRigidBody,
         dt: btScalar,
@@ -11106,7 +11108,7 @@ extern "C" {
 }
 extern "C" {
     /// perform implicit force computation in body space (inertial frame)
-    #[link_name = "\u{1}_ZNK11btRigidBody37computeGyroscopicImpulseImplicit_BodyEf"]
+    #[link_name = "\u{1}_ZNK11btRigidBody37computeGyroscopicImpulseImplicit_BodyEd"]
     pub fn btRigidBody_computeGyroscopicImpulseImplicit_Body(
         this: *const btRigidBody,
         step: btScalar,
@@ -11114,7 +11116,7 @@ extern "C" {
 }
 extern "C" {
     /// explicit version is best avoided, it gains energy
-    #[link_name = "\u{1}_ZNK11btRigidBody30computeGyroscopicForceExplicitEf"]
+    #[link_name = "\u{1}_ZNK11btRigidBody30computeGyroscopicForceExplicitEd"]
     pub fn btRigidBody_computeGyroscopicForceExplicit(
         this: *const btRigidBody,
         maxGyroscopicForce: btScalar,
@@ -11135,7 +11137,7 @@ extern "C" {
 extern "C" {
     /// btRigidBody constructor for backwards compatibility.
     /// ///To specify friction (etc) during rigid body construction, please use the other constructor (using btRigidBodyConstructionInfo)
-    #[link_name = "\u{1}_ZN11btRigidBodyC1EfP13btMotionStateP16btCollisionShapeRK9btVector3"]
+    #[link_name = "\u{1}_ZN11btRigidBodyC1EdP13btMotionStateP16btCollisionShapeRK9btVector3"]
     pub fn btRigidBody_btRigidBody1(
         this: *mut btRigidBody,
         mass: btScalar,
@@ -11448,7 +11450,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN30btKinematicCharacterController36updateTargetPositionBasedOnCollisionERK9btVector3ff"]
+    #[link_name = "\u{1}_ZN30btKinematicCharacterController36updateTargetPositionBasedOnCollisionERK9btVector3dd"]
     pub fn btKinematicCharacterController_updateTargetPositionBasedOnCollision(
         this: *mut btKinematicCharacterController,
         hit_normal: *const btVector3,
@@ -11465,7 +11467,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN30btKinematicCharacterController8stepDownEP16btCollisionWorldf"]
+    #[link_name = "\u{1}_ZN30btKinematicCharacterController8stepDownEP16btCollisionWorldd"]
     pub fn btKinematicCharacterController_stepDown(
         this: *mut btKinematicCharacterController,
         collisionWorld: *mut btCollisionWorld,
@@ -11495,28 +11497,28 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN30btKinematicCharacterController13setStepHeightEf"]
+    #[link_name = "\u{1}_ZN30btKinematicCharacterController13setStepHeightEd"]
     pub fn btKinematicCharacterController_setStepHeight(
         this: *mut btKinematicCharacterController,
         h: btScalar,
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN30btKinematicCharacterController12setFallSpeedEf"]
+    #[link_name = "\u{1}_ZN30btKinematicCharacterController12setFallSpeedEd"]
     pub fn btKinematicCharacterController_setFallSpeed(
         this: *mut btKinematicCharacterController,
         fallSpeed: btScalar,
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN30btKinematicCharacterController12setJumpSpeedEf"]
+    #[link_name = "\u{1}_ZN30btKinematicCharacterController12setJumpSpeedEd"]
     pub fn btKinematicCharacterController_setJumpSpeed(
         this: *mut btKinematicCharacterController,
         jumpSpeed: btScalar,
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN30btKinematicCharacterController16setMaxJumpHeightEf"]
+    #[link_name = "\u{1}_ZN30btKinematicCharacterController16setMaxJumpHeightEd"]
     pub fn btKinematicCharacterController_setMaxJumpHeight(
         this: *mut btKinematicCharacterController,
         maxJumpHeight: btScalar,
@@ -11538,7 +11540,7 @@ extern "C" {
 extern "C" {
     /// The max slope determines the maximum angle that the controller can walk up.
     /// /// The slope angle is measured in radians.
-    #[link_name = "\u{1}_ZN30btKinematicCharacterController11setMaxSlopeEf"]
+    #[link_name = "\u{1}_ZN30btKinematicCharacterController11setMaxSlopeEd"]
     pub fn btKinematicCharacterController_setMaxSlope(
         this: *mut btKinematicCharacterController,
         slopeRadians: btScalar,
@@ -11551,7 +11553,7 @@ extern "C" {
     ) -> btScalar;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN30btKinematicCharacterController22setMaxPenetrationDepthEf"]
+    #[link_name = "\u{1}_ZN30btKinematicCharacterController22setMaxPenetrationDepthEd"]
     pub fn btKinematicCharacterController_setMaxPenetrationDepth(
         this: *mut btKinematicCharacterController,
         d: btScalar,
@@ -11570,7 +11572,7 @@ extern "C" {
     ) -> *mut btPairCachingGhostObject;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN30btKinematicCharacterControllerC1EP24btPairCachingGhostObjectP13btConvexShapefRK9btVector3"]
+    #[link_name = "\u{1}_ZN30btKinematicCharacterControllerC1EP24btPairCachingGhostObjectP13btConvexShapedRK9btVector3"]
     pub fn btKinematicCharacterController_btKinematicCharacterController(
         this: *mut btKinematicCharacterController,
         ghostObject: *mut btPairCachingGhostObject,
@@ -11753,7 +11755,7 @@ extern "C" {
     /// ///	to zero.
     /// /// This call will reset any walk direction set by setWalkDirection().
     /// /// Negative time intervals will result in no motion.
-    #[link_name = "\u{1}_ZN30btKinematicCharacterController26setVelocityForTimeIntervalERK9btVector3f"]
+    #[link_name = "\u{1}_ZN30btKinematicCharacterController26setVelocityForTimeIntervalERK9btVector3d"]
     pub fn btKinematicCharacterController_setVelocityForTimeInterval(
         this: *mut ::std::os::raw::c_void,
         velocity: *const btVector3,
@@ -11808,7 +11810,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN30btKinematicCharacterController10playerStepEP16btCollisionWorldf"]
+    #[link_name = "\u{1}_ZN30btKinematicCharacterController10playerStepEP16btCollisionWorldd"]
     pub fn btKinematicCharacterController_playerStep(
         this: *mut ::std::os::raw::c_void,
         collisionWorld: *mut btCollisionWorld,
@@ -11983,7 +11985,7 @@ pub struct btTypedConstraint_btConstraintInfo2 {
 }
 extern "C" {
     /// internal method used by the constraint solver, don't use them directly
-    #[link_name = "\u{1}_ZN17btTypedConstraint14getMotorFactorEfffff"]
+    #[link_name = "\u{1}_ZN17btTypedConstraint14getMotorFactorEddddd"]
     pub fn btTypedConstraint_getMotorFactor(
         this: *mut btTypedConstraint,
         pos: btScalar,
@@ -12084,8 +12086,8 @@ pub struct btTypedConstraintFloatData {
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct btTypedConstraintData {
-    pub m_rbA: *mut btRigidBodyFloatData,
-    pub m_rbB: *mut btRigidBodyFloatData,
+    pub m_rbA: *mut btRigidBodyDoubleData,
+    pub m_rbB: *mut btRigidBodyDoubleData,
     pub m_name: *mut ::std::os::raw::c_char,
     pub m_objectType: ::std::os::raw::c_int,
     pub m_userConstraintType: ::std::os::raw::c_int,
@@ -12132,7 +12134,7 @@ extern "C" {
     /// Sets all limit's parameters.
     /// /// When low > high limit becomes inactive.
     /// /// When high - low > 2PI limit is ineffective too becouse no angle can exceed the limit
-    #[link_name = "\u{1}_ZN14btAngularLimit3setEfffff"]
+    #[link_name = "\u{1}_ZN14btAngularLimit3setEddddd"]
     pub fn btAngularLimit_set(
         this: *mut btAngularLimit,
         low: btScalar,
@@ -12145,13 +12147,13 @@ extern "C" {
 extern "C" {
     /// Checks conastaint angle against limit. If limit is active and the angle violates the limit
     /// /// correction is calculated.
-    #[link_name = "\u{1}_ZN14btAngularLimit4testEf"]
+    #[link_name = "\u{1}_ZN14btAngularLimit4testEd"]
     pub fn btAngularLimit_test(this: *mut btAngularLimit, angle: btScalar);
 }
 extern "C" {
     /// Checks given angle against limit. If limit is active and angle doesn't fit it, the angle
     /// /// returned is modified so it equals to the limit closest to given angle.
-    #[link_name = "\u{1}_ZNK14btAngularLimit3fitERf"]
+    #[link_name = "\u{1}_ZNK14btAngularLimit3fitERd"]
     pub fn btAngularLimit_fit(this: *const btAngularLimit, angle: *mut btScalar);
 }
 extern "C" {
@@ -12413,7 +12415,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN35btSequentialImpulseConstraintSolver23setupFrictionConstraintER18btSolverConstraintRK9btVector3iiR15btManifoldPointS4_S4_P17btCollisionObjectS8_fRK19btContactSolverInfoff"]
+    #[link_name = "\u{1}_ZN35btSequentialImpulseConstraintSolver23setupFrictionConstraintER18btSolverConstraintRK9btVector3iiR15btManifoldPointS4_S4_P17btCollisionObjectS8_dRK19btContactSolverInfodd"]
     pub fn btSequentialImpulseConstraintSolver_setupFrictionConstraint(
         this: *mut btSequentialImpulseConstraintSolver,
         solverConstraint: *mut btSolverConstraint,
@@ -12432,7 +12434,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN35btSequentialImpulseConstraintSolver32setupTorsionalFrictionConstraintER18btSolverConstraintRK9btVector3iiR15btManifoldPointfS4_S4_P17btCollisionObjectS8_fff"]
+    #[link_name = "\u{1}_ZN35btSequentialImpulseConstraintSolver32setupTorsionalFrictionConstraintER18btSolverConstraintRK9btVector3iiR15btManifoldPointdS4_S4_P17btCollisionObjectS8_ddd"]
     pub fn btSequentialImpulseConstraintSolver_setupTorsionalFrictionConstraint(
         this: *mut btSequentialImpulseConstraintSolver,
         solverConstraint: *mut btSolverConstraint,
@@ -12451,7 +12453,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN35btSequentialImpulseConstraintSolver21addFrictionConstraintERK9btVector3iiiR15btManifoldPointS2_S2_P17btCollisionObjectS6_fRK19btContactSolverInfoff"]
+    #[link_name = "\u{1}_ZN35btSequentialImpulseConstraintSolver21addFrictionConstraintERK9btVector3iiiR15btManifoldPointS2_S2_P17btCollisionObjectS6_dRK19btContactSolverInfodd"]
     pub fn btSequentialImpulseConstraintSolver_addFrictionConstraint(
         this: *mut btSequentialImpulseConstraintSolver,
         normalAxis: *const btVector3,
@@ -12470,7 +12472,7 @@ extern "C" {
     ) -> *mut btSolverConstraint;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN35btSequentialImpulseConstraintSolver30addTorsionalFrictionConstraintERK9btVector3iiiR15btManifoldPointfS2_S2_P17btCollisionObjectS6_fff"]
+    #[link_name = "\u{1}_ZN35btSequentialImpulseConstraintSolver30addTorsionalFrictionConstraintERK9btVector3iiiR15btManifoldPointdS2_S2_P17btCollisionObjectS6_ddd"]
     pub fn btSequentialImpulseConstraintSolver_addTorsionalFrictionConstraint(
         this: *mut btSequentialImpulseConstraintSolver,
         normalAxis: *const btVector3,
@@ -12489,7 +12491,7 @@ extern "C" {
     ) -> *mut btSolverConstraint;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN35btSequentialImpulseConstraintSolver22setupContactConstraintER18btSolverConstraintiiR15btManifoldPointRK19btContactSolverInfoRfRK9btVector3SA_"]
+    #[link_name = "\u{1}_ZN35btSequentialImpulseConstraintSolver22setupContactConstraintER18btSolverConstraintiiR15btManifoldPointRK19btContactSolverInfoRdRK9btVector3SA_"]
     pub fn btSequentialImpulseConstraintSolver_setupContactConstraint(
         this: *mut btSequentialImpulseConstraintSolver,
         solverConstraint: *mut btSolverConstraint,
@@ -12522,7 +12524,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN35btSequentialImpulseConstraintSolver16restitutionCurveEfff"]
+    #[link_name = "\u{1}_ZN35btSequentialImpulseConstraintSolver16restitutionCurveEddd"]
     pub fn btSequentialImpulseConstraintSolver_restitutionCurve(
         this: *mut btSequentialImpulseConstraintSolver,
         rel_vel: btScalar,
@@ -12551,7 +12553,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN35btSequentialImpulseConstraintSolver19getOrInitSolverBodyER17btCollisionObjectf"]
+    #[link_name = "\u{1}_ZN35btSequentialImpulseConstraintSolver19getOrInitSolverBodyER17btCollisionObjectd"]
     pub fn btSequentialImpulseConstraintSolver_getOrInitSolverBody(
         this: *mut btSequentialImpulseConstraintSolver,
         body: *mut btCollisionObject,
@@ -12559,7 +12561,7 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN35btSequentialImpulseConstraintSolver14initSolverBodyEP12btSolverBodyP17btCollisionObjectf"]
+    #[link_name = "\u{1}_ZN35btSequentialImpulseConstraintSolver14initSolverBodyEP12btSolverBodyP17btCollisionObjectd"]
     pub fn btSequentialImpulseConstraintSolver_initSolverBody(
         this: *mut btSequentialImpulseConstraintSolver,
         solverBody: *mut btSolverBody,
@@ -13434,7 +13436,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN37btSequentialImpulseConstraintSolverMt29getOrInitSolverBodyThreadsafeER17btCollisionObjectf"]
+    #[link_name = "\u{1}_ZN37btSequentialImpulseConstraintSolverMt29getOrInitSolverBodyThreadsafeER17btCollisionObjectd"]
     pub fn btSequentialImpulseConstraintSolverMt_getOrInitSolverBodyThreadsafe(
         this: *mut btSequentialImpulseConstraintSolverMt,
         body: *mut btCollisionObject,
@@ -13978,7 +13980,7 @@ pub struct btSolve2LinearConstraint {
     pub m_damping: btScalar,
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN24btSolve2LinearConstraint31resolveUnilateralPairConstraintEP11btRigidBodyS1_RK11btMatrix3x3S4_RK9btVector3fS7_S7_S7_S7_fS7_S7_S7_fS7_S7_S7_fS7_RfS8_"]
+    #[link_name = "\u{1}_ZN24btSolve2LinearConstraint31resolveUnilateralPairConstraintEP11btRigidBodyS1_RK11btMatrix3x3S4_RK9btVector3dS7_S7_S7_S7_dS7_S7_S7_dS7_S7_S7_dS7_RdS8_"]
     pub fn btSolve2LinearConstraint_resolveUnilateralPairConstraint(
         this: *mut btSolve2LinearConstraint,
         body0: *mut btRigidBody,
@@ -14006,7 +14008,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN24btSolve2LinearConstraint30resolveBilateralPairConstraintEP11btRigidBodyS1_RK11btMatrix3x3S4_RK9btVector3fS7_S7_S7_S7_fS7_S7_S7_fS7_S7_S7_fS7_RfS8_"]
+    #[link_name = "\u{1}_ZN24btSolve2LinearConstraint30resolveBilateralPairConstraintEP11btRigidBodyS1_RK11btMatrix3x3S4_RK9btVector3dS7_S7_S7_S7_dS7_S7_S7_dS7_S7_S7_dS7_RdS8_"]
     pub fn btSolve2LinearConstraint_resolveBilateralPairConstraint(
         this: *mut btSolve2LinearConstraint,
         body0: *mut btRigidBody,
@@ -14204,7 +14206,7 @@ pub struct btDiscreteDynamicsWorld {
     pub m_predictiveManifoldsMutex: btSpinMutex,
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN23btDiscreteDynamicsWorld27integrateTransformsInternalEPP11btRigidBodyif"]
+    #[link_name = "\u{1}_ZN23btDiscreteDynamicsWorld27integrateTransformsInternalEPP11btRigidBodyid"]
     pub fn btDiscreteDynamicsWorld_integrateTransformsInternal(
         this: *mut btDiscreteDynamicsWorld,
         bodies: *mut *mut btRigidBody,
@@ -14213,14 +14215,14 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN23btDiscreteDynamicsWorld13updateActionsEf"]
+    #[link_name = "\u{1}_ZN23btDiscreteDynamicsWorld13updateActionsEd"]
     pub fn btDiscreteDynamicsWorld_updateActions(
         this: *mut btDiscreteDynamicsWorld,
         timeStep: btScalar,
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN23btDiscreteDynamicsWorld14startProfilingEf"]
+    #[link_name = "\u{1}_ZN23btDiscreteDynamicsWorld14startProfilingEd"]
     pub fn btDiscreteDynamicsWorld_startProfiling(
         this: *mut btDiscreteDynamicsWorld,
         timeStep: btScalar,
@@ -14231,7 +14233,7 @@ extern "C" {
     pub fn btDiscreteDynamicsWorld_releasePredictiveContacts(this: *mut btDiscreteDynamicsWorld);
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN23btDiscreteDynamicsWorld32createPredictiveContactsInternalEPP11btRigidBodyif"]
+    #[link_name = "\u{1}_ZN23btDiscreteDynamicsWorld32createPredictiveContactsInternalEPP11btRigidBodyid"]
     pub fn btDiscreteDynamicsWorld_createPredictiveContactsInternal(
         this: *mut btDiscreteDynamicsWorld,
         bodies: *mut *mut btRigidBody,
@@ -14334,14 +14336,14 @@ impl btDiscreteDynamicsWorld {
     }
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN23btDiscreteDynamicsWorld25predictUnconstraintMotionEf"]
+    #[link_name = "\u{1}_ZN23btDiscreteDynamicsWorld25predictUnconstraintMotionEd"]
     pub fn btDiscreteDynamicsWorld_predictUnconstraintMotion(
         this: *mut ::std::os::raw::c_void,
         timeStep: btScalar,
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN23btDiscreteDynamicsWorld19integrateTransformsEf"]
+    #[link_name = "\u{1}_ZN23btDiscreteDynamicsWorld19integrateTransformsEd"]
     pub fn btDiscreteDynamicsWorld_integrateTransforms(
         this: *mut ::std::os::raw::c_void,
         timeStep: btScalar,
@@ -14359,28 +14361,28 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN23btDiscreteDynamicsWorld21updateActivationStateEf"]
+    #[link_name = "\u{1}_ZN23btDiscreteDynamicsWorld21updateActivationStateEd"]
     pub fn btDiscreteDynamicsWorld_updateActivationState(
         this: *mut ::std::os::raw::c_void,
         timeStep: btScalar,
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN23btDiscreteDynamicsWorld28internalSingleStepSimulationEf"]
+    #[link_name = "\u{1}_ZN23btDiscreteDynamicsWorld28internalSingleStepSimulationEd"]
     pub fn btDiscreteDynamicsWorld_internalSingleStepSimulation(
         this: *mut ::std::os::raw::c_void,
         timeStep: btScalar,
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN23btDiscreteDynamicsWorld24createPredictiveContactsEf"]
+    #[link_name = "\u{1}_ZN23btDiscreteDynamicsWorld24createPredictiveContactsEd"]
     pub fn btDiscreteDynamicsWorld_createPredictiveContacts(
         this: *mut ::std::os::raw::c_void,
         timeStep: btScalar,
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN23btDiscreteDynamicsWorld18saveKinematicStateEf"]
+    #[link_name = "\u{1}_ZN23btDiscreteDynamicsWorld18saveKinematicStateEd"]
     pub fn btDiscreteDynamicsWorld_saveKinematicState(
         this: *mut ::std::os::raw::c_void,
         timeStep: btScalar,
@@ -14394,7 +14396,7 @@ extern "C" {
 }
 extern "C" {
     /// if maxSubSteps > 0, it will interpolate motion between fixedTimeStep's
-    #[link_name = "\u{1}_ZN23btDiscreteDynamicsWorld14stepSimulationEfif"]
+    #[link_name = "\u{1}_ZN23btDiscreteDynamicsWorld14stepSimulationEdid"]
     pub fn btDiscreteDynamicsWorld_stepSimulation(
         this: *mut ::std::os::raw::c_void,
         timeStep: btScalar,
@@ -15106,21 +15108,21 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN25btDiscreteDynamicsWorldMt25predictUnconstraintMotionEf"]
+    #[link_name = "\u{1}_ZN25btDiscreteDynamicsWorldMt25predictUnconstraintMotionEd"]
     pub fn btDiscreteDynamicsWorldMt_predictUnconstraintMotion(
         this: *mut ::std::os::raw::c_void,
         timeStep: btScalar,
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN25btDiscreteDynamicsWorldMt24createPredictiveContactsEf"]
+    #[link_name = "\u{1}_ZN25btDiscreteDynamicsWorldMt24createPredictiveContactsEd"]
     pub fn btDiscreteDynamicsWorldMt_createPredictiveContacts(
         this: *mut ::std::os::raw::c_void,
         timeStep: btScalar,
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN25btDiscreteDynamicsWorldMt19integrateTransformsEf"]
+    #[link_name = "\u{1}_ZN25btDiscreteDynamicsWorldMt19integrateTransformsEd"]
     pub fn btDiscreteDynamicsWorldMt_integrateTransforms(
         this: *mut ::std::os::raw::c_void,
         timeStep: btScalar,
@@ -15133,7 +15135,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN25btDiscreteDynamicsWorldMt14stepSimulationEfif"]
+    #[link_name = "\u{1}_ZN25btDiscreteDynamicsWorldMt14stepSimulationEdid"]
     pub fn btDiscreteDynamicsWorldMt_stepSimulation(
         this: *mut ::std::os::raw::c_void,
         timeStep: btScalar,
@@ -15326,7 +15328,7 @@ pub struct btMultiBody {
     pub m_internalNeedsJointFeedback: bool,
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN11btMultiBody10setupFixedEifRK9btVector3iRK12btQuaternionS2_S2_b"]
+    #[link_name = "\u{1}_ZN11btMultiBody10setupFixedEidRK9btVector3iRK12btQuaternionS2_S2_b"]
     pub fn btMultiBody_setupFixed(
         this: *mut btMultiBody,
         linkIndex: ::std::os::raw::c_int,
@@ -15340,7 +15342,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN11btMultiBody14setupPrismaticEifRK9btVector3iRK12btQuaternionS2_S2_S2_b"]
+    #[link_name = "\u{1}_ZN11btMultiBody14setupPrismaticEidRK9btVector3iRK12btQuaternionS2_S2_S2_b"]
     pub fn btMultiBody_setupPrismatic(
         this: *mut btMultiBody,
         i: ::std::os::raw::c_int,
@@ -15355,7 +15357,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN11btMultiBody13setupRevoluteEifRK9btVector3iRK12btQuaternionS2_S2_S2_b"]
+    #[link_name = "\u{1}_ZN11btMultiBody13setupRevoluteEidRK9btVector3iRK12btQuaternionS2_S2_S2_b"]
     pub fn btMultiBody_setupRevolute(
         this: *mut btMultiBody,
         linkIndex: ::std::os::raw::c_int,
@@ -15370,7 +15372,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN11btMultiBody14setupSphericalEifRK9btVector3iRK12btQuaternionS2_S2_b"]
+    #[link_name = "\u{1}_ZN11btMultiBody14setupSphericalEidRK9btVector3iRK12btQuaternionS2_S2_b"]
     pub fn btMultiBody_setupSpherical(
         this: *mut btMultiBody,
         linkIndex: ::std::os::raw::c_int,
@@ -15384,7 +15386,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN11btMultiBody11setupPlanarEifRK9btVector3iRK12btQuaternionS2_S2_b"]
+    #[link_name = "\u{1}_ZN11btMultiBody11setupPlanarEidRK9btVector3iRK12btQuaternionS2_S2_b"]
     pub fn btMultiBody_setupPlanar(
         this: *mut btMultiBody,
         i: ::std::os::raw::c_int,
@@ -15452,11 +15454,11 @@ extern "C" {
     ) -> *const btScalar;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN11btMultiBody11setJointPosEif"]
+    #[link_name = "\u{1}_ZN11btMultiBody11setJointPosEid"]
     pub fn btMultiBody_setJointPos(this: *mut btMultiBody, i: ::std::os::raw::c_int, q: btScalar);
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN11btMultiBody11setJointVelEif"]
+    #[link_name = "\u{1}_ZN11btMultiBody11setJointVelEid"]
     pub fn btMultiBody_setJointVel(
         this: *mut btMultiBody,
         i: ::std::os::raw::c_int,
@@ -15464,7 +15466,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN11btMultiBody19setJointPosMultiDofEiPf"]
+    #[link_name = "\u{1}_ZN11btMultiBody19setJointPosMultiDofEiPd"]
     pub fn btMultiBody_setJointPosMultiDof(
         this: *mut btMultiBody,
         i: ::std::os::raw::c_int,
@@ -15472,7 +15474,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN11btMultiBody19setJointVelMultiDofEiPf"]
+    #[link_name = "\u{1}_ZN11btMultiBody19setJointVelMultiDofEiPd"]
     pub fn btMultiBody_setJointVelMultiDof(
         this: *mut btMultiBody,
         i: ::std::os::raw::c_int,
@@ -15586,7 +15588,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN11btMultiBody14addJointTorqueEif"]
+    #[link_name = "\u{1}_ZN11btMultiBody14addJointTorqueEid"]
     pub fn btMultiBody_addJointTorque(
         this: *mut btMultiBody,
         i: ::std::os::raw::c_int,
@@ -15594,7 +15596,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN11btMultiBody22addJointTorqueMultiDofEiif"]
+    #[link_name = "\u{1}_ZN11btMultiBody22addJointTorqueMultiDofEiid"]
     pub fn btMultiBody_addJointTorqueMultiDof(
         this: *mut btMultiBody,
         i: ::std::os::raw::c_int,
@@ -15603,7 +15605,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN11btMultiBody22addJointTorqueMultiDofEiPKf"]
+    #[link_name = "\u{1}_ZN11btMultiBody22addJointTorqueMultiDofEiPKd"]
     pub fn btMultiBody_addJointTorqueMultiDof1(
         this: *mut btMultiBody,
         i: ::std::os::raw::c_int,
@@ -15639,7 +15641,7 @@ extern "C" {
     ) -> *mut btScalar;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN11btMultiBody52computeAccelerationsArticulatedBodyAlgorithmMultiDofEfR20btAlignedObjectArrayIfERS0_I9btVector3ERS0_I11btMatrix3x3Eb"]
+    #[link_name = "\u{1}_ZN11btMultiBody52computeAccelerationsArticulatedBodyAlgorithmMultiDofEdR20btAlignedObjectArrayIdERS0_I9btVector3ERS0_I11btMatrix3x3Eb"]
     pub fn btMultiBody_computeAccelerationsArticulatedBodyAlgorithmMultiDof(
         this: *mut btMultiBody,
         dt: btScalar,
@@ -15650,7 +15652,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZNK11btMultiBody30calcAccelerationDeltasMultiDofEPKfPfR20btAlignedObjectArrayIfERS3_I9btVector3E"]
+    #[link_name = "\u{1}_ZNK11btMultiBody30calcAccelerationDeltasMultiDofEPKdPdR20btAlignedObjectArrayIdERS3_I9btVector3E"]
     pub fn btMultiBody_calcAccelerationDeltasMultiDof(
         this: *const btMultiBody,
         force: *const btScalar,
@@ -15660,7 +15662,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN11btMultiBody21stepPositionsMultiDofEfPfS0_"]
+    #[link_name = "\u{1}_ZN11btMultiBody21stepPositionsMultiDofEdPdS0_"]
     pub fn btMultiBody_stepPositionsMultiDof(
         this: *mut btMultiBody,
         dt: btScalar,
@@ -15669,7 +15671,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZNK11btMultiBody30fillConstraintJacobianMultiDofEiRK9btVector3S2_S2_PfR20btAlignedObjectArrayIfERS4_IS0_ERS4_I11btMatrix3x3E"]
+    #[link_name = "\u{1}_ZNK11btMultiBody30fillConstraintJacobianMultiDofEiRK9btVector3S2_S2_PdR20btAlignedObjectArrayIdERS4_IS0_ERS4_I11btMatrix3x3E"]
     pub fn btMultiBody_fillConstraintJacobianMultiDof(
         this: *const btMultiBody,
         link: ::std::os::raw::c_int,
@@ -15691,7 +15693,7 @@ extern "C" {
     pub fn btMultiBody_goToSleep(this: *mut btMultiBody);
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN11btMultiBody29checkMotionAndSleepIfRequiredEf"]
+    #[link_name = "\u{1}_ZN11btMultiBody29checkMotionAndSleepIfRequiredEd"]
     pub fn btMultiBody_checkMotionAndSleepIfRequired(this: *mut btMultiBody, timestep: btScalar);
 }
 extern "C" {
@@ -15723,7 +15725,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN11btMultiBodyC1EifRK9btVector3bbb"]
+    #[link_name = "\u{1}_ZN11btMultiBodyC1EidRK9btVector3bbb"]
     pub fn btMultiBody_btMultiBody(
         this: *mut btMultiBody,
         n_links: ::std::os::raw::c_int,
@@ -16302,7 +16304,7 @@ pub struct btMultiBodyConstraint {
     pub m_data: btAlignedObjectArray<btScalar>,
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN21btMultiBodyConstraint13applyDeltaVeeER23btMultiBodyJacobianDataPffii"]
+    #[link_name = "\u{1}_ZN21btMultiBodyConstraint13applyDeltaVeeER23btMultiBodyJacobianDataPddii"]
     pub fn btMultiBodyConstraint_applyDeltaVee(
         this: *mut btMultiBodyConstraint,
         data: *mut btMultiBodyJacobianData,
@@ -16313,7 +16315,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN21btMultiBodyConstraint23fillMultiBodyConstraintER27btMultiBodySolverConstraintR23btMultiBodyJacobianDataPfS4_RK9btVector3S7_S7_S7_fRK19btContactSolverInfoffbfbff"]
+    #[link_name = "\u{1}_ZN21btMultiBodyConstraint23fillMultiBodyConstraintER27btMultiBodySolverConstraintR23btMultiBodyJacobianDataPdS4_RK9btVector3S7_S7_S7_dRK19btContactSolverInfoddbdbdd"]
     pub fn btMultiBodyConstraint_fillMultiBodyConstraint(
         this: *mut btMultiBodyConstraint,
         solverConstraint: *mut btMultiBodySolverConstraint,
@@ -16470,7 +16472,7 @@ extern "C" {
     ) -> btScalar;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN27btMultiBodyConstraintSolver30addMultiBodyFrictionConstraintERK9btVector3P20btPersistentManifoldiR15btManifoldPointP17btCollisionObjectS8_fRK19btContactSolverInfoff"]
+    #[link_name = "\u{1}_ZN27btMultiBodyConstraintSolver30addMultiBodyFrictionConstraintERK9btVector3P20btPersistentManifoldiR15btManifoldPointP17btCollisionObjectS8_dRK19btContactSolverInfodd"]
     pub fn btMultiBodyConstraintSolver_addMultiBodyFrictionConstraint(
         this: *mut btMultiBodyConstraintSolver,
         normalAxis: *const btVector3,
@@ -16486,7 +16488,7 @@ extern "C" {
     ) -> *mut btMultiBodySolverConstraint;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN27btMultiBodyConstraintSolver39addMultiBodyTorsionalFrictionConstraintERK9btVector3P20btPersistentManifoldiR15btManifoldPointfP17btCollisionObjectS8_fRK19btContactSolverInfoff"]
+    #[link_name = "\u{1}_ZN27btMultiBodyConstraintSolver39addMultiBodyTorsionalFrictionConstraintERK9btVector3P20btPersistentManifoldiR15btManifoldPointdP17btCollisionObjectS8_dRK19btContactSolverInfodd"]
     pub fn btMultiBodyConstraintSolver_addMultiBodyTorsionalFrictionConstraint(
         this: *mut btMultiBodyConstraintSolver,
         normalAxis: *const btVector3,
@@ -16503,7 +16505,7 @@ extern "C" {
     ) -> *mut btMultiBodySolverConstraint;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN27btMultiBodyConstraintSolver34setupMultiBodyJointLimitConstraintER27btMultiBodySolverConstraintPfS2_fffRK19btContactSolverInfo"]
+    #[link_name = "\u{1}_ZN27btMultiBodyConstraintSolver34setupMultiBodyJointLimitConstraintER27btMultiBodySolverConstraintPdS2_dddRK19btContactSolverInfo"]
     pub fn btMultiBodyConstraintSolver_setupMultiBodyJointLimitConstraint(
         this: *mut btMultiBodyConstraintSolver,
         constraintRow: *mut btMultiBodySolverConstraint,
@@ -16516,7 +16518,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN27btMultiBodyConstraintSolver31setupMultiBodyContactConstraintER27btMultiBodySolverConstraintRK9btVector3R15btManifoldPointRK19btContactSolverInfoRfbff"]
+    #[link_name = "\u{1}_ZN27btMultiBodyConstraintSolver31setupMultiBodyContactConstraintER27btMultiBodySolverConstraintRK9btVector3R15btManifoldPointRK19btContactSolverInfoRdbdd"]
     pub fn btMultiBodyConstraintSolver_setupMultiBodyContactConstraint(
         this: *mut btMultiBodyConstraintSolver,
         solverConstraint: *mut btMultiBodySolverConstraint,
@@ -16530,7 +16532,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN27btMultiBodyConstraintSolver41setupMultiBodyTorsionalFrictionConstraintER27btMultiBodySolverConstraintRK9btVector3R15btManifoldPointfRK19btContactSolverInfoRfbff"]
+    #[link_name = "\u{1}_ZN27btMultiBodyConstraintSolver41setupMultiBodyTorsionalFrictionConstraintER27btMultiBodySolverConstraintRK9btVector3R15btManifoldPointdRK19btContactSolverInfoRdbdd"]
     pub fn btMultiBodyConstraintSolver_setupMultiBodyTorsionalFrictionConstraint(
         this: *mut btMultiBodyConstraintSolver,
         solverConstraint: *mut btMultiBodySolverConstraint,
@@ -16553,7 +16555,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN27btMultiBodyConstraintSolver13applyDeltaVeeEPffii"]
+    #[link_name = "\u{1}_ZN27btMultiBodyConstraintSolver13applyDeltaVeeEPddii"]
     pub fn btMultiBodyConstraintSolver_applyDeltaVee(
         this: *mut btMultiBodyConstraintSolver,
         deltaV: *mut btScalar,
@@ -16563,7 +16565,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN27btMultiBodyConstraintSolver30writeBackSolverBodyToMultiBodyER27btMultiBodySolverConstraintf"]
+    #[link_name = "\u{1}_ZN27btMultiBodyConstraintSolver30writeBackSolverBodyToMultiBodyER27btMultiBodySolverConstraintd"]
     pub fn btMultiBodyConstraintSolver_writeBackSolverBodyToMultiBody(
         this: *mut btMultiBodyConstraintSolver,
         constraint: *mut btMultiBodySolverConstraint,
@@ -17049,7 +17051,7 @@ pub struct btMultiBodyJointLimitConstraint {
     pub m_upperBound: btScalar,
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN31btMultiBodyJointLimitConstraintC1EP11btMultiBodyiff"]
+    #[link_name = "\u{1}_ZN31btMultiBodyJointLimitConstraintC1EP11btMultiBodyidd"]
     pub fn btMultiBodyJointLimitConstraint_btMultiBodyJointLimitConstraint(
         this: *mut btMultiBodyJointLimitConstraint,
         body: *mut btMultiBody,
@@ -17120,7 +17122,7 @@ pub struct btMultiBodyJointMotor {
     pub m_rhsClamp: btScalar,
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN21btMultiBodyJointMotorC1EP11btMultiBodyiff"]
+    #[link_name = "\u{1}_ZN21btMultiBodyJointMotorC1EP11btMultiBodyidd"]
     pub fn btMultiBodyJointMotor_btMultiBodyJointMotor(
         this: *mut btMultiBodyJointMotor,
         body: *mut btMultiBody,
@@ -17130,7 +17132,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN21btMultiBodyJointMotorC1EP11btMultiBodyiiff"]
+    #[link_name = "\u{1}_ZN21btMultiBodyJointMotorC1EP11btMultiBodyiidd"]
     pub fn btMultiBodyJointMotor_btMultiBodyJointMotor1(
         this: *mut btMultiBodyJointMotor,
         body: *mut btMultiBody,
@@ -17646,7 +17648,7 @@ pub struct btDantzigScratchMemory {
     pub state: btAlignedObjectArray<bool>,
 }
 extern "C" {
-    #[link_name = "\u{1}_Z17btSolveDantzigLCPiPfS_S_S_iS_S_PiR22btDantzigScratchMemory"]
+    #[link_name = "\u{1}_Z17btSolveDantzigLCPiPdS_S_S_iS_S_PiR22btDantzigScratchMemory"]
     pub fn btSolveDantzigLCP(
         n: ::std::os::raw::c_int,
         A: *mut btScalar,
@@ -17680,8 +17682,8 @@ pub struct btLemkeAlgorithm__bindgen_vtable(::std::os::raw::c_void);
 #[derive(Debug)]
 pub struct btLemkeAlgorithm {
     pub vtable_: *const btLemkeAlgorithm__bindgen_vtable,
-    pub m_M: btMatrixXf,
-    pub m_q: btVectorXf,
+    pub m_M: btMatrixXd,
+    pub m_q: btVectorXd,
     /// \brief number of steps until the Lemke algorithm found a solution
     pub steps: ::std::os::raw::c_uint,
     /// \brief define level of debug output
@@ -17698,38 +17700,38 @@ extern "C" {
     pub fn btLemkeAlgorithm_solve(
         this: *mut btLemkeAlgorithm,
         maxloops: ::std::os::raw::c_uint,
-    ) -> btVectorXf;
+    ) -> btVectorXd;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN16btLemkeAlgorithm24findLexicographicMinimumERK9btMatrixXIfERKi"]
+    #[link_name = "\u{1}_ZN16btLemkeAlgorithm24findLexicographicMinimumERK9btMatrixXIdERKi"]
     pub fn btLemkeAlgorithm_findLexicographicMinimum(
         this: *mut btLemkeAlgorithm,
-        A: *const btMatrixXf,
+        A: *const btMatrixXd,
         pivotColIndex: *const ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN16btLemkeAlgorithm21LexicographicPositiveERK9btVectorXIfE"]
+    #[link_name = "\u{1}_ZN16btLemkeAlgorithm21LexicographicPositiveERK9btVectorXIdE"]
     pub fn btLemkeAlgorithm_LexicographicPositive(
         this: *mut btLemkeAlgorithm,
-        v: *const btVectorXf,
+        v: *const btVectorXd,
     ) -> bool;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN16btLemkeAlgorithm26GaussJordanEliminationStepER9btMatrixXIfEiiRK20btAlignedObjectArrayIiE"]
+    #[link_name = "\u{1}_ZN16btLemkeAlgorithm26GaussJordanEliminationStepER9btMatrixXIdEiiRK20btAlignedObjectArrayIiE"]
     pub fn btLemkeAlgorithm_GaussJordanEliminationStep(
         this: *mut btLemkeAlgorithm,
-        A: *mut btMatrixXf,
+        A: *mut btMatrixXd,
         pivotRowIndex: ::std::os::raw::c_int,
         pivotColumnIndex: ::std::os::raw::c_int,
         basis: *const btAlignedObjectArray<::std::os::raw::c_int>,
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN16btLemkeAlgorithm11greaterZeroERK9btVectorXIfE"]
+    #[link_name = "\u{1}_ZN16btLemkeAlgorithm11greaterZeroERK9btVectorXIdE"]
     pub fn btLemkeAlgorithm_greaterZero(
         this: *mut btLemkeAlgorithm,
-        vector: *const btVectorXf,
+        vector: *const btVectorXd,
     ) -> bool;
 }
 extern "C" {
@@ -17741,25 +17743,25 @@ extern "C" {
 }
 impl btLemkeAlgorithm {
     #[inline]
-    pub unsafe fn solve(&mut self, maxloops: ::std::os::raw::c_uint) -> btVectorXf {
+    pub unsafe fn solve(&mut self, maxloops: ::std::os::raw::c_uint) -> btVectorXd {
         btLemkeAlgorithm_solve(self, maxloops)
     }
     #[inline]
     pub unsafe fn findLexicographicMinimum(
         &mut self,
-        A: *const btMatrixXf,
+        A: *const btMatrixXd,
         pivotColIndex: *const ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
         btLemkeAlgorithm_findLexicographicMinimum(self, A, pivotColIndex)
     }
     #[inline]
-    pub unsafe fn LexicographicPositive(&mut self, v: *const btVectorXf) -> bool {
+    pub unsafe fn LexicographicPositive(&mut self, v: *const btVectorXd) -> bool {
         btLemkeAlgorithm_LexicographicPositive(self, v)
     }
     #[inline]
     pub unsafe fn GaussJordanEliminationStep(
         &mut self,
-        A: *mut btMatrixXf,
+        A: *mut btMatrixXd,
         pivotRowIndex: ::std::os::raw::c_int,
         pivotColumnIndex: ::std::os::raw::c_int,
         basis: *const btAlignedObjectArray<::std::os::raw::c_int>,
@@ -17767,7 +17769,7 @@ impl btLemkeAlgorithm {
         btLemkeAlgorithm_GaussJordanEliminationStep(self, A, pivotRowIndex, pivotColumnIndex, basis)
     }
     #[inline]
-    pub unsafe fn greaterZero(&mut self, vector: *const btVectorXf) -> bool {
+    pub unsafe fn greaterZero(&mut self, vector: *const btVectorXd) -> bool {
         btLemkeAlgorithm_greaterZero(self, vector)
     }
     #[inline]
@@ -17793,16 +17795,16 @@ pub struct btLemkeSolver {
 #[repr(C)]
 pub struct btMLCPSolver {
     pub _base: btSequentialImpulseConstraintSolver,
-    pub m_A: btMatrixXf,
-    pub m_b: btVectorXf,
-    pub m_x: btVectorXf,
-    pub m_lo: btVectorXf,
-    pub m_hi: btVectorXf,
+    pub m_A: btMatrixXd,
+    pub m_b: btVectorXd,
+    pub m_x: btVectorXd,
+    pub m_lo: btVectorXd,
+    pub m_hi: btVectorXd,
     /// when using 'split impulse' we solve two separate (M)LCPs
-    pub m_bSplit: btVectorXf,
-    pub m_xSplit: btVectorXf,
-    pub m_bSplit1: btVectorXf,
-    pub m_xSplit2: btVectorXf,
+    pub m_bSplit: btVectorXd,
+    pub m_xSplit: btVectorXd,
+    pub m_bSplit1: btVectorXd,
+    pub m_xSplit2: btVectorXd,
     pub m_limitDependencies: btAlignedObjectArray<::std::os::raw::c_int>,
     pub m_allConstraintPtrArray: btAlignedObjectArray<*mut btSolverConstraint>,
     pub m_solver: *mut btMLCPSolverInterface,
@@ -17810,13 +17812,13 @@ pub struct btMLCPSolver {
     /// The following scratch variables are not stateful -- contents are cleared prior to each use.
     /// /// They are only cached here to avoid extra memory allocations and deallocations and to ensure
     /// /// that multiple instances of the solver can be run in parallel.
-    pub m_scratchJ3: btMatrixXf,
-    pub m_scratchJInvM3: btMatrixXf,
+    pub m_scratchJ3: btMatrixXd,
+    pub m_scratchJInvM3: btMatrixXd,
     pub m_scratchOfs: btAlignedObjectArray<::std::os::raw::c_int>,
-    pub m_scratchMInv: btMatrixXf,
-    pub m_scratchJ: btMatrixXf,
-    pub m_scratchJTranspose: btMatrixXf,
-    pub m_scratchTmp: btMatrixXf,
+    pub m_scratchMInv: btMatrixXd,
+    pub m_scratchJ: btMatrixXd,
+    pub m_scratchJTranspose: btMatrixXd,
+    pub m_scratchTmp: btMatrixXd,
 }
 extern "C" {
     #[link_name = "\u{1}_ZN12btMLCPSolverC1EP21btMLCPSolverInterface"]
@@ -17890,6 +17892,2491 @@ pub struct btSolveProjectedGaussSeidel {
     pub _base: btMLCPSolverInterface,
     pub m_leastSquaresResidualThreshold: btScalar,
     pub m_leastSquaresResidual: btScalar,
+}
+pub type idScalar = btScalar;
+pub type btSizeType = ::std::os::raw::c_int;
+pub type b3AlignedAllocator_self_type = u8;
+pub type b3AlignedAllocator_const_pointer<T> = *mut T;
+pub type b3AlignedAllocator_const_reference<T> = *mut T;
+pub type b3AlignedAllocator_pointer<T> = *mut T;
+pub type b3AlignedAllocator_reference<T> = *mut T;
+pub type b3AlignedAllocator_value_type<T> = T;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct b3AlignedAllocator_rebind {
+    pub _address: u8,
+}
+pub type b3AlignedAllocator_rebind_other = u8;
+/// The b3AlignedObjectArray template class uses a subset of the stl::vector interface for its methods
+/// It is developed to replace stl::vector to avoid portability issues, including STL alignment issues to add SIMD/SSE data
+#[repr(C)]
+#[derive(Debug)]
+pub struct b3AlignedObjectArray<T> {
+    pub m_allocator: u8,
+    pub m_size: ::std::os::raw::c_int,
+    pub m_capacity: ::std::os::raw::c_int,
+    pub m_data: *mut T,
+    pub m_ownsMemory: bool,
+    pub _phantom_0: ::std::marker::PhantomData<::std::cell::UnsafeCell<T>>,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct b3AlignedObjectArray_less {
+    pub _address: u8,
+}
+pub type idArrayIdx = ::std::os::raw::c_int;
+pub type btInverseDynamics_matxx = btMatrixX<idScalar>;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct btInverseDynamics_vec3 {
+    pub _base: btVector3,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct btInverseDynamics_mat33 {
+    pub _base: btMatrix3x3,
+}
+#[repr(C)]
+#[derive(Debug)]
+pub struct btInverseDynamics_vecx {
+    pub _base: btVectorX<idScalar>,
+}
+#[repr(C)]
+#[derive(Debug)]
+pub struct btInverseDynamics_mat3x {
+    pub _base: btInverseDynamics_matxx,
+}
+extern "C" {
+    /// set all elements to zero
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet37setZeroERNS_4vec3E"]
+    pub fn btInverseDynamics_setZero(v: *mut btInverseDynamics_vec3);
+}
+extern "C" {
+    /// set all elements to zero
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet37setZeroERNS_4vecxE"]
+    pub fn btInverseDynamics_setZero1(v: *mut btInverseDynamics_vecx);
+}
+extern "C" {
+    /// set all elements to zero
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet37setZeroERNS_5mat33E"]
+    pub fn btInverseDynamics_setZero2(m: *mut btInverseDynamics_mat33);
+}
+extern "C" {
+    /// create a skew symmetric matrix from a vector (useful for cross product abstraction, e.g. v x a = V * a)
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet34skewERNS_4vec3EPNS_5mat33E"]
+    pub fn btInverseDynamics_skew(
+        v: *mut btInverseDynamics_vec3,
+        result: *mut btInverseDynamics_mat33,
+    );
+}
+extern "C" {
+    /// return maximum absolute value
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet36maxAbsERKNS_4vecxE"]
+    pub fn btInverseDynamics_maxAbs(v: *const btInverseDynamics_vecx) -> idScalar;
+}
+extern "C" {
+    /// return maximum absolute value
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet36maxAbsERKNS_4vec3E"]
+    pub fn btInverseDynamics_maxAbs1(v: *const btInverseDynamics_vec3) -> idScalar;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet311maxAbsMat3xERKNS_5mat3xE"]
+    pub fn btInverseDynamics_maxAbsMat3x(m: *const btInverseDynamics_mat3x) -> idScalar;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet37setZeroERNS_5mat3xE"]
+    pub fn btInverseDynamics_setZero3(m: *mut btInverseDynamics_mat3x);
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet33mulERKNS_5mat33ERKNS_5mat3xEPS3_"]
+    pub fn btInverseDynamics_mul(
+        a: *const btInverseDynamics_mat33,
+        b: *const btInverseDynamics_mat3x,
+        result: *mut btInverseDynamics_mat3x,
+    );
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet33addERKNS_5mat3xES2_PS0_"]
+    pub fn btInverseDynamics_add(
+        a: *const btInverseDynamics_mat3x,
+        b: *const btInverseDynamics_mat3x,
+        result: *mut btInverseDynamics_mat3x,
+    );
+}
+extern "C" {
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet33subERKNS_5mat3xES2_PS0_"]
+    pub fn btInverseDynamics_sub(
+        a: *const btInverseDynamics_mat3x,
+        b: *const btInverseDynamics_mat3x,
+        result: *mut btInverseDynamics_mat3x,
+    );
+}
+extern "C" {
+    /// get offset vector & transform matrix from DH parameters
+    /// TODO: add documentation
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet315getVecMatFromDHEddddPNS_4vec3EPNS_5mat33E"]
+    pub fn btInverseDynamics_getVecMatFromDH(
+        theta: idScalar,
+        d: idScalar,
+        a: idScalar,
+        alpha: idScalar,
+        r: *mut btInverseDynamics_vec3,
+        T: *mut btInverseDynamics_mat33,
+    );
+}
+extern "C" {
+    /// Check if a 3x3 matrix is positive definite
+    /// @param m a 3x3 matrix
+    /// @return true if m>0, false otherwise
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet318isPositiveDefiniteERKNS_5mat33E"]
+    pub fn btInverseDynamics_isPositiveDefinite(m: *const btInverseDynamics_mat33) -> bool;
+}
+extern "C" {
+    /// Check if a 3x3 matrix is positive semi definite
+    /// @param m a 3x3 matrix
+    /// @return true if m>=0, false otherwise
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet322isPositiveSemiDefiniteERKNS_5mat33E"]
+    pub fn btInverseDynamics_isPositiveSemiDefinite(m: *const btInverseDynamics_mat33) -> bool;
+}
+extern "C" {
+    /// Check if a 3x3 matrix is positive semi definite within numeric limits
+    /// @param m a 3x3 matrix
+    /// @return true if m>=-eps, false otherwise
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet327isPositiveSemiDefiniteFuzzyERKNS_5mat33E"]
+    pub fn btInverseDynamics_isPositiveSemiDefiniteFuzzy(m: *const btInverseDynamics_mat33)
+        -> bool;
+}
+extern "C" {
+    /// Determinant of 3x3 matrix
+    /// NOTE: implemented here for portability, as determinant operation
+    /// will be implemented differently for various matrix/vector libraries
+    /// @param m a 3x3 matrix
+    /// @return det(m)
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet311determinantERKNS_5mat33E"]
+    pub fn btInverseDynamics_determinant(m: *const btInverseDynamics_mat33) -> idScalar;
+}
+extern "C" {
+    /// Test if a 3x3 matrix satisfies some properties of inertia matrices
+    /// @param I a 3x3 matrix
+    /// @param index body index (for error messages)
+    /// @param has_fixed_joint: if true, positive semi-definite matrices are accepted
+    /// @return true if I satisfies inertia matrix properties, false otherwise.
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet320isValidInertiaMatrixERKNS_5mat33Eib"]
+    pub fn btInverseDynamics_isValidInertiaMatrix(
+        I: *const btInverseDynamics_mat33,
+        index: ::std::os::raw::c_int,
+        has_fixed_joint: bool,
+    ) -> bool;
+}
+extern "C" {
+    /// Check if a 3x3 matrix is a valid transform (rotation) matrix
+    /// @param m a 3x3 matrix
+    /// @return true if m is a rotation matrix, false otherwise
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet322isValidTransformMatrixERKNS_5mat33E"]
+    pub fn btInverseDynamics_isValidTransformMatrix(m: *const btInverseDynamics_mat33) -> bool;
+}
+extern "C" {
+    /// Transform matrix from parent to child frame,
+    /// when the child frame is rotated about @param axis by @angle
+    /// (mathematically positive)
+    /// @param axis the axis of rotation
+    /// @param angle rotation angle
+    /// @param T pointer to transform matrix
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet324bodyTParentFromAxisAngleERKNS_4vec3ERKdPNS_5mat33E"]
+    pub fn btInverseDynamics_bodyTParentFromAxisAngle(
+        axis: *const btInverseDynamics_vec3,
+        angle: *const idScalar,
+        T: *mut btInverseDynamics_mat33,
+    );
+}
+extern "C" {
+    /// Check if this is a unit vector
+    /// @param vector
+    /// @return true if |vector|=1 within numeric limits
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet312isUnitVectorERKNS_4vec3E"]
+    pub fn btInverseDynamics_isUnitVector(vector: *const btInverseDynamics_vec3) -> bool;
+}
+extern "C" {
+    /// @input a vector in R^3
+    /// @returns corresponding spin tensor
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313tildeOperatorERKNS_4vec3E"]
+    pub fn btInverseDynamics_tildeOperator(
+        v: *const btInverseDynamics_vec3,
+    ) -> btInverseDynamics_mat33;
+}
+extern "C" {
+    /// @param alpha angle in radians
+    /// @returns transform matrix for ratation with @param alpha about x-axis
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet310transformXERKd"]
+    pub fn btInverseDynamics_transformX(alpha: *const idScalar) -> btInverseDynamics_mat33;
+}
+extern "C" {
+    /// @param beta angle in radians
+    /// @returns transform matrix for ratation with @param beta about y-axis
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet310transformYERKd"]
+    pub fn btInverseDynamics_transformY(beta: *const idScalar) -> btInverseDynamics_mat33;
+}
+extern "C" {
+    /// @param gamma angle in radians
+    /// @returns transform matrix for ratation with @param gamma about z-axis
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet310transformZERKd"]
+    pub fn btInverseDynamics_transformZ(gamma: *const idScalar) -> btInverseDynamics_mat33;
+}
+extern "C" {
+    /// calculate rpy angles (x-y-z Euler angles) from a given rotation matrix
+    /// @param rot rotation matrix
+    /// @returns x-y-z Euler angles
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313rpyFromMatrixERKNS_5mat33E"]
+    pub fn btInverseDynamics_rpyFromMatrix(
+        rot: *const btInverseDynamics_mat33,
+    ) -> btInverseDynamics_vec3;
+}
+/// no degree of freedom, moves with parent
+pub const btInverseDynamics_JointType_FIXED: btInverseDynamics_JointType = 0;
+/// one rotational degree of freedom relative to parent
+pub const btInverseDynamics_JointType_REVOLUTE: btInverseDynamics_JointType = 1;
+/// one translational degree of freedom relative to parent
+pub const btInverseDynamics_JointType_PRISMATIC: btInverseDynamics_JointType = 2;
+/// six degrees of freedom relative to parent
+pub const btInverseDynamics_JointType_FLOATING: btInverseDynamics_JointType = 3;
+/// Enumeration of supported joint types
+pub type btInverseDynamics_JointType = u32;
+/// Interface class for calculating inverse dynamics for tree structured
+/// multibody systems
+///
+/// Note on degrees of freedom
+/// The q vector contains the generalized coordinate set defining the tree's configuration.
+/// Every joint adds elements that define the corresponding link's frame pose relative to
+/// its parent. For the joint types that is:
+/// - FIXED:	 none
+/// - REVOLUTE:  angle of rotation [rad]
+/// - PRISMATIC: displacement [m]
+/// - FLOATING:  Euler x-y-z angles [rad] and displacement in body-fixed frame of parent [m]
+/// (in that order)
+/// The u vector contains the generalized speeds, which are
+/// - FIXED:	 none
+/// - REVOLUTE:  time derivative of angle of rotation [rad/s]
+/// - PRISMATIC: time derivative of displacement [m/s]
+/// - FLOATING:  angular velocity [rad/s] (*not* time derivative of rpy angles)
+/// and time derivative of displacement in parent frame [m/s]
+///
+/// The q and u vectors are obtained by stacking contributions of all bodies in one
+/// vector in the order of body indices.
+///
+/// Note on generalized forces: analogous to u, i.e.,
+/// - FIXED:	 none
+/// - REVOLUTE:  moment [Nm], about joint axis
+/// - PRISMATIC: force  [N], along joint axis
+/// - FLOATING:  moment vector [Nm] and force vector [N], both in body-fixed frame
+/// (in that order)
+///
+/// TODO - force element interface (friction, springs, dampers, etc)
+/// - gears and motor inertia
+#[repr(C)]
+#[derive(Debug)]
+pub struct btInverseDynamics_MultiBodyTree {
+    pub m_is_finalized: bool,
+    pub m_mass_parameters_are_valid: bool,
+    pub m_accept_invalid_mass_parameters: bool,
+    pub m_impl: *mut btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+    pub m_init_cache: *mut btInverseDynamics_MultiBodyTree_InitCache,
+}
+extern "C" {
+    /// Add body to the system. this allocates memory and not real-time safe.
+    /// /// This only adds the data to an initial cache. After all bodies have been
+    /// /// added,
+    /// /// the system is setup using the buildSystem call
+    /// /// @param body_index index of the body to be added. Must >=0, <number of bodies,
+    /// ///		and index of parent must be < index of body
+    /// /// @param parent_index index of the parent body
+    /// ///		The root of the tree has index 0 and its parent (the world frame)
+    /// ///		is assigned index -1
+    /// ///		the rotation and translation relative to the parent are taken as
+    /// ///		pose of the root body relative to the world frame. Other parameters
+    /// ///		are ignored
+    /// /// @param JointType type of joint connecting the body to the parent
+    /// /// @param mass the mass of the body
+    /// /// @param body_r_body_com the center of mass of the body relative to and
+    /// /// described in
+    /// ///		the body fixed frame, which is located in the joint axis connecting
+    /// /// the body to its parent
+    /// /// @param body_I_body the moment of inertia of the body w.r.t the body-fixed
+    /// /// frame
+    /// ///		(ie, the reference point is the origin of the body-fixed frame and
+    /// /// the matrix is written
+    /// ///		 w.r.t. those unit vectors)
+    /// /// @param parent_r_parent_body_ref position of joint relative to the parent
+    /// /// body's reference frame
+    /// ///		for q=0, written in the parent bodies reference frame
+    /// /// @param body_axis_of_motion translation/rotation axis in body-fixed frame.
+    /// ///		Ignored for joints that are not revolute or prismatic.
+    /// ///		must be a unit vector.
+    /// /// @param body_T_parent_ref transform matrix from parent to body reference
+    /// /// frame for q=0.
+    /// ///		This is the matrix transforming a vector represented in the
+    /// /// parent's reference frame into one represented
+    /// ///		in this body's reference frame.
+    /// ///		ie, if parent_vec is a vector in R^3 whose components are w.r.t to
+    /// /// the parent's reference frame,
+    /// ///		then the same vector written w.r.t. this body's frame (for q=0) is
+    /// /// given by
+    /// ///		body_vec = parent_R_body_ref * parent_vec
+    /// /// @param user_ptr pointer to user data
+    /// /// @param user_int pointer to user integer
+    /// /// @return 0 on success, -1 on error
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree7addBodyEiiNS_9JointTypeERKNS_4vec3ERKNS_5mat33ES4_dS4_S7_iPv"]
+    pub fn btInverseDynamics_MultiBodyTree_addBody(
+        this: *mut btInverseDynamics_MultiBodyTree,
+        body_index: ::std::os::raw::c_int,
+        parent_index: ::std::os::raw::c_int,
+        joint_type: btInverseDynamics_JointType,
+        parent_r_parent_body_ref: *const btInverseDynamics_vec3,
+        body_T_parent_ref: *const btInverseDynamics_mat33,
+        body_axis_of_motion: *const btInverseDynamics_vec3,
+        mass: idScalar,
+        body_r_body_com: *const btInverseDynamics_vec3,
+        body_I_body: *const btInverseDynamics_mat33,
+        user_int: ::std::os::raw::c_int,
+        user_ptr: *mut ::std::os::raw::c_void,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// set policy for invalid mass properties
+    /// /// @param flag if true, invalid mass properties are accepted,
+    /// ///		the default is false
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree30setAcceptInvalidMassParametersEb"]
+    pub fn btInverseDynamics_MultiBodyTree_setAcceptInvalidMassParameters(
+        this: *mut btInverseDynamics_MultiBodyTree,
+        flag: bool,
+    );
+}
+extern "C" {
+    /// @return the mass properties policy flag
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree30getAcceptInvalidMassPropertiesEv"]
+    pub fn btInverseDynamics_MultiBodyTree_getAcceptInvalidMassProperties(
+        this: *const btInverseDynamics_MultiBodyTree,
+    ) -> bool;
+}
+extern "C" {
+    /// build internal data structures
+    /// /// call this after all bodies have been added via addBody
+    /// /// @return 0 on success, -1 on error
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree8finalizeEv"]
+    pub fn btInverseDynamics_MultiBodyTree_finalize(
+        this: *mut btInverseDynamics_MultiBodyTree,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// pretty print ascii description of tree to stdout
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree9printTreeEv"]
+    pub fn btInverseDynamics_MultiBodyTree_printTree(this: *mut btInverseDynamics_MultiBodyTree);
+}
+extern "C" {
+    /// print tree data to stdout
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree13printTreeDataEv"]
+    pub fn btInverseDynamics_MultiBodyTree_printTreeData(
+        this: *mut btInverseDynamics_MultiBodyTree,
+    );
+}
+extern "C" {
+    /// Calculate joint forces for given generalized state & derivatives.
+    /// /// This also updates kinematic terms computed in calculateKinematics.
+    /// /// If gravity is not set to zero, acceleration terms will contain
+    /// /// gravitational acceleration.
+    /// /// @param q generalized coordinates
+    /// /// @param u generalized velocities. In the general case, u=T(q)*dot(q) and dim(q)>=dim(u)
+    /// /// @param dot_u time derivative of u
+    /// /// @param joint_forces this is where the resulting joint forces will be
+    /// ///		stored. dim(joint_forces) = dim(u)
+    /// /// @return 0 on success, -1 on error
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree24calculateInverseDynamicsERKNS_4vecxES3_S3_PS1_"]
+    pub fn btInverseDynamics_MultiBodyTree_calculateInverseDynamics(
+        this: *mut btInverseDynamics_MultiBodyTree,
+        q: *const btInverseDynamics_vecx,
+        u: *const btInverseDynamics_vecx,
+        dot_u: *const btInverseDynamics_vecx,
+        joint_forces: *mut btInverseDynamics_vecx,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// Calculate joint space mass matrix
+    /// /// @param q generalized coordinates
+    /// /// @param initialize_matrix if true, initialize mass matrix with zero.
+    /// ///		If mass_matrix is initialized to zero externally and only used
+    /// ///		for mass matrix computations for the same system, it is safe to
+    /// ///		set this to false.
+    /// /// @param set_lower_triangular_matrix if true, the lower triangular section of mass_matrix
+    /// ///		is also populated, otherwise not.
+    /// /// @param mass_matrix matrix for storing the output (should be dim(q)xdim(q))
+    /// /// @return -1 on error, 0 on success
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree19calculateMassMatrixERKNS_4vecxEbbbP9btMatrixXIdE"]
+    pub fn btInverseDynamics_MultiBodyTree_calculateMassMatrix(
+        this: *mut btInverseDynamics_MultiBodyTree,
+        q: *const btInverseDynamics_vecx,
+        update_kinematics: bool,
+        initialize_matrix: bool,
+        set_lower_triangular_matrix: bool,
+        mass_matrix: *mut btInverseDynamics_matxx,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// Calculate joint space mass matrix.
+    /// /// This version will update kinematics, initialize all mass_matrix elements to zero and
+    /// /// populate all mass matrix entries.
+    /// /// @param q generalized coordinates
+    /// /// @param mass_matrix matrix for storing the output (should be dim(q)xdim(q))
+    /// /// @return -1 on error, 0 on success
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree19calculateMassMatrixERKNS_4vecxEP9btMatrixXIdE"]
+    pub fn btInverseDynamics_MultiBodyTree_calculateMassMatrix1(
+        this: *mut btInverseDynamics_MultiBodyTree,
+        q: *const btInverseDynamics_vecx,
+        mass_matrix: *mut btInverseDynamics_matxx,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// Calculates kinematics also calculated in calculateInverseDynamics,
+    /// /// but not dynamics.
+    /// /// This function ensures that correct accelerations are computed that do not
+    /// /// contain gravitational acceleration terms.
+    /// /// Does not calculate Jacobians, but only vector quantities (positions, velocities & accelerations)
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree19calculateKinematicsERKNS_4vecxES3_S3_"]
+    pub fn btInverseDynamics_MultiBodyTree_calculateKinematics(
+        this: *mut btInverseDynamics_MultiBodyTree,
+        q: *const btInverseDynamics_vecx,
+        u: *const btInverseDynamics_vecx,
+        dot_u: *const btInverseDynamics_vecx,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// Calculate position kinematics
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree27calculatePositionKinematicsERKNS_4vecxE"]
+    pub fn btInverseDynamics_MultiBodyTree_calculatePositionKinematics(
+        this: *mut btInverseDynamics_MultiBodyTree,
+        q: *const btInverseDynamics_vecx,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// Calculate position and velocity kinematics
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree38calculatePositionAndVelocityKinematicsERKNS_4vecxES3_"]
+    pub fn btInverseDynamics_MultiBodyTree_calculatePositionAndVelocityKinematics(
+        this: *mut btInverseDynamics_MultiBodyTree,
+        q: *const btInverseDynamics_vecx,
+        u: *const btInverseDynamics_vecx,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// Calculate Jacobians (dvel/du), as well as velocity-dependent accelearation components
+    /// /// d(Jacobian)/dt*u
+    /// /// This function assumes that calculateInverseDynamics was called, or calculateKinematics,
+    /// /// or calculatePositionAndVelocityKinematics
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree18calculateJacobiansERKNS_4vecxES3_"]
+    pub fn btInverseDynamics_MultiBodyTree_calculateJacobians(
+        this: *mut btInverseDynamics_MultiBodyTree,
+        q: *const btInverseDynamics_vecx,
+        u: *const btInverseDynamics_vecx,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// Calculate Jacobians (dvel/du)
+    /// /// This function assumes that calculateInverseDynamics was called, or
+    /// /// one of the calculateKineamtics functions
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree18calculateJacobiansERKNS_4vecxE"]
+    pub fn btInverseDynamics_MultiBodyTree_calculateJacobians1(
+        this: *mut btInverseDynamics_MultiBodyTree,
+        q: *const btInverseDynamics_vecx,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// set gravitational acceleration
+    /// /// the default is [0;0;-9.8] in the world frame
+    /// /// @param gravity the gravitational acceleration in world frame
+    /// /// @return 0 on success, -1 on error
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree22setGravityInWorldFrameERKNS_4vec3E"]
+    pub fn btInverseDynamics_MultiBodyTree_setGravityInWorldFrame(
+        this: *mut btInverseDynamics_MultiBodyTree,
+        gravity: *const btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// returns number of bodies in tree
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree9numBodiesEv"]
+    pub fn btInverseDynamics_MultiBodyTree_numBodies(
+        this: *const btInverseDynamics_MultiBodyTree,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// returns number of mechanical degrees of freedom (dimension of q-vector)
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree7numDoFsEv"]
+    pub fn btInverseDynamics_MultiBodyTree_numDoFs(
+        this: *const btInverseDynamics_MultiBodyTree,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// get origin of a body-fixed frame, represented in world frame
+    /// /// @param body_index index for frame/body
+    /// /// @param world_origin pointer for return data
+    /// /// @return 0 on success, -1 on error
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree13getBodyOriginEiPNS_4vec3E"]
+    pub fn btInverseDynamics_MultiBodyTree_getBodyOrigin(
+        this: *const btInverseDynamics_MultiBodyTree,
+        body_index: ::std::os::raw::c_int,
+        world_origin: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// get center of mass of a body, represented in world frame
+    /// /// @param body_index index for frame/body
+    /// /// @param world_com pointer for return data
+    /// /// @return 0 on success, -1 on error
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree10getBodyCoMEiPNS_4vec3E"]
+    pub fn btInverseDynamics_MultiBodyTree_getBodyCoM(
+        this: *const btInverseDynamics_MultiBodyTree,
+        body_index: ::std::os::raw::c_int,
+        world_com: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// get transform from of a body-fixed frame to the world frame
+    /// /// @param body_index index for frame/body
+    /// /// @param world_T_body pointer for return data
+    /// /// @return 0 on success, -1 on error
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree16getBodyTransformEiPNS_5mat33E"]
+    pub fn btInverseDynamics_MultiBodyTree_getBodyTransform(
+        this: *const btInverseDynamics_MultiBodyTree,
+        body_index: ::std::os::raw::c_int,
+        world_T_body: *mut btInverseDynamics_mat33,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// get absolute angular velocity for a body, represented in the world frame
+    /// /// @param body_index index for frame/body
+    /// /// @param world_omega pointer for return data
+    /// /// @return 0 on success, -1 on error
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree22getBodyAngularVelocityEiPNS_4vec3E"]
+    pub fn btInverseDynamics_MultiBodyTree_getBodyAngularVelocity(
+        this: *const btInverseDynamics_MultiBodyTree,
+        body_index: ::std::os::raw::c_int,
+        world_omega: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// get linear velocity of a body, represented in world frame
+    /// /// @param body_index index for frame/body
+    /// /// @param world_velocity pointer for return data
+    /// /// @return 0 on success, -1 on error
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree21getBodyLinearVelocityEiPNS_4vec3E"]
+    pub fn btInverseDynamics_MultiBodyTree_getBodyLinearVelocity(
+        this: *const btInverseDynamics_MultiBodyTree,
+        body_index: ::std::os::raw::c_int,
+        world_velocity: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// get linear velocity of a body's CoM, represented in world frame
+    /// /// (not required for inverse dynamics, provided for convenience)
+    /// /// @param body_index index for frame/body
+    /// /// @param world_vel_com pointer for return data
+    /// /// @return 0 on success, -1 on error
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree24getBodyLinearVelocityCoMEiPNS_4vec3E"]
+    pub fn btInverseDynamics_MultiBodyTree_getBodyLinearVelocityCoM(
+        this: *const btInverseDynamics_MultiBodyTree,
+        body_index: ::std::os::raw::c_int,
+        world_velocity: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// get origin of a body-fixed frame, represented in world frame
+    /// /// @param body_index index for frame/body
+    /// /// @param world_origin pointer for return data
+    /// /// @return 0 on success, -1 on error
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree26getBodyAngularAccelerationEiPNS_4vec3E"]
+    pub fn btInverseDynamics_MultiBodyTree_getBodyAngularAcceleration(
+        this: *const btInverseDynamics_MultiBodyTree,
+        body_index: ::std::os::raw::c_int,
+        world_dot_omega: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// get origin of a body-fixed frame, represented in world frame
+    /// /// NOTE: this will include the gravitational acceleration, so the actual acceleration is
+    /// /// obtainened by setting gravitational acceleration to zero, or subtracting it.
+    /// /// @param body_index index for frame/body
+    /// /// @param world_origin pointer for return data
+    /// /// @return 0 on success, -1 on error
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree25getBodyLinearAccelerationEiPNS_4vec3E"]
+    pub fn btInverseDynamics_MultiBodyTree_getBodyLinearAcceleration(
+        this: *const btInverseDynamics_MultiBodyTree,
+        body_index: ::std::os::raw::c_int,
+        world_acceleration: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree20getBodyJacobianTransEiPNS_5mat3xE"]
+    pub fn btInverseDynamics_MultiBodyTree_getBodyJacobianTrans(
+        this: *const btInverseDynamics_MultiBodyTree,
+        body_index: ::std::os::raw::c_int,
+        world_jac_trans: *mut btInverseDynamics_mat3x,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree18getBodyJacobianRotEiPNS_5mat3xE"]
+    pub fn btInverseDynamics_MultiBodyTree_getBodyJacobianRot(
+        this: *const btInverseDynamics_MultiBodyTree,
+        body_index: ::std::os::raw::c_int,
+        world_jac_rot: *mut btInverseDynamics_mat3x,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree24getBodyDotJacobianTransUEiPNS_4vec3E"]
+    pub fn btInverseDynamics_MultiBodyTree_getBodyDotJacobianTransU(
+        this: *const btInverseDynamics_MultiBodyTree,
+        body_index: ::std::os::raw::c_int,
+        world_dot_jac_trans_u: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree22getBodyDotJacobianRotUEiPNS_4vec3E"]
+    pub fn btInverseDynamics_MultiBodyTree_getBodyDotJacobianRotU(
+        this: *const btInverseDynamics_MultiBodyTree,
+        body_index: ::std::os::raw::c_int,
+        world_dot_jac_rot_u: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// returns the (internal) index of body
+    /// /// @param body_index is the index of a body
+    /// /// @param parent_index pointer to where parent index will be stored
+    /// /// @return 0 on success, -1 on error
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree14getParentIndexEiPi"]
+    pub fn btInverseDynamics_MultiBodyTree_getParentIndex(
+        this: *const btInverseDynamics_MultiBodyTree,
+        body_index: ::std::os::raw::c_int,
+        parent_index: *mut ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// get joint type
+    /// /// @param body_index index of the body
+    /// /// @param joint_type the corresponding joint type
+    /// /// @return 0 on success, -1 on failure
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree12getJointTypeEiPNS_9JointTypeE"]
+    pub fn btInverseDynamics_MultiBodyTree_getJointType(
+        this: *const btInverseDynamics_MultiBodyTree,
+        body_index: ::std::os::raw::c_int,
+        joint_type: *mut btInverseDynamics_JointType,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// get joint type as string
+    /// /// @param body_index index of the body
+    /// /// @param joint_type string naming the corresponding joint type
+    /// /// @return 0 on success, -1 on failure
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree15getJointTypeStrEiPPKc"]
+    pub fn btInverseDynamics_MultiBodyTree_getJointTypeStr(
+        this: *const btInverseDynamics_MultiBodyTree,
+        body_index: ::std::os::raw::c_int,
+        joint_type: *mut *const ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// get offset translation to parent body (see addBody)
+    /// /// @param body_index index of the body
+    /// /// @param r the offset translation (see above)
+    /// /// @return 0 on success, -1 on failure
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree23getParentRParentBodyRefEiPNS_4vec3E"]
+    pub fn btInverseDynamics_MultiBodyTree_getParentRParentBodyRef(
+        this: *const btInverseDynamics_MultiBodyTree,
+        body_index: ::std::os::raw::c_int,
+        r: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// get offset rotation to parent body (see addBody)
+    /// /// @param body_index index of the body
+    /// /// @param T the transform (see above)
+    /// /// @return 0 on success, -1 on failure
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree17getBodyTParentRefEiPNS_5mat33E"]
+    pub fn btInverseDynamics_MultiBodyTree_getBodyTParentRef(
+        this: *const btInverseDynamics_MultiBodyTree,
+        body_index: ::std::os::raw::c_int,
+        T: *mut btInverseDynamics_mat33,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// get axis of motion (see addBody)
+    /// /// @param body_index index of the body
+    /// /// @param axis the axis (see above)
+    /// /// @return 0 on success, -1 on failure
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree19getBodyAxisOfMotionEiPNS_4vec3E"]
+    pub fn btInverseDynamics_MultiBodyTree_getBodyAxisOfMotion(
+        this: *const btInverseDynamics_MultiBodyTree,
+        body_index: ::std::os::raw::c_int,
+        axis: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// get offset for degrees of freedom of this body into the q-vector
+    /// /// @param body_index index of the body
+    /// /// @param q_offset offset the q vector
+    /// /// @return -1 on error, 0 on success
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree12getDoFOffsetEiPi"]
+    pub fn btInverseDynamics_MultiBodyTree_getDoFOffset(
+        this: *const btInverseDynamics_MultiBodyTree,
+        body_index: ::std::os::raw::c_int,
+        q_offset: *mut ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// get user integer. not used by the library.
+    /// /// @param body_index index of the body
+    /// /// @param user_int   the user integer
+    /// /// @return 0 on success, -1 on error
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree10getUserIntEiPi"]
+    pub fn btInverseDynamics_MultiBodyTree_getUserInt(
+        this: *const btInverseDynamics_MultiBodyTree,
+        body_index: ::std::os::raw::c_int,
+        user_int: *mut ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// get user pointer. not used by the library.
+    /// /// @param body_index index of the body
+    /// /// @param user_ptr   the user pointer
+    /// /// @return 0 on success, -1 on error
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree10getUserPtrEiPPv"]
+    pub fn btInverseDynamics_MultiBodyTree_getUserPtr(
+        this: *const btInverseDynamics_MultiBodyTree,
+        body_index: ::std::os::raw::c_int,
+        user_ptr: *mut *mut ::std::os::raw::c_void,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// set user integer. not used by the library.
+    /// /// @param body_index index of the body
+    /// /// @param user_int   the user integer
+    /// /// @return 0 on success, -1 on error
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree10setUserIntEii"]
+    pub fn btInverseDynamics_MultiBodyTree_setUserInt(
+        this: *mut btInverseDynamics_MultiBodyTree,
+        body_index: ::std::os::raw::c_int,
+        user_int: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// set user pointer. not used by the library.
+    /// /// @param body_index index of the body
+    /// /// @param user_ptr   the user pointer
+    /// /// @return 0 on success, -1 on error
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree10setUserPtrEiPv"]
+    pub fn btInverseDynamics_MultiBodyTree_setUserPtr(
+        this: *mut btInverseDynamics_MultiBodyTree,
+        body_index: ::std::os::raw::c_int,
+        user_ptr: *const ::std::os::raw::c_void,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// set mass for a body
+    /// /// @param body_index index of the body
+    /// /// @param mass the mass to set
+    /// /// @return 0 on success, -1 on failure
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree11setBodyMassEid"]
+    pub fn btInverseDynamics_MultiBodyTree_setBodyMass(
+        this: *mut btInverseDynamics_MultiBodyTree,
+        body_index: ::std::os::raw::c_int,
+        mass: idScalar,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// set first moment of mass for a body
+    /// /// (mass * center of mass, in body fixed frame, relative to joint)
+    /// /// @param body_index index of the body
+    /// /// @param first_mass_moment the vector to set
+    /// /// @return 0 on success, -1 on failure
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree22setBodyFirstMassMomentEiRKNS_4vec3E"]
+    pub fn btInverseDynamics_MultiBodyTree_setBodyFirstMassMoment(
+        this: *mut btInverseDynamics_MultiBodyTree,
+        body_index: ::std::os::raw::c_int,
+        first_mass_moment: *const btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// set second moment of mass for a body
+    /// /// (moment of inertia, in body fixed frame, relative to joint)
+    /// /// @param body_index index of the body
+    /// /// @param second_mass_moment the inertia matrix
+    /// /// @return 0 on success, -1 on failure
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree23setBodySecondMassMomentEiRKNS_5mat33E"]
+    pub fn btInverseDynamics_MultiBodyTree_setBodySecondMassMoment(
+        this: *mut btInverseDynamics_MultiBodyTree,
+        body_index: ::std::os::raw::c_int,
+        second_mass_moment: *const btInverseDynamics_mat33,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// get mass for a body
+    /// /// @param body_index index of the body
+    /// /// @param mass the mass
+    /// /// @return 0 on success, -1 on failure
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree11getBodyMassEiPd"]
+    pub fn btInverseDynamics_MultiBodyTree_getBodyMass(
+        this: *const btInverseDynamics_MultiBodyTree,
+        body_index: ::std::os::raw::c_int,
+        mass: *mut idScalar,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// get first moment of mass for a body
+    /// /// (mass * center of mass, in body fixed frame, relative to joint)
+    /// /// @param body_index index of the body
+    /// /// @param first_moment the vector
+    /// /// @return 0 on success, -1 on failure
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree22getBodyFirstMassMomentEiPNS_4vec3E"]
+    pub fn btInverseDynamics_MultiBodyTree_getBodyFirstMassMoment(
+        this: *const btInverseDynamics_MultiBodyTree,
+        body_index: ::std::os::raw::c_int,
+        first_mass_moment: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// get second moment of mass for a body
+    /// /// (moment of inertia, in body fixed frame, relative to joint)
+    /// /// @param body_index index of the body
+    /// /// @param second_mass_moment the inertia matrix
+    /// /// @return 0 on success, -1 on failure
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree23getBodySecondMassMomentEiPNS_5mat33E"]
+    pub fn btInverseDynamics_MultiBodyTree_getBodySecondMassMoment(
+        this: *const btInverseDynamics_MultiBodyTree,
+        body_index: ::std::os::raw::c_int,
+        second_mass_moment: *mut btInverseDynamics_mat33,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// set all user forces and moments to zero
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree28clearAllUserForcesAndMomentsEv"]
+    pub fn btInverseDynamics_MultiBodyTree_clearAllUserForcesAndMoments(
+        this: *mut btInverseDynamics_MultiBodyTree,
+    );
+}
+extern "C" {
+    /// Add an external force to a body, acting at the origin of the body-fixed frame.
+    /// /// Calls to addUserForce are cumulative. Set the user force and moment to zero
+    /// /// via clearAllUserForcesAndMoments()
+    /// /// @param body_force the force represented in the body-fixed frame of reference
+    /// /// @return 0 on success, -1 on error
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree12addUserForceEiRKNS_4vec3E"]
+    pub fn btInverseDynamics_MultiBodyTree_addUserForce(
+        this: *mut btInverseDynamics_MultiBodyTree,
+        body_index: ::std::os::raw::c_int,
+        body_force: *const btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// Add an external moment to a body.
+    /// /// Calls to addUserMoment are cumulative. Set the user force and moment to zero
+    /// /// via clearAllUserForcesAndMoments()
+    /// /// @param body_moment the moment represented in the body-fixed frame of reference
+    /// /// @return 0 on success, -1 on error
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree13addUserMomentEiRKNS_4vec3E"]
+    pub fn btInverseDynamics_MultiBodyTree_addUserMoment(
+        this: *mut btInverseDynamics_MultiBodyTree,
+        body_index: ::std::os::raw::c_int,
+        body_moment: *const btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// The contructor.
+    /// /// Initialization & allocation is via addBody and buildSystem calls.
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTreeC1Ev"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyTree(
+        this: *mut btInverseDynamics_MultiBodyTree,
+    );
+}
+extern "C" {
+    /// the destructor. This also deallocates all memory
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTreeD1Ev"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyTree_destructor(
+        this: *mut btInverseDynamics_MultiBodyTree,
+    );
+}
+impl btInverseDynamics_MultiBodyTree {
+    #[inline]
+    pub unsafe fn addBody(
+        &mut self,
+        body_index: ::std::os::raw::c_int,
+        parent_index: ::std::os::raw::c_int,
+        joint_type: btInverseDynamics_JointType,
+        parent_r_parent_body_ref: *const btInverseDynamics_vec3,
+        body_T_parent_ref: *const btInverseDynamics_mat33,
+        body_axis_of_motion: *const btInverseDynamics_vec3,
+        mass: idScalar,
+        body_r_body_com: *const btInverseDynamics_vec3,
+        body_I_body: *const btInverseDynamics_mat33,
+        user_int: ::std::os::raw::c_int,
+        user_ptr: *mut ::std::os::raw::c_void,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_addBody(
+            self,
+            body_index,
+            parent_index,
+            joint_type,
+            parent_r_parent_body_ref,
+            body_T_parent_ref,
+            body_axis_of_motion,
+            mass,
+            body_r_body_com,
+            body_I_body,
+            user_int,
+            user_ptr,
+        )
+    }
+    #[inline]
+    pub unsafe fn setAcceptInvalidMassParameters(&mut self, flag: bool) {
+        btInverseDynamics_MultiBodyTree_setAcceptInvalidMassParameters(self, flag)
+    }
+    #[inline]
+    pub unsafe fn getAcceptInvalidMassProperties(&self) -> bool {
+        btInverseDynamics_MultiBodyTree_getAcceptInvalidMassProperties(self)
+    }
+    #[inline]
+    pub unsafe fn finalize(&mut self) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_finalize(self)
+    }
+    #[inline]
+    pub unsafe fn printTree(&mut self) {
+        btInverseDynamics_MultiBodyTree_printTree(self)
+    }
+    #[inline]
+    pub unsafe fn printTreeData(&mut self) {
+        btInverseDynamics_MultiBodyTree_printTreeData(self)
+    }
+    #[inline]
+    pub unsafe fn calculateInverseDynamics(
+        &mut self,
+        q: *const btInverseDynamics_vecx,
+        u: *const btInverseDynamics_vecx,
+        dot_u: *const btInverseDynamics_vecx,
+        joint_forces: *mut btInverseDynamics_vecx,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_calculateInverseDynamics(self, q, u, dot_u, joint_forces)
+    }
+    #[inline]
+    pub unsafe fn calculateMassMatrix(
+        &mut self,
+        q: *const btInverseDynamics_vecx,
+        update_kinematics: bool,
+        initialize_matrix: bool,
+        set_lower_triangular_matrix: bool,
+        mass_matrix: *mut btInverseDynamics_matxx,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_calculateMassMatrix(
+            self,
+            q,
+            update_kinematics,
+            initialize_matrix,
+            set_lower_triangular_matrix,
+            mass_matrix,
+        )
+    }
+    #[inline]
+    pub unsafe fn calculateMassMatrix1(
+        &mut self,
+        q: *const btInverseDynamics_vecx,
+        mass_matrix: *mut btInverseDynamics_matxx,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_calculateMassMatrix1(self, q, mass_matrix)
+    }
+    #[inline]
+    pub unsafe fn calculateKinematics(
+        &mut self,
+        q: *const btInverseDynamics_vecx,
+        u: *const btInverseDynamics_vecx,
+        dot_u: *const btInverseDynamics_vecx,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_calculateKinematics(self, q, u, dot_u)
+    }
+    #[inline]
+    pub unsafe fn calculatePositionKinematics(
+        &mut self,
+        q: *const btInverseDynamics_vecx,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_calculatePositionKinematics(self, q)
+    }
+    #[inline]
+    pub unsafe fn calculatePositionAndVelocityKinematics(
+        &mut self,
+        q: *const btInverseDynamics_vecx,
+        u: *const btInverseDynamics_vecx,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_calculatePositionAndVelocityKinematics(self, q, u)
+    }
+    #[inline]
+    pub unsafe fn calculateJacobians(
+        &mut self,
+        q: *const btInverseDynamics_vecx,
+        u: *const btInverseDynamics_vecx,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_calculateJacobians(self, q, u)
+    }
+    #[inline]
+    pub unsafe fn calculateJacobians1(
+        &mut self,
+        q: *const btInverseDynamics_vecx,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_calculateJacobians1(self, q)
+    }
+    #[inline]
+    pub unsafe fn setGravityInWorldFrame(
+        &mut self,
+        gravity: *const btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_setGravityInWorldFrame(self, gravity)
+    }
+    #[inline]
+    pub unsafe fn numBodies(&self) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_numBodies(self)
+    }
+    #[inline]
+    pub unsafe fn numDoFs(&self) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_numDoFs(self)
+    }
+    #[inline]
+    pub unsafe fn getBodyOrigin(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        world_origin: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_getBodyOrigin(self, body_index, world_origin)
+    }
+    #[inline]
+    pub unsafe fn getBodyCoM(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        world_com: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_getBodyCoM(self, body_index, world_com)
+    }
+    #[inline]
+    pub unsafe fn getBodyTransform(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        world_T_body: *mut btInverseDynamics_mat33,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_getBodyTransform(self, body_index, world_T_body)
+    }
+    #[inline]
+    pub unsafe fn getBodyAngularVelocity(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        world_omega: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_getBodyAngularVelocity(self, body_index, world_omega)
+    }
+    #[inline]
+    pub unsafe fn getBodyLinearVelocity(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        world_velocity: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_getBodyLinearVelocity(self, body_index, world_velocity)
+    }
+    #[inline]
+    pub unsafe fn getBodyLinearVelocityCoM(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        world_velocity: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_getBodyLinearVelocityCoM(self, body_index, world_velocity)
+    }
+    #[inline]
+    pub unsafe fn getBodyAngularAcceleration(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        world_dot_omega: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_getBodyAngularAcceleration(
+            self,
+            body_index,
+            world_dot_omega,
+        )
+    }
+    #[inline]
+    pub unsafe fn getBodyLinearAcceleration(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        world_acceleration: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_getBodyLinearAcceleration(
+            self,
+            body_index,
+            world_acceleration,
+        )
+    }
+    #[inline]
+    pub unsafe fn getBodyJacobianTrans(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        world_jac_trans: *mut btInverseDynamics_mat3x,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_getBodyJacobianTrans(self, body_index, world_jac_trans)
+    }
+    #[inline]
+    pub unsafe fn getBodyJacobianRot(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        world_jac_rot: *mut btInverseDynamics_mat3x,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_getBodyJacobianRot(self, body_index, world_jac_rot)
+    }
+    #[inline]
+    pub unsafe fn getBodyDotJacobianTransU(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        world_dot_jac_trans_u: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_getBodyDotJacobianTransU(
+            self,
+            body_index,
+            world_dot_jac_trans_u,
+        )
+    }
+    #[inline]
+    pub unsafe fn getBodyDotJacobianRotU(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        world_dot_jac_rot_u: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_getBodyDotJacobianRotU(
+            self,
+            body_index,
+            world_dot_jac_rot_u,
+        )
+    }
+    #[inline]
+    pub unsafe fn getParentIndex(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        parent_index: *mut ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_getParentIndex(self, body_index, parent_index)
+    }
+    #[inline]
+    pub unsafe fn getJointType(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        joint_type: *mut btInverseDynamics_JointType,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_getJointType(self, body_index, joint_type)
+    }
+    #[inline]
+    pub unsafe fn getJointTypeStr(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        joint_type: *mut *const ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_getJointTypeStr(self, body_index, joint_type)
+    }
+    #[inline]
+    pub unsafe fn getParentRParentBodyRef(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        r: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_getParentRParentBodyRef(self, body_index, r)
+    }
+    #[inline]
+    pub unsafe fn getBodyTParentRef(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        T: *mut btInverseDynamics_mat33,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_getBodyTParentRef(self, body_index, T)
+    }
+    #[inline]
+    pub unsafe fn getBodyAxisOfMotion(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        axis: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_getBodyAxisOfMotion(self, body_index, axis)
+    }
+    #[inline]
+    pub unsafe fn getDoFOffset(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        q_offset: *mut ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_getDoFOffset(self, body_index, q_offset)
+    }
+    #[inline]
+    pub unsafe fn getUserInt(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        user_int: *mut ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_getUserInt(self, body_index, user_int)
+    }
+    #[inline]
+    pub unsafe fn getUserPtr(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        user_ptr: *mut *mut ::std::os::raw::c_void,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_getUserPtr(self, body_index, user_ptr)
+    }
+    #[inline]
+    pub unsafe fn setUserInt(
+        &mut self,
+        body_index: ::std::os::raw::c_int,
+        user_int: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_setUserInt(self, body_index, user_int)
+    }
+    #[inline]
+    pub unsafe fn setUserPtr(
+        &mut self,
+        body_index: ::std::os::raw::c_int,
+        user_ptr: *const ::std::os::raw::c_void,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_setUserPtr(self, body_index, user_ptr)
+    }
+    #[inline]
+    pub unsafe fn setBodyMass(
+        &mut self,
+        body_index: ::std::os::raw::c_int,
+        mass: idScalar,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_setBodyMass(self, body_index, mass)
+    }
+    #[inline]
+    pub unsafe fn setBodyFirstMassMoment(
+        &mut self,
+        body_index: ::std::os::raw::c_int,
+        first_mass_moment: *const btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_setBodyFirstMassMoment(self, body_index, first_mass_moment)
+    }
+    #[inline]
+    pub unsafe fn setBodySecondMassMoment(
+        &mut self,
+        body_index: ::std::os::raw::c_int,
+        second_mass_moment: *const btInverseDynamics_mat33,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_setBodySecondMassMoment(
+            self,
+            body_index,
+            second_mass_moment,
+        )
+    }
+    #[inline]
+    pub unsafe fn getBodyMass(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        mass: *mut idScalar,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_getBodyMass(self, body_index, mass)
+    }
+    #[inline]
+    pub unsafe fn getBodyFirstMassMoment(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        first_mass_moment: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_getBodyFirstMassMoment(self, body_index, first_mass_moment)
+    }
+    #[inline]
+    pub unsafe fn getBodySecondMassMoment(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        second_mass_moment: *mut btInverseDynamics_mat33,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_getBodySecondMassMoment(
+            self,
+            body_index,
+            second_mass_moment,
+        )
+    }
+    #[inline]
+    pub unsafe fn clearAllUserForcesAndMoments(&mut self) {
+        btInverseDynamics_MultiBodyTree_clearAllUserForcesAndMoments(self)
+    }
+    #[inline]
+    pub unsafe fn addUserForce(
+        &mut self,
+        body_index: ::std::os::raw::c_int,
+        body_force: *const btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_addUserForce(self, body_index, body_force)
+    }
+    #[inline]
+    pub unsafe fn addUserMoment(
+        &mut self,
+        body_index: ::std::os::raw::c_int,
+        body_moment: *const btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_addUserMoment(self, body_index, body_moment)
+    }
+    #[inline]
+    pub unsafe fn new() -> Self {
+        let mut __bindgen_tmp = ::std::mem::uninitialized();
+        btInverseDynamics_MultiBodyTree_MultiBodyTree(&mut __bindgen_tmp);
+        __bindgen_tmp
+    }
+    #[inline]
+    pub unsafe fn destruct(&mut self) {
+        btInverseDynamics_MultiBodyTree_MultiBodyTree_destructor(self)
+    }
+}
+/// Structure for for rigid body mass properties, connectivity and kinematic state
+/// all vectors and matrices are in body-fixed frame, if not indicated otherwise.
+/// The body-fixed frame is located in the joint connecting the body to its parent.
+#[repr(C)]
+#[derive(Debug)]
+pub struct btInverseDynamics_RigidBody {
+    /// Mass
+    pub m_mass: idScalar,
+    /// Mass times center of gravity in body-fixed frame
+    pub m_body_mass_com: btInverseDynamics_vec3,
+    /// Moment of inertia w.r.t. body-fixed frame
+    pub m_body_I_body: btInverseDynamics_mat33,
+    /// Left-hand side of the body equation of motion, translational part
+    pub m_eom_lhs_translational: btInverseDynamics_vec3,
+    /// Left-hand side of the body equation of motion, rotational part
+    pub m_eom_lhs_rotational: btInverseDynamics_vec3,
+    /// Force acting at the joint when the body is cut from its parent;
+    /// /// includes impressed joint force in J_JT direction,
+    /// /// as well as constraint force,
+    /// /// in body-fixed frame
+    pub m_force_at_joint: btInverseDynamics_vec3,
+    /// Moment acting at the joint when the body is cut from its parent;
+    /// /// includes impressed joint moment in J_JR direction, and constraint moment
+    /// /// in body-fixed frame
+    pub m_moment_at_joint: btInverseDynamics_vec3,
+    /// external (user provided) force acting at the body-fixed frame's origin, written in that
+    /// /// frame
+    pub m_body_force_user: btInverseDynamics_vec3,
+    /// external (user provided) moment acting at the body-fixed frame's origin, written in that
+    /// /// frame
+    pub m_body_moment_user: btInverseDynamics_vec3,
+    /// Position of body-fixed frame relative to world frame
+    /// /// this is currently only for debugging purposes
+    pub m_body_pos: btInverseDynamics_vec3,
+    /// Absolute velocity of body-fixed frame
+    pub m_body_vel: btInverseDynamics_vec3,
+    /// Absolute acceleration of body-fixed frame
+    /// /// NOTE: if gravitational acceleration is not zero, this is the accelation PLUS gravitational
+    /// /// acceleration!
+    pub m_body_acc: btInverseDynamics_vec3,
+    /// Absolute angular velocity
+    pub m_body_ang_vel: btInverseDynamics_vec3,
+    /// Absolute angular acceleration
+    /// /// NOTE: if gravitational acceleration is not zero, this is the accelation PLUS gravitational
+    /// /// acceleration!
+    pub m_body_ang_acc: btInverseDynamics_vec3,
+    /// Transform from world to body-fixed frame;
+    /// /// this is currently only for debugging purposes
+    pub m_body_T_world: btInverseDynamics_mat33,
+    /// Transform from parent to body-fixed frame
+    pub m_body_T_parent: btInverseDynamics_mat33,
+    /// Vector from parent to child frame in parent frame
+    pub m_parent_pos_parent_body: btInverseDynamics_vec3,
+    /// Relative angular velocity
+    pub m_body_ang_vel_rel: btInverseDynamics_vec3,
+    /// Relative linear velocity
+    pub m_parent_vel_rel: btInverseDynamics_vec3,
+    /// Relative angular acceleration
+    pub m_body_ang_acc_rel: btInverseDynamics_vec3,
+    /// Relative linear acceleration
+    pub m_parent_acc_rel: btInverseDynamics_vec3,
+    /// Type of joint
+    pub m_joint_type: btInverseDynamics_JointType,
+    /// Position of joint frame (body-fixed frame at q=0) relative to the parent frame
+    /// /// Components are in body-fixed frame of the parent
+    pub m_parent_pos_parent_body_ref: btInverseDynamics_vec3,
+    /// Orientation of joint frame (body-fixed frame at q=0) relative to the parent frame
+    pub m_body_T_parent_ref: btInverseDynamics_mat33,
+    /// Joint rotational Jacobian, ie, the partial derivative of the body-fixed frames absolute
+    /// /// angular velocity w.r.t. the generalized velocity of this body's relative degree of freedom.
+    /// /// For revolute joints this is the joint axis, for prismatic joints it is a null matrix.
+    /// /// (NOTE: dimensions will have to be dynamic for additional joint types!)
+    pub m_Jac_JR: btInverseDynamics_vec3,
+    /// Joint translational Jacobian, ie, the partial derivative of the body-fixed frames absolute
+    /// /// linear velocity w.r.t. the generalized velocity of this body's relative degree of freedom.
+    /// /// For prismatic joints this is the joint axis, for revolute joints it is a null matrix.
+    /// /// (NOTE: dimensions might have to be dynamic for additional joint types!)
+    pub m_Jac_JT: btInverseDynamics_vec3,
+    /// m_Jac_JT in the parent frame, it, m_body_T_parent_ref.transpose()*m_Jac_JT
+    pub m_parent_Jac_JT: btInverseDynamics_vec3,
+    /// Start of index range for the position degree(s) of freedom describing this body's motion
+    /// /// relative to
+    /// /// its parent. The indices are wrt the multibody system's q-vector of generalized coordinates.
+    pub m_q_index: ::std::os::raw::c_int,
+    /// mass of the subtree rooted in this body
+    pub m_subtree_mass: idScalar,
+    /// center of mass * mass for subtree rooted in this body, in body-fixed frame
+    pub m_body_subtree_mass_com: btInverseDynamics_vec3,
+    /// moment of inertia of subtree rooted in this body, w.r.t. body origin, in body-fixed frame
+    pub m_body_subtree_I_body: btInverseDynamics_mat33,
+    /// translational jacobian in body-fixed frame d(m_body_vel)/du
+    pub m_body_Jac_T: btInverseDynamics_mat3x,
+    /// rotationsl jacobian in body-fixed frame d(m_body_ang_vel)/du
+    pub m_body_Jac_R: btInverseDynamics_mat3x,
+    /// components of linear acceleration depending on u
+    /// /// (same as is d(m_Jac_T)/dt*u)
+    pub m_body_dot_Jac_T_u: btInverseDynamics_vec3,
+    /// components of angular acceleration depending on u
+    /// /// (same as is d(m_Jac_T)/dt*u)
+    pub m_body_dot_Jac_R_u: btInverseDynamics_vec3,
+}
+/// The MBS implements a tree structured multibody system
+#[repr(C)]
+#[derive(Debug)]
+pub struct btInverseDynamics_MultiBodyTree_MultiBodyImpl {
+    pub m_num_bodies: ::std::os::raw::c_int,
+    pub m_num_dofs: ::std::os::raw::c_int,
+    pub m_world_gravity: btInverseDynamics_vec3,
+    pub m_body_list: b3AlignedObjectArray<btInverseDynamics_RigidBody>,
+    pub m_parent_index: b3AlignedObjectArray<::std::os::raw::c_int>,
+    pub m_child_indices: b3AlignedObjectArray<[u64; 4usize]>,
+    pub m_body_revolute_list: b3AlignedObjectArray<::std::os::raw::c_int>,
+    pub m_body_prismatic_list: b3AlignedObjectArray<::std::os::raw::c_int>,
+    pub m_body_floating_list: b3AlignedObjectArray<::std::os::raw::c_int>,
+    pub m_user_int: b3AlignedObjectArray<::std::os::raw::c_int>,
+    pub m_user_ptr: b3AlignedObjectArray<*mut ::std::os::raw::c_void>,
+    pub m_m3x: btInverseDynamics_mat3x,
+}
+pub const btInverseDynamics_MultiBodyTree_MultiBodyImpl_KinUpdateType_POSITION_ONLY:
+    btInverseDynamics_MultiBodyTree_MultiBodyImpl_KinUpdateType = 0;
+pub const btInverseDynamics_MultiBodyTree_MultiBodyImpl_KinUpdateType_POSITION_VELOCITY:
+    btInverseDynamics_MultiBodyTree_MultiBodyImpl_KinUpdateType = 1;
+pub const btInverseDynamics_MultiBodyTree_MultiBodyImpl_KinUpdateType_POSITION_VELOCITY_ACCELERATION : btInverseDynamics_MultiBodyTree_MultiBodyImpl_KinUpdateType = 2 ;
+pub type btInverseDynamics_MultiBodyTree_MultiBodyImpl_KinUpdateType = u32;
+extern "C" {
+    /// \copydoc MultiBodyTree::calculateInverseDynamics
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl24calculateInverseDynamicsERKNS_4vecxES4_S4_PS2_"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_calculateInverseDynamics(
+        this: *mut btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        q: *const btInverseDynamics_vecx,
+        u: *const btInverseDynamics_vecx,
+        dot_u: *const btInverseDynamics_vecx,
+        joint_forces: *mut btInverseDynamics_vecx,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// \copydoc MultiBodyTree::calculateMassMatrix
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl19calculateMassMatrixERKNS_4vecxEbbbP9btMatrixXIdE"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_calculateMassMatrix(
+        this: *mut btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        q: *const btInverseDynamics_vecx,
+        update_kinematics: bool,
+        initialize_matrix: bool,
+        set_lower_triangular_matrix: bool,
+        mass_matrix: *mut btInverseDynamics_matxx,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// calculate kinematics (vector quantities)
+    /// /// Depending on type, update positions only, positions & velocities, or positions, velocities
+    /// /// and accelerations.
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl19calculateKinematicsERKNS_4vecxES4_S4_NS1_13KinUpdateTypeE"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_calculateKinematics(
+        this: *mut btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        q: *const btInverseDynamics_vecx,
+        u: *const btInverseDynamics_vecx,
+        dot_u: *const btInverseDynamics_vecx,
+        type_: btInverseDynamics_MultiBodyTree_MultiBodyImpl_KinUpdateType,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// calculate jacobians and (if type == POSITION_VELOCITY), also velocity-dependent accelration terms.
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl18calculateJacobiansERKNS_4vecxES4_NS1_13KinUpdateTypeE"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_calculateJacobians(
+        this: *mut btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        q: *const btInverseDynamics_vecx,
+        u: *const btInverseDynamics_vecx,
+        type_: btInverseDynamics_MultiBodyTree_MultiBodyImpl_KinUpdateType,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// \copydoc MultiBodyTree::getBodyDotJacobianTransU
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl24getBodyDotJacobianTransUEiPNS_4vec3E"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodyDotJacobianTransU(
+        this: *const btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        body_index: ::std::os::raw::c_int,
+        world_dot_jac_trans_u: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// \copydoc MultiBodyTree::getBodyDotJacobianRotU
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl22getBodyDotJacobianRotUEiPNS_4vec3E"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodyDotJacobianRotU(
+        this: *const btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        body_index: ::std::os::raw::c_int,
+        world_dot_jac_rot_u: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// \copydoc MultiBodyTree::getBodyJacobianTrans
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl20getBodyJacobianTransEiPNS_5mat3xE"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodyJacobianTrans(
+        this: *const btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        body_index: ::std::os::raw::c_int,
+        world_jac_trans: *mut btInverseDynamics_mat3x,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// \copydoc MultiBodyTree::getBodyJacobianRot
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl18getBodyJacobianRotEiPNS_5mat3xE"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodyJacobianRot(
+        this: *const btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        body_index: ::std::os::raw::c_int,
+        world_jac_rot: *mut btInverseDynamics_mat3x,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// Add relative Jacobian component from motion relative to parent body
+    /// /// @param body the body to add the Jacobian component for
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl28addRelativeJacobianComponentERNS_9RigidBodyE"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_addRelativeJacobianComponent(
+        this: *mut btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        body: *mut btInverseDynamics_RigidBody,
+    );
+}
+extern "C" {
+    /// generate additional index sets from the parent_index array
+    /// /// @return -1 on error, 0 on success
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl17generateIndexSetsEv"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_generateIndexSets(
+        this: *mut btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// set gravity acceleration in world frame
+    /// /// @param gravity gravity vector in the world frame
+    /// /// @return 0 on success, -1 on error
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl22setGravityInWorldFrameERKNS_4vec3E"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_setGravityInWorldFrame(
+        this: *mut btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        gravity: *const btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// pretty print tree
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl9printTreeEv"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_printTree(
+        this: *mut btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+    );
+}
+extern "C" {
+    /// print tree data
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl13printTreeDataEv"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_printTreeData(
+        this: *mut btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+    );
+}
+extern "C" {
+    /// initialize fixed data
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl19calculateStaticDataEv"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_calculateStaticData(
+        this: *mut btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+    );
+}
+extern "C" {
+    /// \copydoc MultiBodyTree::getBodyFrame
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl12getBodyFrameEiPNS_4vec3EPNS_5mat33E"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodyFrame(
+        this: *const btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        index: ::std::os::raw::c_int,
+        world_origin: *mut btInverseDynamics_vec3,
+        body_T_world: *mut btInverseDynamics_mat33,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// \copydoc MultiBodyTree::getParentIndex
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl14getParentIndexEiPi"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_getParentIndex(
+        this: *mut btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        body_index: ::std::os::raw::c_int,
+        m_parent_index: *mut ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// \copydoc MultiBodyTree::getJointType
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl12getJointTypeEiPNS_9JointTypeE"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_getJointType(
+        this: *const btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        body_index: ::std::os::raw::c_int,
+        joint_type: *mut btInverseDynamics_JointType,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// \copydoc MultiBodyTree::getJointTypeStr
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl15getJointTypeStrEiPPKc"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_getJointTypeStr(
+        this: *const btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        body_index: ::std::os::raw::c_int,
+        joint_type: *mut *const ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// \copydoc MultiBodyTree::getParentRParentBodyRef
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl23getParentRParentBodyRefEiPNS_4vec3E"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_getParentRParentBodyRef(
+        this: *const btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        body_index: ::std::os::raw::c_int,
+        r: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// \copydoc MultiBodyTree::getBodyTParentRef
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl17getBodyTParentRefEiPNS_5mat33E"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodyTParentRef(
+        this: *const btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        body_index: ::std::os::raw::c_int,
+        T: *mut btInverseDynamics_mat33,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// \copydoc MultiBodyTree::getBodyAxisOfMotion
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl19getBodyAxisOfMotionEiPNS_4vec3E"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodyAxisOfMotion(
+        this: *const btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        body_index: ::std::os::raw::c_int,
+        axis: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// \copydoc MultiBodyTree:getDoFOffset
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl12getDoFOffsetEiPi"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_getDoFOffset(
+        this: *const btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        body_index: ::std::os::raw::c_int,
+        q_index: *mut ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// \copydoc MultiBodyTree::getBodyOrigin
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl13getBodyOriginEiPNS_4vec3E"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodyOrigin(
+        this: *const btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        body_index: ::std::os::raw::c_int,
+        world_origin: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// \copydoc MultiBodyTree::getBodyCoM
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl10getBodyCoMEiPNS_4vec3E"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodyCoM(
+        this: *const btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        body_index: ::std::os::raw::c_int,
+        world_com: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// \copydoc MultiBodyTree::getBodyTransform
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl16getBodyTransformEiPNS_5mat33E"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodyTransform(
+        this: *const btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        body_index: ::std::os::raw::c_int,
+        world_T_body: *mut btInverseDynamics_mat33,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// \copydoc MultiBodyTree::getBodyAngularVelocity
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl22getBodyAngularVelocityEiPNS_4vec3E"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodyAngularVelocity(
+        this: *const btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        body_index: ::std::os::raw::c_int,
+        world_omega: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// \copydoc MultiBodyTree::getBodyLinearVelocity
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl21getBodyLinearVelocityEiPNS_4vec3E"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodyLinearVelocity(
+        this: *const btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        body_index: ::std::os::raw::c_int,
+        world_velocity: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// \copydoc MultiBodyTree::getBodyLinearVelocityCoM
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl24getBodyLinearVelocityCoMEiPNS_4vec3E"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodyLinearVelocityCoM(
+        this: *const btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        body_index: ::std::os::raw::c_int,
+        world_velocity: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// \copydoc MultiBodyTree::getBodyAngularAcceleration
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl26getBodyAngularAccelerationEiPNS_4vec3E"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodyAngularAcceleration(
+        this: *const btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        body_index: ::std::os::raw::c_int,
+        world_dot_omega: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// \copydoc MultiBodyTree::getBodyLinearAcceleration
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl25getBodyLinearAccelerationEiPNS_4vec3E"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodyLinearAcceleration(
+        this: *const btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        body_index: ::std::os::raw::c_int,
+        world_acceleration: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// \copydoc MultiBodyTree::getUserInt
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl10getUserIntEiPi"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_getUserInt(
+        this: *const btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        body_index: ::std::os::raw::c_int,
+        user_int: *mut ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// \copydoc MultiBodyTree::getUserPtr
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl10getUserPtrEiPPv"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_getUserPtr(
+        this: *const btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        body_index: ::std::os::raw::c_int,
+        user_ptr: *mut *mut ::std::os::raw::c_void,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// \copydoc MultiBodyTree::setUserInt
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl10setUserIntEii"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_setUserInt(
+        this: *mut btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        body_index: ::std::os::raw::c_int,
+        user_int: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// \copydoc MultiBodyTree::setUserPtr
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl10setUserPtrEiPv"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_setUserPtr(
+        this: *mut btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        body_index: ::std::os::raw::c_int,
+        user_ptr: *const ::std::os::raw::c_void,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// \copydoc MultiBodytTree::setBodyMass
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl11setBodyMassEid"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_setBodyMass(
+        this: *mut btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        body_index: ::std::os::raw::c_int,
+        mass: idScalar,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// \copydoc MultiBodytTree::setBodyFirstMassMoment
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl22setBodyFirstMassMomentEiRKNS_4vec3E"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_setBodyFirstMassMoment(
+        this: *mut btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        body_index: ::std::os::raw::c_int,
+        first_mass_moment: *const btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// \copydoc MultiBodytTree::setBodySecondMassMoment
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl23setBodySecondMassMomentEiRKNS_5mat33E"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_setBodySecondMassMoment(
+        this: *mut btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        body_index: ::std::os::raw::c_int,
+        second_mass_moment: *const btInverseDynamics_mat33,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// \copydoc MultiBodytTree::getBodyMass
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl11getBodyMassEiPd"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodyMass(
+        this: *const btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        body_index: ::std::os::raw::c_int,
+        mass: *mut idScalar,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// \copydoc MultiBodytTree::getBodyFirstMassMoment
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl22getBodyFirstMassMomentEiPNS_4vec3E"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodyFirstMassMoment(
+        this: *const btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        body_index: ::std::os::raw::c_int,
+        first_mass_moment: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// \copydoc MultiBodytTree::getBodySecondMassMoment
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl23getBodySecondMassMomentEiPNS_5mat33E"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodySecondMassMoment(
+        this: *const btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        body_index: ::std::os::raw::c_int,
+        second_mass_moment: *mut btInverseDynamics_mat33,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// \copydoc MultiBodyTree::clearAllUserForcesAndMoments
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl28clearAllUserForcesAndMomentsEv"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_clearAllUserForcesAndMoments(
+        this: *mut btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+    );
+}
+extern "C" {
+    /// \copydoc MultiBodyTree::addUserForce
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl12addUserForceEiRKNS_4vec3E"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_addUserForce(
+        this: *mut btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        body_index: ::std::os::raw::c_int,
+        body_force: *const btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// \copydoc MultiBodyTree::addUserMoment
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImpl13addUserMomentEiRKNS_4vec3E"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_addUserMoment(
+        this: *mut btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        body_index: ::std::os::raw::c_int,
+        body_moment: *const btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// constructor
+    /// /// @param num_bodies the number of bodies in the system
+    /// /// @param num_dofs number of degrees of freedom in the system
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree13MultiBodyImplC1Eii"]
+    pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_MultiBodyImpl(
+        this: *mut btInverseDynamics_MultiBodyTree_MultiBodyImpl,
+        num_bodies_: ::std::os::raw::c_int,
+        num_dofs_: ::std::os::raw::c_int,
+    );
+}
+impl btInverseDynamics_MultiBodyTree_MultiBodyImpl {
+    #[inline]
+    pub unsafe fn calculateInverseDynamics(
+        &mut self,
+        q: *const btInverseDynamics_vecx,
+        u: *const btInverseDynamics_vecx,
+        dot_u: *const btInverseDynamics_vecx,
+        joint_forces: *mut btInverseDynamics_vecx,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_calculateInverseDynamics(
+            self,
+            q,
+            u,
+            dot_u,
+            joint_forces,
+        )
+    }
+    #[inline]
+    pub unsafe fn calculateMassMatrix(
+        &mut self,
+        q: *const btInverseDynamics_vecx,
+        update_kinematics: bool,
+        initialize_matrix: bool,
+        set_lower_triangular_matrix: bool,
+        mass_matrix: *mut btInverseDynamics_matxx,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_calculateMassMatrix(
+            self,
+            q,
+            update_kinematics,
+            initialize_matrix,
+            set_lower_triangular_matrix,
+            mass_matrix,
+        )
+    }
+    #[inline]
+    pub unsafe fn calculateKinematics(
+        &mut self,
+        q: *const btInverseDynamics_vecx,
+        u: *const btInverseDynamics_vecx,
+        dot_u: *const btInverseDynamics_vecx,
+        type_: btInverseDynamics_MultiBodyTree_MultiBodyImpl_KinUpdateType,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_calculateKinematics(self, q, u, dot_u, type_)
+    }
+    #[inline]
+    pub unsafe fn calculateJacobians(
+        &mut self,
+        q: *const btInverseDynamics_vecx,
+        u: *const btInverseDynamics_vecx,
+        type_: btInverseDynamics_MultiBodyTree_MultiBodyImpl_KinUpdateType,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_calculateJacobians(self, q, u, type_)
+    }
+    #[inline]
+    pub unsafe fn getBodyDotJacobianTransU(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        world_dot_jac_trans_u: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodyDotJacobianTransU(
+            self,
+            body_index,
+            world_dot_jac_trans_u,
+        )
+    }
+    #[inline]
+    pub unsafe fn getBodyDotJacobianRotU(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        world_dot_jac_rot_u: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodyDotJacobianRotU(
+            self,
+            body_index,
+            world_dot_jac_rot_u,
+        )
+    }
+    #[inline]
+    pub unsafe fn getBodyJacobianTrans(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        world_jac_trans: *mut btInverseDynamics_mat3x,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodyJacobianTrans(
+            self,
+            body_index,
+            world_jac_trans,
+        )
+    }
+    #[inline]
+    pub unsafe fn getBodyJacobianRot(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        world_jac_rot: *mut btInverseDynamics_mat3x,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodyJacobianRot(
+            self,
+            body_index,
+            world_jac_rot,
+        )
+    }
+    #[inline]
+    pub unsafe fn addRelativeJacobianComponent(&mut self, body: *mut btInverseDynamics_RigidBody) {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_addRelativeJacobianComponent(self, body)
+    }
+    #[inline]
+    pub unsafe fn generateIndexSets(&mut self) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_generateIndexSets(self)
+    }
+    #[inline]
+    pub unsafe fn setGravityInWorldFrame(
+        &mut self,
+        gravity: *const btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_setGravityInWorldFrame(self, gravity)
+    }
+    #[inline]
+    pub unsafe fn printTree(&mut self) {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_printTree(self)
+    }
+    #[inline]
+    pub unsafe fn printTreeData(&mut self) {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_printTreeData(self)
+    }
+    #[inline]
+    pub unsafe fn calculateStaticData(&mut self) {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_calculateStaticData(self)
+    }
+    #[inline]
+    pub unsafe fn getBodyFrame(
+        &self,
+        index: ::std::os::raw::c_int,
+        world_origin: *mut btInverseDynamics_vec3,
+        body_T_world: *mut btInverseDynamics_mat33,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodyFrame(
+            self,
+            index,
+            world_origin,
+            body_T_world,
+        )
+    }
+    #[inline]
+    pub unsafe fn getParentIndex(
+        &mut self,
+        body_index: ::std::os::raw::c_int,
+        m_parent_index: *mut ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_getParentIndex(
+            self,
+            body_index,
+            m_parent_index,
+        )
+    }
+    #[inline]
+    pub unsafe fn getJointType(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        joint_type: *mut btInverseDynamics_JointType,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_getJointType(self, body_index, joint_type)
+    }
+    #[inline]
+    pub unsafe fn getJointTypeStr(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        joint_type: *mut *const ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_getJointTypeStr(self, body_index, joint_type)
+    }
+    #[inline]
+    pub unsafe fn getParentRParentBodyRef(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        r: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_getParentRParentBodyRef(self, body_index, r)
+    }
+    #[inline]
+    pub unsafe fn getBodyTParentRef(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        T: *mut btInverseDynamics_mat33,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodyTParentRef(self, body_index, T)
+    }
+    #[inline]
+    pub unsafe fn getBodyAxisOfMotion(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        axis: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodyAxisOfMotion(self, body_index, axis)
+    }
+    #[inline]
+    pub unsafe fn getDoFOffset(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        q_index: *mut ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_getDoFOffset(self, body_index, q_index)
+    }
+    #[inline]
+    pub unsafe fn getBodyOrigin(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        world_origin: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodyOrigin(self, body_index, world_origin)
+    }
+    #[inline]
+    pub unsafe fn getBodyCoM(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        world_com: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodyCoM(self, body_index, world_com)
+    }
+    #[inline]
+    pub unsafe fn getBodyTransform(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        world_T_body: *mut btInverseDynamics_mat33,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodyTransform(
+            self,
+            body_index,
+            world_T_body,
+        )
+    }
+    #[inline]
+    pub unsafe fn getBodyAngularVelocity(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        world_omega: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodyAngularVelocity(
+            self,
+            body_index,
+            world_omega,
+        )
+    }
+    #[inline]
+    pub unsafe fn getBodyLinearVelocity(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        world_velocity: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodyLinearVelocity(
+            self,
+            body_index,
+            world_velocity,
+        )
+    }
+    #[inline]
+    pub unsafe fn getBodyLinearVelocityCoM(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        world_velocity: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodyLinearVelocityCoM(
+            self,
+            body_index,
+            world_velocity,
+        )
+    }
+    #[inline]
+    pub unsafe fn getBodyAngularAcceleration(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        world_dot_omega: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodyAngularAcceleration(
+            self,
+            body_index,
+            world_dot_omega,
+        )
+    }
+    #[inline]
+    pub unsafe fn getBodyLinearAcceleration(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        world_acceleration: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodyLinearAcceleration(
+            self,
+            body_index,
+            world_acceleration,
+        )
+    }
+    #[inline]
+    pub unsafe fn getUserInt(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        user_int: *mut ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_getUserInt(self, body_index, user_int)
+    }
+    #[inline]
+    pub unsafe fn getUserPtr(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        user_ptr: *mut *mut ::std::os::raw::c_void,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_getUserPtr(self, body_index, user_ptr)
+    }
+    #[inline]
+    pub unsafe fn setUserInt(
+        &mut self,
+        body_index: ::std::os::raw::c_int,
+        user_int: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_setUserInt(self, body_index, user_int)
+    }
+    #[inline]
+    pub unsafe fn setUserPtr(
+        &mut self,
+        body_index: ::std::os::raw::c_int,
+        user_ptr: *const ::std::os::raw::c_void,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_setUserPtr(self, body_index, user_ptr)
+    }
+    #[inline]
+    pub unsafe fn setBodyMass(
+        &mut self,
+        body_index: ::std::os::raw::c_int,
+        mass: idScalar,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_setBodyMass(self, body_index, mass)
+    }
+    #[inline]
+    pub unsafe fn setBodyFirstMassMoment(
+        &mut self,
+        body_index: ::std::os::raw::c_int,
+        first_mass_moment: *const btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_setBodyFirstMassMoment(
+            self,
+            body_index,
+            first_mass_moment,
+        )
+    }
+    #[inline]
+    pub unsafe fn setBodySecondMassMoment(
+        &mut self,
+        body_index: ::std::os::raw::c_int,
+        second_mass_moment: *const btInverseDynamics_mat33,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_setBodySecondMassMoment(
+            self,
+            body_index,
+            second_mass_moment,
+        )
+    }
+    #[inline]
+    pub unsafe fn getBodyMass(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        mass: *mut idScalar,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodyMass(self, body_index, mass)
+    }
+    #[inline]
+    pub unsafe fn getBodyFirstMassMoment(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        first_mass_moment: *mut btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodyFirstMassMoment(
+            self,
+            body_index,
+            first_mass_moment,
+        )
+    }
+    #[inline]
+    pub unsafe fn getBodySecondMassMoment(
+        &self,
+        body_index: ::std::os::raw::c_int,
+        second_mass_moment: *mut btInverseDynamics_mat33,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_getBodySecondMassMoment(
+            self,
+            body_index,
+            second_mass_moment,
+        )
+    }
+    #[inline]
+    pub unsafe fn clearAllUserForcesAndMoments(&mut self) {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_clearAllUserForcesAndMoments(self)
+    }
+    #[inline]
+    pub unsafe fn addUserForce(
+        &mut self,
+        body_index: ::std::os::raw::c_int,
+        body_force: *const btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_addUserForce(self, body_index, body_force)
+    }
+    #[inline]
+    pub unsafe fn addUserMoment(
+        &mut self,
+        body_index: ::std::os::raw::c_int,
+        body_moment: *const btInverseDynamics_vec3,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_addUserMoment(self, body_index, body_moment)
+    }
+    #[inline]
+    pub unsafe fn new(
+        num_bodies_: ::std::os::raw::c_int,
+        num_dofs_: ::std::os::raw::c_int,
+    ) -> Self {
+        let mut __bindgen_tmp = ::std::mem::uninitialized();
+        btInverseDynamics_MultiBodyTree_MultiBodyImpl_MultiBodyImpl(
+            &mut __bindgen_tmp,
+            num_bodies_,
+            num_dofs_,
+        );
+        __bindgen_tmp
+    }
+}
+/// Mass properties of a rigid body
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct btInverseDynamics_InertiaData {
+    /// mass
+    pub m_mass: idScalar,
+    /// vector from body-fixed frame to center of mass,
+    /// /// in body-fixed frame, multiplied by the mass
+    pub m_body_pos_body_com: btInverseDynamics_vec3,
+    /// moment of inertia w.r.t. the origin of the body-fixed
+    /// /// frame, represented in that frame
+    pub m_body_I_body: btInverseDynamics_mat33,
+}
+/// Joint properties
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct btInverseDynamics_JointData {
+    /// type of joint
+    pub m_type: btInverseDynamics_JointType,
+    /// index of parent body
+    pub m_parent: ::std::os::raw::c_int,
+    /// index of child body
+    pub m_child: ::std::os::raw::c_int,
+    /// vector from parent's body-fixed frame to child's body-fixed
+    /// /// frame for q=0, written in the parent's body fixed frame
+    pub m_parent_pos_parent_child_ref: btInverseDynamics_vec3,
+    /// Transform matrix converting vectors written in the parent's frame
+    /// /// into vectors written in the child's frame for q=0
+    /// /// ie, child_vector = child_T_parent_ref * parent_vector;
+    pub m_child_T_parent_ref: btInverseDynamics_mat33,
+    /// Axis of motion for 1 degree-of-freedom joints,
+    /// /// written in the child's frame
+    /// /// For revolute joints, the q-value is positive for a positive
+    /// /// rotation about this axis.
+    /// /// For prismatic joints, the q-value is positive for a positive
+    /// /// translation is this direction.
+    pub m_child_axis_of_motion: btInverseDynamics_vec3,
+}
+/// Data structure to store data passed by the user.
+/// This is used in MultiBodyTree::finalize to build internal data structures.
+#[repr(C)]
+#[derive(Debug)]
+pub struct btInverseDynamics_MultiBodyTree_InitCache {
+    pub m_inertias: b3AlignedObjectArray<btInverseDynamics_InertiaData>,
+    pub m_joints: b3AlignedObjectArray<btInverseDynamics_JointData>,
+    pub m_num_dofs: ::std::os::raw::c_int,
+    pub m_parent_index: b3AlignedObjectArray<::std::os::raw::c_int>,
+    pub m_user_int: b3AlignedObjectArray<::std::os::raw::c_int>,
+    pub m_user_ptr: b3AlignedObjectArray<*mut ::std::os::raw::c_void>,
+    pub m_root_index: ::std::os::raw::c_int,
+}
+extern "C" {
+    /// \copydoc MultiBodyTree::addBody
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree9InitCache7addBodyEiiNS_9JointTypeERKNS_4vec3ERKNS_5mat33ES5_dS5_S8_iPv"]
+    pub fn btInverseDynamics_MultiBodyTree_InitCache_addBody(
+        this: *mut btInverseDynamics_MultiBodyTree_InitCache,
+        body_index: ::std::os::raw::c_int,
+        parent_index: ::std::os::raw::c_int,
+        joint_type: btInverseDynamics_JointType,
+        parent_r_parent_body_ref: *const btInverseDynamics_vec3,
+        body_T_parent_ref: *const btInverseDynamics_mat33,
+        body_axis_of_motion: *const btInverseDynamics_vec3,
+        mass: idScalar,
+        body_r_body_com: *const btInverseDynamics_vec3,
+        body_I_body: *const btInverseDynamics_mat33,
+        user_int: ::std::os::raw::c_int,
+        user_ptr: *mut ::std::os::raw::c_void,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// build index arrays
+    /// /// @return 0 on success, -1 on failure
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree9InitCache14buildIndexSetsEv"]
+    pub fn btInverseDynamics_MultiBodyTree_InitCache_buildIndexSets(
+        this: *mut btInverseDynamics_MultiBodyTree_InitCache,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// get inertia data for index
+    /// /// @param index of the body
+    /// /// @param inertia pointer for return data
+    /// /// @return 0 on success, -1 on failure
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree9InitCache14getInertiaDataEiPNS_11InertiaDataE"]
+    pub fn btInverseDynamics_MultiBodyTree_InitCache_getInertiaData(
+        this: *const btInverseDynamics_MultiBodyTree_InitCache,
+        index: ::std::os::raw::c_int,
+        inertia: *mut btInverseDynamics_InertiaData,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// get joint data for index
+    /// /// @param index of the body
+    /// /// @param joint pointer for return data
+    /// /// @return 0 on success, -1 on failure
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree9InitCache12getJointDataEiPNS_9JointDataE"]
+    pub fn btInverseDynamics_MultiBodyTree_InitCache_getJointData(
+        this: *const btInverseDynamics_MultiBodyTree_InitCache,
+        index: ::std::os::raw::c_int,
+        joint: *mut btInverseDynamics_JointData,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// get user integer
+    /// /// @param index body index
+    /// /// @param user_int user integer
+    /// /// @return 0 on success, -1 on failure
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree9InitCache10getUserIntEiPi"]
+    pub fn btInverseDynamics_MultiBodyTree_InitCache_getUserInt(
+        this: *const btInverseDynamics_MultiBodyTree_InitCache,
+        index: ::std::os::raw::c_int,
+        user_int: *mut ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// get user pointer
+    /// /// @param index body index
+    /// /// @param user_int user pointer
+    /// /// @return 0 on success, -1 on failure
+    #[link_name = "\u{1}_ZNK24btInverseDynamicsBullet313MultiBodyTree9InitCache10getUserPtrEiPPv"]
+    pub fn btInverseDynamics_MultiBodyTree_InitCache_getUserPtr(
+        this: *const btInverseDynamics_MultiBodyTree_InitCache,
+        index: ::std::os::raw::c_int,
+        user_ptr: *mut *mut ::std::os::raw::c_void,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// constructor
+    #[link_name = "\u{1}_ZN24btInverseDynamicsBullet313MultiBodyTree9InitCacheC1Ev"]
+    pub fn btInverseDynamics_MultiBodyTree_InitCache_InitCache(
+        this: *mut btInverseDynamics_MultiBodyTree_InitCache,
+    );
+}
+impl btInverseDynamics_MultiBodyTree_InitCache {
+    #[inline]
+    pub unsafe fn addBody(
+        &mut self,
+        body_index: ::std::os::raw::c_int,
+        parent_index: ::std::os::raw::c_int,
+        joint_type: btInverseDynamics_JointType,
+        parent_r_parent_body_ref: *const btInverseDynamics_vec3,
+        body_T_parent_ref: *const btInverseDynamics_mat33,
+        body_axis_of_motion: *const btInverseDynamics_vec3,
+        mass: idScalar,
+        body_r_body_com: *const btInverseDynamics_vec3,
+        body_I_body: *const btInverseDynamics_mat33,
+        user_int: ::std::os::raw::c_int,
+        user_ptr: *mut ::std::os::raw::c_void,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_InitCache_addBody(
+            self,
+            body_index,
+            parent_index,
+            joint_type,
+            parent_r_parent_body_ref,
+            body_T_parent_ref,
+            body_axis_of_motion,
+            mass,
+            body_r_body_com,
+            body_I_body,
+            user_int,
+            user_ptr,
+        )
+    }
+    #[inline]
+    pub unsafe fn buildIndexSets(&mut self) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_InitCache_buildIndexSets(self)
+    }
+    #[inline]
+    pub unsafe fn getInertiaData(
+        &self,
+        index: ::std::os::raw::c_int,
+        inertia: *mut btInverseDynamics_InertiaData,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_InitCache_getInertiaData(self, index, inertia)
+    }
+    #[inline]
+    pub unsafe fn getJointData(
+        &self,
+        index: ::std::os::raw::c_int,
+        joint: *mut btInverseDynamics_JointData,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_InitCache_getJointData(self, index, joint)
+    }
+    #[inline]
+    pub unsafe fn getUserInt(
+        &self,
+        index: ::std::os::raw::c_int,
+        user_int: *mut ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_InitCache_getUserInt(self, index, user_int)
+    }
+    #[inline]
+    pub unsafe fn getUserPtr(
+        &self,
+        index: ::std::os::raw::c_int,
+        user_ptr: *mut *mut ::std::os::raw::c_void,
+    ) -> ::std::os::raw::c_int {
+        btInverseDynamics_MultiBodyTree_InitCache_getUserPtr(self, index, user_ptr)
+    }
+    #[inline]
+    pub unsafe fn new() -> Self {
+        let mut __bindgen_tmp = ::std::mem::uninitialized();
+        btInverseDynamics_MultiBodyTree_InitCache_InitCache(&mut __bindgen_tmp);
+        __bindgen_tmp
+    }
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -18064,7 +20551,7 @@ pub struct btSoftBodyTriangleCallback {
     pub m_triangleCount: ::std::os::raw::c_int,
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN26btSoftBodyTriangleCallback22setTimeStepAndCountersEfPK24btCollisionObjectWrapperRK16btDispatcherInfoP16btManifoldResult"]
+    #[link_name = "\u{1}_ZN26btSoftBodyTriangleCallback22setTimeStepAndCountersEdPK24btCollisionObjectWrapperRK16btDispatcherInfoP16btManifoldResult"]
     pub fn btSoftBodyTriangleCallback_setTimeStepAndCounters(
         this: *mut btSoftBodyTriangleCallback,
         collisionMarginTriangle: btScalar,
@@ -18279,7 +20766,7 @@ pub struct SoftRigidAnchorData {
     pub m_c0: btMatrix3x3FloatData,
     pub m_c1: btVector3FloatData,
     pub m_localFrame: btVector3FloatData,
-    pub m_rigidBody: *mut btRigidBodyFloatData,
+    pub m_rigidBody: *mut btRigidBodyDoubleData,
     pub m_nodeIndex: ::std::os::raw::c_int,
     pub m_c2: f32,
 }
@@ -18451,7 +20938,7 @@ extern "C" {
     ) -> bool;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN15btGjkEpaSolver214SignedDistanceERK9btVector3fPK13btConvexShapeRK11btTransformRNS_8sResultsE"]
+    #[link_name = "\u{1}_ZN15btGjkEpaSolver214SignedDistanceERK9btVector3dPK13btConvexShapeRK11btTransformRNS_8sResultsE"]
     pub fn btGjkEpaSolver2_SignedDistance(
         position: *const btVector3,
         margin: btScalar,
@@ -18549,7 +21036,7 @@ pub struct btSoftBodyWorldInfo {
     pub m_broadphase: *mut btBroadphaseInterface,
     pub m_dispatcher: *mut btDispatcher,
     pub m_gravity: btVector3,
-    pub m_sparsesdf: [u64; 7usize],
+    pub m_sparsesdf: [u64; 8usize],
 }
 /// The btSoftBody is an class to simulate cloth and volumetric soft bodies.
 /// There is two-way interaction between btSoftBody and btRigidBody/btCollisionObject.
@@ -18939,7 +21426,7 @@ pub struct btSoftBody_Impulse {
     pub m_velocity: btVector3,
     pub m_drift: btVector3,
     pub _bitfield_1: __BindgenBitfieldUnit<[u8; 1usize], u8>,
-    pub __bindgen_padding_0: [u8; 3usize],
+    pub __bindgen_padding_0: [u8; 7usize],
 }
 impl btSoftBody_Impulse {
     #[inline]
@@ -19119,7 +21606,7 @@ pub struct btSoftBody_RayFromToCaster {
     pub m_tests: ::std::os::raw::c_int,
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN10btSoftBody15RayFromToCaster17rayFromToTriangleERK9btVector3S3_S3_S3_S3_S3_f"]
+    #[link_name = "\u{1}_ZN10btSoftBody15RayFromToCaster17rayFromToTriangleERK9btVector3S3_S3_S3_S3_S3_d"]
     pub fn btSoftBody_RayFromToCaster_rayFromToTriangle(
         rayFrom: *const btVector3,
         rayTo: *const btVector3,
@@ -19131,7 +21618,7 @@ extern "C" {
     ) -> btScalar;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN10btSoftBody15RayFromToCasterC1ERK9btVector3S3_f"]
+    #[link_name = "\u{1}_ZN10btSoftBody15RayFromToCasterC1ERK9btVector3S3_d"]
     pub fn btSoftBody_RayFromToCaster_RayFromToCaster(
         this: *mut btSoftBody_RayFromToCaster,
         rayFrom: *const btVector3,
@@ -19259,7 +21746,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN10btSoftBody10appendNodeERK9btVector3f"]
+    #[link_name = "\u{1}_ZN10btSoftBody10appendNodeERK9btVector3d"]
     pub fn btSoftBody_appendNode(this: *mut btSoftBody, x: *const btVector3, m: btScalar);
 }
 extern "C" {
@@ -19328,7 +21815,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN10btSoftBody12appendAnchorEiP11btRigidBodybf"]
+    #[link_name = "\u{1}_ZN10btSoftBody12appendAnchorEiP11btRigidBodybd"]
     pub fn btSoftBody_appendAnchor(
         this: *mut btSoftBody,
         node: ::std::os::raw::c_int,
@@ -19338,7 +21825,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN10btSoftBody12appendAnchorEiP11btRigidBodyRK9btVector3bf"]
+    #[link_name = "\u{1}_ZN10btSoftBody12appendAnchorEiP11btRigidBodyRK9btVector3bd"]
     pub fn btSoftBody_appendAnchor1(
         this: *mut btSoftBody,
         node: ::std::os::raw::c_int,
@@ -19443,7 +21930,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN10btSoftBody7setMassEif"]
+    #[link_name = "\u{1}_ZN10btSoftBody7setMassEid"]
     pub fn btSoftBody_setMass(this: *mut btSoftBody, node: ::std::os::raw::c_int, mass: btScalar);
 }
 extern "C" {
@@ -19455,19 +21942,19 @@ extern "C" {
     pub fn btSoftBody_getTotalMass(this: *const btSoftBody) -> btScalar;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN10btSoftBody12setTotalMassEfb"]
+    #[link_name = "\u{1}_ZN10btSoftBody12setTotalMassEdb"]
     pub fn btSoftBody_setTotalMass(this: *mut btSoftBody, mass: btScalar, fromfaces: bool);
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN10btSoftBody15setTotalDensityEf"]
+    #[link_name = "\u{1}_ZN10btSoftBody15setTotalDensityEd"]
     pub fn btSoftBody_setTotalDensity(this: *mut btSoftBody, density: btScalar);
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN10btSoftBody13setVolumeMassEf"]
+    #[link_name = "\u{1}_ZN10btSoftBody13setVolumeMassEd"]
     pub fn btSoftBody_setVolumeMass(this: *mut btSoftBody, mass: btScalar);
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN10btSoftBody16setVolumeDensityEf"]
+    #[link_name = "\u{1}_ZN10btSoftBody16setVolumeDensityEd"]
     pub fn btSoftBody_setVolumeDensity(this: *mut btSoftBody, density: btScalar);
 }
 extern "C" {
@@ -19491,7 +21978,7 @@ extern "C" {
     pub fn btSoftBody_getRestLengthScale(this: *mut btSoftBody) -> btScalar;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN10btSoftBody18setRestLengthScaleEf"]
+    #[link_name = "\u{1}_ZN10btSoftBody18setRestLengthScaleEd"]
     pub fn btSoftBody_setRestLengthScale(this: *mut btSoftBody, restLength: btScalar);
 }
 extern "C" {
@@ -19602,7 +22089,7 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN10btSoftBody6refineEPNS_10ImplicitFnEfb"]
+    #[link_name = "\u{1}_ZN10btSoftBody6refineEPNS_10ImplicitFnEdb"]
     pub fn btSoftBody_refine(
         this: *mut btSoftBody,
         ifn: *mut btSoftBody_ImplicitFn,
@@ -19611,7 +22098,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN10btSoftBody7cutLinkEiif"]
+    #[link_name = "\u{1}_ZN10btSoftBody7cutLinkEiid"]
     pub fn btSoftBody_cutLink(
         this: *mut btSoftBody,
         node0: ::std::os::raw::c_int,
@@ -19620,7 +22107,7 @@ extern "C" {
     ) -> bool;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN10btSoftBody7cutLinkEPKNS_4NodeES2_f"]
+    #[link_name = "\u{1}_ZN10btSoftBody7cutLinkEPKNS_4NodeES2_d"]
     pub fn btSoftBody_cutLink1(
         this: *mut btSoftBody,
         node0: *const btSoftBody_Node,
@@ -19643,7 +22130,7 @@ extern "C" {
     pub fn btSoftBody_setSolver(this: *mut btSoftBody, preset: btSoftBody_eSolverPresets__);
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN10btSoftBody13predictMotionEf"]
+    #[link_name = "\u{1}_ZN10btSoftBody13predictMotionEd"]
     pub fn btSoftBody_predictMotion(this: *mut btSoftBody, dt: btScalar);
 }
 extern "C" {
@@ -19700,7 +22187,7 @@ extern "C" {
     pub fn btSoftBody_indicesToPointers(this: *mut btSoftBody, map: *const ::std::os::raw::c_int);
 }
 extern "C" {
-    #[link_name = "\u{1}_ZNK10btSoftBody7rayTestERK9btVector3S2_RfRNS_8eFeature1_ERib"]
+    #[link_name = "\u{1}_ZNK10btSoftBody7rayTestERK9btVector3S2_RdRNS_8eFeature1_ERib"]
     pub fn btSoftBody_rayTest1(
         this: *const btSoftBody,
         rayFrom: *const btVector3,
@@ -19720,7 +22207,7 @@ extern "C" {
     pub fn btSoftBody_evaluateCom(this: *const btSoftBody) -> btVector3;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZNK10btSoftBody12checkContactEPK24btCollisionObjectWrapperRK9btVector3fRNS_4sCtiE"]
+    #[link_name = "\u{1}_ZNK10btSoftBody12checkContactEPK24btCollisionObjectWrapperRK9btVector3dRNS_4sCtiE"]
     pub fn btSoftBody_checkContact(
         this: *const btSoftBody,
         colObjWrap: *const btCollisionObjectWrapper,
@@ -19770,7 +22257,7 @@ extern "C" {
     pub fn btSoftBody_prepareClusters(this: *mut btSoftBody, iterations: ::std::os::raw::c_int);
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN10btSoftBody13solveClustersEf"]
+    #[link_name = "\u{1}_ZN10btSoftBody13solveClustersEd"]
     pub fn btSoftBody_solveClusters1(this: *mut btSoftBody, sor: btScalar);
 }
 extern "C" {
@@ -19786,23 +22273,23 @@ extern "C" {
     pub fn btSoftBody_applyForces(this: *mut btSoftBody);
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN10btSoftBody14PSolve_AnchorsEPS_ff"]
+    #[link_name = "\u{1}_ZN10btSoftBody14PSolve_AnchorsEPS_dd"]
     pub fn btSoftBody_PSolve_Anchors(psb: *mut btSoftBody, kst: btScalar, ti: btScalar);
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN10btSoftBody16PSolve_RContactsEPS_ff"]
+    #[link_name = "\u{1}_ZN10btSoftBody16PSolve_RContactsEPS_dd"]
     pub fn btSoftBody_PSolve_RContacts(psb: *mut btSoftBody, kst: btScalar, ti: btScalar);
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN10btSoftBody16PSolve_SContactsEPS_ff"]
+    #[link_name = "\u{1}_ZN10btSoftBody16PSolve_SContactsEPS_dd"]
     pub fn btSoftBody_PSolve_SContacts(psb: *mut btSoftBody, arg1: btScalar, ti: btScalar);
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN10btSoftBody12PSolve_LinksEPS_ff"]
+    #[link_name = "\u{1}_ZN10btSoftBody12PSolve_LinksEPS_dd"]
     pub fn btSoftBody_PSolve_Links(psb: *mut btSoftBody, kst: btScalar, ti: btScalar);
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN10btSoftBody12VSolve_LinksEPS_f"]
+    #[link_name = "\u{1}_ZN10btSoftBody12VSolve_LinksEPS_d"]
     pub fn btSoftBody_VSolve_Links(psb: *mut btSoftBody, kst: btScalar);
 }
 extern "C" {
@@ -19814,7 +22301,7 @@ extern "C" {
     pub fn btSoftBody_getSolver1(solver: btSoftBody_eVSolver__) -> btSoftBody_vsolver_t;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN10btSoftBodyC1EP19btSoftBodyWorldInfoiPK9btVector3PKf"]
+    #[link_name = "\u{1}_ZN10btSoftBodyC1EP19btSoftBodyWorldInfoiPK9btVector3PKd"]
     pub fn btSoftBody_btSoftBody(
         this: *mut btSoftBody,
         worldInfo: *mut btSoftBodyWorldInfo,
@@ -20469,7 +22956,7 @@ impl btSoftBody {
     }
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN10btSoftBody5Joint7PrepareEfi"]
+    #[link_name = "\u{1}_ZN10btSoftBody5Joint7PrepareEdi"]
     pub fn btSoftBody_Joint_Prepare(
         this: *mut ::std::os::raw::c_void,
         dt: btScalar,
@@ -20477,7 +22964,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN10btSoftBody6LJoint7PrepareEfi"]
+    #[link_name = "\u{1}_ZN10btSoftBody6LJoint7PrepareEdi"]
     pub fn btSoftBody_LJoint_Prepare(
         this: *mut ::std::os::raw::c_void,
         dt: btScalar,
@@ -20485,15 +22972,15 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN10btSoftBody6LJoint5SolveEff"]
+    #[link_name = "\u{1}_ZN10btSoftBody6LJoint5SolveEdd"]
     pub fn btSoftBody_LJoint_Solve(this: *mut ::std::os::raw::c_void, dt: btScalar, sor: btScalar);
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN10btSoftBody6LJoint9TerminateEf"]
+    #[link_name = "\u{1}_ZN10btSoftBody6LJoint9TerminateEd"]
     pub fn btSoftBody_LJoint_Terminate(this: *mut ::std::os::raw::c_void, dt: btScalar);
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN10btSoftBody6AJoint7PrepareEfi"]
+    #[link_name = "\u{1}_ZN10btSoftBody6AJoint7PrepareEdi"]
     pub fn btSoftBody_AJoint_Prepare(
         this: *mut ::std::os::raw::c_void,
         dt: btScalar,
@@ -20501,15 +22988,15 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN10btSoftBody6AJoint5SolveEff"]
+    #[link_name = "\u{1}_ZN10btSoftBody6AJoint5SolveEdd"]
     pub fn btSoftBody_AJoint_Solve(this: *mut ::std::os::raw::c_void, dt: btScalar, sor: btScalar);
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN10btSoftBody6AJoint9TerminateEf"]
+    #[link_name = "\u{1}_ZN10btSoftBody6AJoint9TerminateEd"]
     pub fn btSoftBody_AJoint_Terminate(this: *mut ::std::os::raw::c_void, dt: btScalar);
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN10btSoftBody6CJoint7PrepareEfi"]
+    #[link_name = "\u{1}_ZN10btSoftBody6CJoint7PrepareEdi"]
     pub fn btSoftBody_CJoint_Prepare(
         this: *mut ::std::os::raw::c_void,
         dt: btScalar,
@@ -20517,11 +23004,11 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN10btSoftBody6CJoint5SolveEff"]
+    #[link_name = "\u{1}_ZN10btSoftBody6CJoint5SolveEdd"]
     pub fn btSoftBody_CJoint_Solve(this: *mut ::std::os::raw::c_void, dt: btScalar, sor: btScalar);
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN10btSoftBody6CJoint9TerminateEf"]
+    #[link_name = "\u{1}_ZN10btSoftBody6CJoint9TerminateEd"]
     pub fn btSoftBody_CJoint_Terminate(this: *mut ::std::os::raw::c_void, dt: btScalar);
 }
 extern "C" {
@@ -20663,7 +23150,7 @@ extern "C" {
     ) -> *mut btSoftBody;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN17btSoftBodyHelpers17CreateFromTriMeshER19btSoftBodyWorldInfoPKfPKiib"]
+    #[link_name = "\u{1}_ZN17btSoftBodyHelpers17CreateFromTriMeshER19btSoftBodyWorldInfoPKdPKiib"]
     pub fn btSoftBodyHelpers_CreateFromTriMesh(
         worldInfo: *mut btSoftBodyWorldInfo,
         vertices: *const btScalar,
@@ -20911,7 +23398,7 @@ extern "C" {
     /// algorithm
     /// @param maxIterations - the maximum number of iterations used to achieve
     /// convergence
-    #[link_name = "\u{1}_ZN20btPolarDecompositionC1Efj"]
+    #[link_name = "\u{1}_ZN20btPolarDecompositionC1Edj"]
     pub fn btPolarDecomposition_btPolarDecomposition(
         this: *mut btPolarDecomposition,
         tolerance: btScalar,
@@ -21254,7 +23741,7 @@ extern "C" {
     pub fn btMultiBodyDynamicsWorld_calculateSimulationIslands(this: *mut ::std::os::raw::c_void);
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN24btMultiBodyDynamicsWorld21updateActivationStateEf"]
+    #[link_name = "\u{1}_ZN24btMultiBodyDynamicsWorld21updateActivationStateEd"]
     pub fn btMultiBodyDynamicsWorld_updateActivationState(
         this: *mut ::std::os::raw::c_void,
         timeStep: btScalar,
@@ -21311,7 +23798,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN24btMultiBodyDynamicsWorld19integrateTransformsEf"]
+    #[link_name = "\u{1}_ZN24btMultiBodyDynamicsWorld19integrateTransformsEd"]
     pub fn btMultiBodyDynamicsWorld_integrateTransforms(
         this: *mut ::std::os::raw::c_void,
         timeStep: btScalar,
@@ -21369,7 +23856,7 @@ pub struct btSoftMultiBodyDynamicsWorld {
     pub m_ownsSolver: bool,
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN28btSoftMultiBodyDynamicsWorld26solveSoftBodiesConstraintsEf"]
+    #[link_name = "\u{1}_ZN28btSoftMultiBodyDynamicsWorld26solveSoftBodiesConstraintsEd"]
     pub fn btSoftMultiBodyDynamicsWorld_solveSoftBodiesConstraints(
         this: *mut btSoftMultiBodyDynamicsWorld,
         timeStep: btScalar,
@@ -21489,14 +23976,14 @@ impl btSoftMultiBodyDynamicsWorld {
     }
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN28btSoftMultiBodyDynamicsWorld25predictUnconstraintMotionEf"]
+    #[link_name = "\u{1}_ZN28btSoftMultiBodyDynamicsWorld25predictUnconstraintMotionEd"]
     pub fn btSoftMultiBodyDynamicsWorld_predictUnconstraintMotion(
         this: *mut ::std::os::raw::c_void,
         timeStep: btScalar,
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN28btSoftMultiBodyDynamicsWorld28internalSingleStepSimulationEf"]
+    #[link_name = "\u{1}_ZN28btSoftMultiBodyDynamicsWorld28internalSingleStepSimulationEd"]
     pub fn btSoftMultiBodyDynamicsWorld_internalSingleStepSimulation(
         this: *mut ::std::os::raw::c_void,
         timeStep: btScalar,
@@ -21622,7 +24109,7 @@ pub struct btSoftRigidDynamicsWorld {
     pub m_ownsSolver: bool,
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN24btSoftRigidDynamicsWorld26solveSoftBodiesConstraintsEf"]
+    #[link_name = "\u{1}_ZN24btSoftRigidDynamicsWorld26solveSoftBodiesConstraintsEd"]
     pub fn btSoftRigidDynamicsWorld_solveSoftBodiesConstraints(
         this: *mut btSoftRigidDynamicsWorld,
         timeStep: btScalar,
@@ -21737,14 +24224,14 @@ impl btSoftRigidDynamicsWorld {
     }
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN24btSoftRigidDynamicsWorld25predictUnconstraintMotionEf"]
+    #[link_name = "\u{1}_ZN24btSoftRigidDynamicsWorld25predictUnconstraintMotionEd"]
     pub fn btSoftRigidDynamicsWorld_predictUnconstraintMotion(
         this: *mut ::std::os::raw::c_void,
         timeStep: btScalar,
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN24btSoftRigidDynamicsWorld28internalSingleStepSimulationEf"]
+    #[link_name = "\u{1}_ZN24btSoftRigidDynamicsWorld28internalSingleStepSimulationEd"]
     pub fn btSoftRigidDynamicsWorld_internalSingleStepSimulation(
         this: *mut ::std::os::raw::c_void,
         timeStep: btScalar,
@@ -21964,7 +24451,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZNK13btSphereShape21calculateLocalInertiaEfR9btVector3"]
+    #[link_name = "\u{1}_ZNK13btSphereShape21calculateLocalInertiaEdR9btVector3"]
     pub fn btSphereShape_calculateLocalInertia(
         this: *mut ::std::os::raw::c_void,
         mass: btScalar,
@@ -21990,7 +24477,7 @@ pub struct btCapsuleShape {
     pub m_upAxis: ::std::os::raw::c_int,
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN14btCapsuleShapeC1Eff"]
+    #[link_name = "\u{1}_ZN14btCapsuleShapeC1Edd"]
     pub fn btCapsuleShape_btCapsuleShape(
         this: *mut btCapsuleShape,
         radius: btScalar,
@@ -22007,7 +24494,7 @@ impl btCapsuleShape {
 }
 extern "C" {
     /// CollisionShape Interface
-    #[link_name = "\u{1}_ZNK14btCapsuleShape21calculateLocalInertiaEfR9btVector3"]
+    #[link_name = "\u{1}_ZNK14btCapsuleShape21calculateLocalInertiaEdR9btVector3"]
     pub fn btCapsuleShape_calculateLocalInertia(
         this: *mut ::std::os::raw::c_void,
         mass: btScalar,
@@ -22054,7 +24541,7 @@ pub struct btCapsuleShapeX {
     pub _base: btCapsuleShape,
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN15btCapsuleShapeXC1Eff"]
+    #[link_name = "\u{1}_ZN15btCapsuleShapeXC1Edd"]
     pub fn btCapsuleShapeX_btCapsuleShapeX(
         this: *mut btCapsuleShapeX,
         radius: btScalar,
@@ -22077,7 +24564,7 @@ pub struct btCapsuleShapeZ {
     pub _base: btCapsuleShape,
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN15btCapsuleShapeZC1Eff"]
+    #[link_name = "\u{1}_ZN15btCapsuleShapeZC1Edd"]
     pub fn btCapsuleShapeZ_btCapsuleShapeZ(
         this: *mut btCapsuleShapeZ,
         radius: btScalar,
@@ -22132,7 +24619,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZNK15btCylinderShape21calculateLocalInertiaEfR9btVector3"]
+    #[link_name = "\u{1}_ZNK15btCylinderShape21calculateLocalInertiaEdR9btVector3"]
     pub fn btCylinderShape_calculateLocalInertia(
         this: *mut ::std::os::raw::c_void,
         mass: btScalar,
@@ -22266,7 +24753,7 @@ extern "C" {
     pub fn btConeShape_setConeUpIndex(this: *mut btConeShape, upIndex: ::std::os::raw::c_int);
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN11btConeShapeC1Eff"]
+    #[link_name = "\u{1}_ZN11btConeShapeC1Edd"]
     pub fn btConeShape_btConeShape(this: *mut btConeShape, radius: btScalar, height: btScalar);
 }
 impl btConeShape {
@@ -22333,7 +24820,7 @@ pub struct btConeShapeX {
     pub _base: btConeShape,
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN12btConeShapeXC1Eff"]
+    #[link_name = "\u{1}_ZN12btConeShapeXC1Edd"]
     pub fn btConeShapeX_btConeShapeX(this: *mut btConeShapeX, radius: btScalar, height: btScalar);
 }
 impl btConeShapeX {
@@ -22351,7 +24838,7 @@ pub struct btConeShapeZ {
     pub _base: btConeShape,
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN12btConeShapeZC1Eff"]
+    #[link_name = "\u{1}_ZN12btConeShapeZC1Edd"]
     pub fn btConeShapeZ_btConeShapeZ(this: *mut btConeShapeZ, radius: btScalar, height: btScalar);
 }
 impl btConeShapeZ {
@@ -22394,7 +24881,7 @@ extern "C" {
     /// this constructor optionally takes in a pointer to points. Each point is assumed to be 3 consecutive btScalar (x,y,z), the striding defines the number of bytes between each point, in memory.
     /// ///It is easier to not pass any points in the constructor, and just add one point at a time, using addPoint.
     /// ///btConvexHullShape make an internal copy of the points.
-    #[link_name = "\u{1}_ZN17btConvexHullShapeC1EPKfii"]
+    #[link_name = "\u{1}_ZN17btConvexHullShapeC1EPKdii"]
     pub fn btConvexHullShape_btConvexHullShape(
         this: *mut btConvexHullShape,
         points: *const btScalar,
@@ -22446,7 +24933,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZNK17btConvexHullShape7projectERK11btTransformRK9btVector3RfS6_RS3_S7_"]
+    #[link_name = "\u{1}_ZNK17btConvexHullShape7projectERK11btTransformRK9btVector3RdS6_RS3_S7_"]
     pub fn btConvexHullShape_project(
         this: *mut ::std::os::raw::c_void,
         trans: *const btTransform,
@@ -22502,7 +24989,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZNK17btConvexHullShape8isInsideERK9btVector3f"]
+    #[link_name = "\u{1}_ZNK17btConvexHullShape8isInsideERK9btVector3d"]
     pub fn btConvexHullShape_isInside(
         this: *mut ::std::os::raw::c_void,
         pt: *const btVector3,
@@ -22677,7 +25164,7 @@ extern "C" {
     /// ///by the mass. The resulting transform "principal" has to be applied inversely to the mesh in order for the local coordinate system of the
     /// ///shape to be centered at the center of mass and to coincide with the principal axes. This also necessitates a correction of the world transform
     /// ///of the collision object by the principal transform. This method also computes the volume of the convex mesh.
-    #[link_name = "\u{1}_ZNK25btConvexTriangleMeshShape31calculatePrincipalAxisTransformER11btTransformR9btVector3Rf"]
+    #[link_name = "\u{1}_ZNK25btConvexTriangleMeshShape31calculatePrincipalAxisTransformER11btTransformR9btVector3Rd"]
     pub fn btConvexTriangleMeshShape_calculatePrincipalAxisTransform(
         this: *const btConvexTriangleMeshShape,
         principal: *mut btTransform,
@@ -22782,7 +25269,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZNK25btConvexTriangleMeshShape8isInsideERK9btVector3f"]
+    #[link_name = "\u{1}_ZNK25btConvexTriangleMeshShape8isInsideERK9btVector3d"]
     pub fn btConvexTriangleMeshShape_isInside(
         this: *mut ::std::os::raw::c_void,
         pt: *const btVector3,
@@ -22863,7 +25350,7 @@ extern "C" {
     ) -> *const btVector3;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZNK28btScaledBvhTriangleMeshShape21calculateLocalInertiaEfR9btVector3"]
+    #[link_name = "\u{1}_ZNK28btScaledBvhTriangleMeshShape21calculateLocalInertiaEdR9btVector3"]
     pub fn btScaledBvhTriangleMeshShape_calculateLocalInertia(
         this: *mut ::std::os::raw::c_void,
         mass: btScalar,
@@ -22936,7 +25423,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZNK12btEmptyShape21calculateLocalInertiaEfR9btVector3"]
+    #[link_name = "\u{1}_ZNK12btEmptyShape21calculateLocalInertiaEdR9btVector3"]
     pub fn btEmptyShape_calculateLocalInertia(
         this: *mut ::std::os::raw::c_void,
         mass: btScalar,
@@ -22953,7 +25440,7 @@ pub struct btMultiSphereShape {
     pub m_radiArray: btAlignedObjectArray<btScalar>,
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN18btMultiSphereShapeC1EPK9btVector3PKfi"]
+    #[link_name = "\u{1}_ZN18btMultiSphereShapeC1EPK9btVector3PKdi"]
     pub fn btMultiSphereShape_btMultiSphereShape(
         this: *mut btMultiSphereShape,
         positions: *const btVector3,
@@ -22975,7 +25462,7 @@ impl btMultiSphereShape {
 }
 extern "C" {
     /// CollisionShape Interface
-    #[link_name = "\u{1}_ZNK18btMultiSphereShape21calculateLocalInertiaEfR9btVector3"]
+    #[link_name = "\u{1}_ZNK18btMultiSphereShape21calculateLocalInertiaEdR9btVector3"]
     pub fn btMultiSphereShape_calculateLocalInertia(
         this: *mut ::std::os::raw::c_void,
         mass: btScalar,
@@ -23038,7 +25525,7 @@ pub struct btUniformScalingShape {
     pub m_uniformScalingFactor: btScalar,
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN21btUniformScalingShapeC1EP13btConvexShapef"]
+    #[link_name = "\u{1}_ZN21btUniformScalingShapeC1EP13btConvexShaped"]
     pub fn btUniformScalingShape_btUniformScalingShape(
         this: *mut btUniformScalingShape,
         convexChildShape: *mut btConvexShape,
@@ -23088,7 +25575,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZNK21btUniformScalingShape21calculateLocalInertiaEfR9btVector3"]
+    #[link_name = "\u{1}_ZNK21btUniformScalingShape21calculateLocalInertiaEdR9btVector3"]
     pub fn btUniformScalingShape_calculateLocalInertia(
         this: *mut ::std::os::raw::c_void,
         mass: btScalar,
@@ -23128,7 +25615,7 @@ extern "C" {
     ) -> *const btVector3;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN21btUniformScalingShape9setMarginEf"]
+    #[link_name = "\u{1}_ZN21btUniformScalingShape9setMarginEd"]
     pub fn btUniformScalingShape_setMargin(this: *mut ::std::os::raw::c_void, margin: btScalar);
 }
 extern "C" {
@@ -23741,14 +26228,14 @@ pub struct btSimpleDynamicsWorld {
     pub m_gravity: btVector3,
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN21btSimpleDynamicsWorld25predictUnconstraintMotionEf"]
+    #[link_name = "\u{1}_ZN21btSimpleDynamicsWorld25predictUnconstraintMotionEd"]
     pub fn btSimpleDynamicsWorld_predictUnconstraintMotion(
         this: *mut btSimpleDynamicsWorld,
         timeStep: btScalar,
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN21btSimpleDynamicsWorld19integrateTransformsEf"]
+    #[link_name = "\u{1}_ZN21btSimpleDynamicsWorld19integrateTransformsEd"]
     pub fn btSimpleDynamicsWorld_integrateTransforms(
         this: *mut btSimpleDynamicsWorld,
         timeStep: btScalar,
@@ -23798,7 +26285,7 @@ extern "C" {
 }
 extern "C" {
     /// maxSubSteps/fixedTimeStep for interpolation is currently ignored for btSimpleDynamicsWorld, use btDiscreteDynamicsWorld instead
-    #[link_name = "\u{1}_ZN21btSimpleDynamicsWorld14stepSimulationEfif"]
+    #[link_name = "\u{1}_ZN21btSimpleDynamicsWorld14stepSimulationEdid"]
     pub fn btSimpleDynamicsWorld_stepSimulation(
         this: *mut ::std::os::raw::c_void,
         timeStep: btScalar,
@@ -23932,7 +26419,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN23btPoint2PointConstraint9updateRHSEf"]
+    #[link_name = "\u{1}_ZN23btPoint2PointConstraint9updateRHSEd"]
     pub fn btPoint2PointConstraint_updateRHS(
         this: *mut btPoint2PointConstraint,
         timeStep: btScalar,
@@ -24019,7 +26506,7 @@ extern "C" {
 extern "C" {
     /// override the default global value of a parameter (such as ERP or CFM), optionally provide the axis (0..5).
     /// ///If no axis is provided, it uses the default axis for this constraint.
-    #[link_name = "\u{1}_ZN23btPoint2PointConstraint8setParamEifi"]
+    #[link_name = "\u{1}_ZN23btPoint2PointConstraint8setParamEidi"]
     pub fn btPoint2PointConstraint_setParam(
         this: *mut ::std::os::raw::c_void,
         num: ::std::os::raw::c_int,
@@ -24151,7 +26638,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN17btHingeConstraint9updateRHSEf"]
+    #[link_name = "\u{1}_ZN17btHingeConstraint9updateRHSEd"]
     pub fn btHingeConstraint_updateRHS(this: *mut btHingeConstraint, timeStep: btScalar);
 }
 extern "C" {
@@ -24163,7 +26650,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN17btHingeConstraint14setMotorTargetERK12btQuaternionf"]
+    #[link_name = "\u{1}_ZN17btHingeConstraint14setMotorTargetERK12btQuaterniond"]
     pub fn btHingeConstraint_setMotorTarget(
         this: *mut btHingeConstraint,
         qAinB: *const btQuaternion,
@@ -24171,7 +26658,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN17btHingeConstraint14setMotorTargetEff"]
+    #[link_name = "\u{1}_ZN17btHingeConstraint14setMotorTargetEdd"]
     pub fn btHingeConstraint_setMotorTarget1(
         this: *mut btHingeConstraint,
         targetAngle: btScalar,
@@ -24405,7 +26892,7 @@ extern "C" {
 extern "C" {
     /// override the default global value of a parameter (such as ERP or CFM), optionally provide the axis (0..5).
     /// ///If no axis is provided, it uses the default axis for this constraint.
-    #[link_name = "\u{1}_ZN17btHingeConstraint8setParamEifi"]
+    #[link_name = "\u{1}_ZN17btHingeConstraint8setParamEidi"]
     pub fn btHingeConstraint_setParam(
         this: *mut ::std::os::raw::c_void,
         num: ::std::os::raw::c_int,
@@ -24468,7 +26955,7 @@ extern "C" {
     ) -> btScalar;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN33btHingeAccumulatedAngleConstraint24setAccumulatedHingeAngleEf"]
+    #[link_name = "\u{1}_ZN33btHingeAccumulatedAngleConstraint24setAccumulatedHingeAngleEd"]
     pub fn btHingeAccumulatedAngleConstraint_setAccumulatedHingeAngle(
         this: *mut btHingeAccumulatedAngleConstraint,
         accAngle: btScalar,
@@ -24578,7 +27065,7 @@ extern "C" {
     pub fn btConeTwistConstraint_init(this: *mut btConeTwistConstraint);
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN21btConeTwistConstraint20computeConeLimitInfoERK12btQuaternionRfR9btVector3S3_"]
+    #[link_name = "\u{1}_ZN21btConeTwistConstraint20computeConeLimitInfoERK12btQuaternionRdR9btVector3S3_"]
     pub fn btConeTwistConstraint_computeConeLimitInfo(
         this: *mut btConeTwistConstraint,
         qCone: *const btQuaternion,
@@ -24588,7 +27075,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN21btConeTwistConstraint21computeTwistLimitInfoERK12btQuaternionRfR9btVector3"]
+    #[link_name = "\u{1}_ZN21btConeTwistConstraint21computeTwistLimitInfoERK12btQuaternionRdR9btVector3"]
     pub fn btConeTwistConstraint_computeTwistLimitInfo(
         this: *mut btConeTwistConstraint,
         qTwist: *const btQuaternion,
@@ -24622,7 +27109,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN21btConeTwistConstraint9updateRHSEf"]
+    #[link_name = "\u{1}_ZN21btConeTwistConstraint9updateRHSEd"]
     pub fn btConeTwistConstraint_updateRHS(this: *mut btConeTwistConstraint, timeStep: btScalar);
 }
 extern "C" {
@@ -24654,7 +27141,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZNK21btConeTwistConstraint16GetPointForAngleEff"]
+    #[link_name = "\u{1}_ZNK21btConeTwistConstraint16GetPointForAngleEdd"]
     pub fn btConeTwistConstraint_GetPointForAngle(
         this: *const btConeTwistConstraint,
         fAngleInRadians: btScalar,
@@ -24812,7 +27299,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN21btConeTwistConstraint23solveConstraintObsoleteER12btSolverBodyS1_f"]
+    #[link_name = "\u{1}_ZN21btConeTwistConstraint23solveConstraintObsoleteER12btSolverBodyS1_d"]
     pub fn btConeTwistConstraint_solveConstraintObsolete(
         this: *mut ::std::os::raw::c_void,
         bodyA: *mut btSolverBody,
@@ -24823,7 +27310,7 @@ extern "C" {
 extern "C" {
     /// override the default global value of a parameter (such as ERP or CFM), optionally provide the axis (0..5).
     /// ///If no axis is provided, it uses the default axis for this constraint.
-    #[link_name = "\u{1}_ZN21btConeTwistConstraint8setParamEifi"]
+    #[link_name = "\u{1}_ZN21btConeTwistConstraint8setParamEidi"]
     pub fn btConeTwistConstraint_setParam(
         this: *mut ::std::os::raw::c_void,
         num: ::std::os::raw::c_int,
@@ -24933,7 +27420,7 @@ extern "C" {
     /// /*!
     /// calculates m_currentLimit and m_currentLimitError.
     /// */
-    #[link_name = "\u{1}_ZN22btRotationalLimitMotor14testLimitValueEf"]
+    #[link_name = "\u{1}_ZN22btRotationalLimitMotor14testLimitValueEd"]
     pub fn btRotationalLimitMotor_testLimitValue(
         this: *mut btRotationalLimitMotor,
         test_value: btScalar,
@@ -24941,7 +27428,7 @@ extern "C" {
 }
 extern "C" {
     /// ! apply the correction impulses for two bodies
-    #[link_name = "\u{1}_ZN22btRotationalLimitMotor18solveAngularLimitsEfR9btVector3fP11btRigidBodyS3_"]
+    #[link_name = "\u{1}_ZN22btRotationalLimitMotor18solveAngularLimitsEdR9btVector3dP11btRigidBodyS3_"]
     pub fn btRotationalLimitMotor_solveAngularLimits(
         this: *mut btRotationalLimitMotor,
         timeStep: btScalar,
@@ -25000,7 +27487,7 @@ pub struct btTranslationalLimitMotor {
     pub m_currentLimit: [::std::os::raw::c_int; 3usize],
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN25btTranslationalLimitMotor14testLimitValueEif"]
+    #[link_name = "\u{1}_ZN25btTranslationalLimitMotor14testLimitValueEid"]
     pub fn btTranslationalLimitMotor_testLimitValue(
         this: *mut btTranslationalLimitMotor,
         limitIndex: ::std::os::raw::c_int,
@@ -25008,7 +27495,7 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN25btTranslationalLimitMotor15solveLinearAxisEffR11btRigidBodyRK9btVector3S1_S4_iS4_S4_"]
+    #[link_name = "\u{1}_ZN25btTranslationalLimitMotor15solveLinearAxisEddR11btRigidBodyRK9btVector3S1_S4_iS4_S4_"]
     pub fn btTranslationalLimitMotor_solveLinearAxis(
         this: *mut btTranslationalLimitMotor,
         timeStep: btScalar,
@@ -25226,7 +27713,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN23btGeneric6DofConstraint9updateRHSEf"]
+    #[link_name = "\u{1}_ZN23btGeneric6DofConstraint9updateRHSEd"]
     pub fn btGeneric6DofConstraint_updateRHS(
         this: *mut btGeneric6DofConstraint,
         timeStep: btScalar,
@@ -25537,7 +28024,7 @@ extern "C" {
 extern "C" {
     /// override the default global value of a parameter (such as ERP or CFM), optionally provide the axis (0..5).
     /// ///If no axis is provided, it uses the default axis for this constraint.
-    #[link_name = "\u{1}_ZN23btGeneric6DofConstraint8setParamEifi"]
+    #[link_name = "\u{1}_ZN23btGeneric6DofConstraint8setParamEidi"]
     pub fn btGeneric6DofConstraint_setParam(
         this: *mut ::std::os::raw::c_void,
         num: ::std::os::raw::c_int,
@@ -25687,7 +28174,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN18btSliderConstraint18getInfo2NonVirtualEPN17btTypedConstraint17btConstraintInfo2ERK11btTransformS5_RK9btVector3S8_ff"]
+    #[link_name = "\u{1}_ZN18btSliderConstraint18getInfo2NonVirtualEPN17btTypedConstraint17btConstraintInfo2ERK11btTransformS5_RK9btVector3S8_dd"]
     pub fn btSliderConstraint_getInfo2NonVirtual(
         this: *mut btSliderConstraint,
         info: *mut btTypedConstraint_btConstraintInfo2,
@@ -25843,7 +28330,7 @@ extern "C" {
 extern "C" {
     /// override the default global value of a parameter (such as ERP or CFM), optionally provide the axis (0..5).
     /// ///If no axis is provided, it uses the default axis for this constraint.
-    #[link_name = "\u{1}_ZN18btSliderConstraint8setParamEifi"]
+    #[link_name = "\u{1}_ZN18btSliderConstraint8setParamEidi"]
     pub fn btSliderConstraint_setParam(
         this: *mut ::std::os::raw::c_void,
         num: ::std::os::raw::c_int,
@@ -25937,7 +28424,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN29btGeneric6DofSpringConstraint12setStiffnessEif"]
+    #[link_name = "\u{1}_ZN29btGeneric6DofSpringConstraint12setStiffnessEid"]
     pub fn btGeneric6DofSpringConstraint_setStiffness(
         this: *mut btGeneric6DofSpringConstraint,
         index: ::std::os::raw::c_int,
@@ -25945,7 +28432,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN29btGeneric6DofSpringConstraint10setDampingEif"]
+    #[link_name = "\u{1}_ZN29btGeneric6DofSpringConstraint10setDampingEid"]
     pub fn btGeneric6DofSpringConstraint_setDamping(
         this: *mut btGeneric6DofSpringConstraint,
         index: ::std::os::raw::c_int,
@@ -25966,7 +28453,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN29btGeneric6DofSpringConstraint19setEquilibriumPointEif"]
+    #[link_name = "\u{1}_ZN29btGeneric6DofSpringConstraint19setEquilibriumPointEid"]
     pub fn btGeneric6DofSpringConstraint_setEquilibriumPoint2(
         this: *mut btGeneric6DofSpringConstraint,
         index: ::std::os::raw::c_int,
@@ -26200,7 +28687,7 @@ pub struct btRotationalLimitMotor2 {
     pub m_currentLimit: ::std::os::raw::c_int,
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN23btRotationalLimitMotor214testLimitValueEf"]
+    #[link_name = "\u{1}_ZN23btRotationalLimitMotor214testLimitValueEd"]
     pub fn btRotationalLimitMotor2_testLimitValue(
         this: *mut btRotationalLimitMotor2,
         test_value: btScalar,
@@ -26239,7 +28726,7 @@ pub struct btTranslationalLimitMotor2 {
     pub m_currentLimit: [::std::os::raw::c_int; 3usize],
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN26btTranslationalLimitMotor214testLimitValueEif"]
+    #[link_name = "\u{1}_ZN26btTranslationalLimitMotor214testLimitValueEid"]
     pub fn btTranslationalLimitMotor2_testLimitValue(
         this: *mut btTranslationalLimitMotor2,
         limitIndex: ::std::os::raw::c_int,
@@ -26391,7 +28878,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN30btGeneric6DofSpring2Constraint9setBounceEif"]
+    #[link_name = "\u{1}_ZN30btGeneric6DofSpring2Constraint9setBounceEid"]
     pub fn btGeneric6DofSpring2Constraint_setBounce(
         this: *mut btGeneric6DofSpring2Constraint,
         index: ::std::os::raw::c_int,
@@ -26415,7 +28902,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN30btGeneric6DofSpring2Constraint17setTargetVelocityEif"]
+    #[link_name = "\u{1}_ZN30btGeneric6DofSpring2Constraint17setTargetVelocityEid"]
     pub fn btGeneric6DofSpring2Constraint_setTargetVelocity(
         this: *mut btGeneric6DofSpring2Constraint,
         index: ::std::os::raw::c_int,
@@ -26423,7 +28910,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN30btGeneric6DofSpring2Constraint14setServoTargetEif"]
+    #[link_name = "\u{1}_ZN30btGeneric6DofSpring2Constraint14setServoTargetEid"]
     pub fn btGeneric6DofSpring2Constraint_setServoTarget(
         this: *mut btGeneric6DofSpring2Constraint,
         index: ::std::os::raw::c_int,
@@ -26431,7 +28918,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN30btGeneric6DofSpring2Constraint16setMaxMotorForceEif"]
+    #[link_name = "\u{1}_ZN30btGeneric6DofSpring2Constraint16setMaxMotorForceEid"]
     pub fn btGeneric6DofSpring2Constraint_setMaxMotorForce(
         this: *mut btGeneric6DofSpring2Constraint,
         index: ::std::os::raw::c_int,
@@ -26447,7 +28934,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN30btGeneric6DofSpring2Constraint12setStiffnessEifb"]
+    #[link_name = "\u{1}_ZN30btGeneric6DofSpring2Constraint12setStiffnessEidb"]
     pub fn btGeneric6DofSpring2Constraint_setStiffness(
         this: *mut btGeneric6DofSpring2Constraint,
         index: ::std::os::raw::c_int,
@@ -26456,7 +28943,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN30btGeneric6DofSpring2Constraint10setDampingEifb"]
+    #[link_name = "\u{1}_ZN30btGeneric6DofSpring2Constraint10setDampingEidb"]
     pub fn btGeneric6DofSpring2Constraint_setDamping(
         this: *mut btGeneric6DofSpring2Constraint,
         index: ::std::os::raw::c_int,
@@ -26478,7 +28965,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN30btGeneric6DofSpring2Constraint19setEquilibriumPointEif"]
+    #[link_name = "\u{1}_ZN30btGeneric6DofSpring2Constraint19setEquilibriumPointEid"]
     pub fn btGeneric6DofSpring2Constraint_setEquilibriumPoint2(
         this: *mut btGeneric6DofSpring2Constraint,
         index: ::std::os::raw::c_int,
@@ -26809,7 +29296,7 @@ extern "C" {
     ) -> *const ::std::os::raw::c_char;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN30btGeneric6DofSpring2Constraint8setParamEifi"]
+    #[link_name = "\u{1}_ZN30btGeneric6DofSpring2Constraint8setParamEidi"]
     pub fn btGeneric6DofSpring2Constraint_setParam(
         this: *mut ::std::os::raw::c_void,
         num: ::std::os::raw::c_int,
@@ -26958,7 +29445,7 @@ pub struct btGearConstraint {
     pub m_ratio: btScalar,
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN16btGearConstraintC1ER11btRigidBodyS1_RK9btVector3S4_f"]
+    #[link_name = "\u{1}_ZN16btGearConstraintC1ER11btRigidBodyS1_RK9btVector3S4_d"]
     pub fn btGearConstraint_btGearConstraint(
         this: *mut btGearConstraint,
         rbA: *mut btRigidBody,
@@ -27222,7 +29709,7 @@ extern "C" {
     ) -> btScalar;
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN16btRaycastVehicle16setSteeringValueEfi"]
+    #[link_name = "\u{1}_ZN16btRaycastVehicle16setSteeringValueEdi"]
     pub fn btRaycastVehicle_setSteeringValue(
         this: *mut btRaycastVehicle,
         steering: btScalar,
@@ -27230,7 +29717,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN16btRaycastVehicle16applyEngineForceEfi"]
+    #[link_name = "\u{1}_ZN16btRaycastVehicle16applyEngineForceEdi"]
     pub fn btRaycastVehicle_applyEngineForce(
         this: *mut btRaycastVehicle,
         force: btScalar,
@@ -27253,7 +29740,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN16btRaycastVehicle8addWheelERK9btVector3S2_S2_ffRKNS_15btVehicleTuningEb"]
+    #[link_name = "\u{1}_ZN16btRaycastVehicle8addWheelERK9btVector3S2_S2_ddRKNS_15btVehicleTuningEb"]
     pub fn btRaycastVehicle_addWheel(
         this: *mut btRaycastVehicle,
         connectionPointCS0: *const btVector3,
@@ -27288,7 +29775,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN16btRaycastVehicle8setBrakeEfi"]
+    #[link_name = "\u{1}_ZN16btRaycastVehicle8setBrakeEdi"]
     pub fn btRaycastVehicle_setBrake(
         this: *mut btRaycastVehicle,
         brake: btScalar,
@@ -27296,7 +29783,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN16btRaycastVehicle16updateSuspensionEf"]
+    #[link_name = "\u{1}_ZN16btRaycastVehicle16updateSuspensionEd"]
     pub fn btRaycastVehicle_updateSuspension(this: *mut btRaycastVehicle, deltaTime: btScalar);
 }
 extern "C" {
@@ -27418,11 +29905,11 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN16btRaycastVehicle13updateVehicleEf"]
+    #[link_name = "\u{1}_ZN16btRaycastVehicle13updateVehicleEd"]
     pub fn btRaycastVehicle_updateVehicle(this: *mut ::std::os::raw::c_void, step: btScalar);
 }
 extern "C" {
-    #[link_name = "\u{1}_ZN16btRaycastVehicle14updateFrictionEf"]
+    #[link_name = "\u{1}_ZN16btRaycastVehicle14updateFrictionEd"]
     pub fn btRaycastVehicle_updateFriction(this: *mut ::std::os::raw::c_void, timeStep: btScalar);
 }
 #[repr(C)]
@@ -27439,11 +29926,6 @@ extern "C" {
         to: *const btVector3,
         result: *mut btVehicleRaycaster_btVehicleRaycasterResult,
     ) -> *mut ::std::os::raw::c_void;
-}
-pub type btSizeType = ::std::os::raw::c_int;
-pub type wint_t = ::std::os::raw::c_uint;
-extern "C" {
-    pub fn btowc(__c: ::std::os::raw::c_int) -> wint_t;
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]

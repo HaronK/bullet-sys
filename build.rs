@@ -11,24 +11,8 @@ fn main() {
     }
 
     if cfg!(feature = "bind") {
-        let bindings = bindgen::Builder::default()
-            .layout_tests(cfg!(feature = "layout_tests"))
-            .clang_arg(r"-v")
-            .clang_arg(r"-xc++")
-            .clang_arg(r"-std=c++14")
-            .clang_arg(r"-Ibullet/src")
-            .clang_arg(r"-DBT_NO_SIMD_OPERATOR_OVERLOADS")
-            .header(r"bullet.h")
-            .whitelist_type(r"bt.+")
-            .whitelist_function(r"bt.+")
-            .whitelist_var(r"bt.+")
-            .generate()
-            .expect("Unable to generate bindings");
-
-        let out_path = PathBuf::from("src").join(format!("bullet_{}.rs", get_os_name()));
-        bindings
-            .write_to_file(out_path)
-            .expect("Couldn't write bindings!");
+        bind("bullet", "bt.+");
+        bind("bullet3", "b3.+");
     }
 }
 
@@ -106,6 +90,7 @@ fn cmake_build_linux(build_tests: &str, build_examples: &str) -> (PathBuf, PathB
         .define("BUILD_BULLET2_DEMOS", build_examples)
         .define("USE_GRAPHICAL_BENCHMARK", "OFF")
         .define("USE_DOUBLE_PRECISION", "ON")
+        //.env("VERBOSE", "1")
         .build();
 
     (dst.join("build"), dst.join("lib"))
@@ -136,4 +121,31 @@ fn cmake_build_windows(build_tests: &str, build_examples: &str) -> (PathBuf, Pat
     };
 
     (dst.join("bullet"), dst.join(libs_path))
+}
+
+fn bind(prefix: &str, templ: &str) {
+    let bindings = bindgen::Builder::default()
+        .layout_tests(cfg!(feature = "layout_tests"))
+        .clang_arg(r"-v")
+        .clang_arg(r"-xc++")
+        .clang_arg(r"-std=c++14")
+        .clang_arg(r"-Ibullet/src")
+        .clang_arg(r"-DBT_NO_SIMD_OPERATOR_OVERLOADS")
+        .clang_arg(r"-DBT_ENABLE_CLSOCKET")
+        .clang_arg(r"-DBT_ENABLE_ENET")
+        .clang_arg(r"-DBT_USE_DOUBLE_PRECISION")
+        .clang_arg(r"-DHAS_SOCKLEN_T")
+        .clang_arg(r"-DPHYSICS_SERVER_DIRECT")
+        .clang_arg(r"-DB3_USE_CLEW")
+        .header(format!("{}.h", prefix))
+        .whitelist_type(templ)
+        .whitelist_function(templ)
+        .whitelist_var(templ)
+        .generate()
+        .expect("Unable to generate bindings");
+
+    let out_path = PathBuf::from("src").join(format!("{}_{}.rs", prefix, get_os_name()));
+    bindings
+        .write_to_file(out_path)
+        .expect(&format!("Couldn't write bindings for {}!", prefix));
 }
