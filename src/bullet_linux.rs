@@ -163,8 +163,8 @@ extern "C" {
     );
 }
 pub type btAlignedAllocator_self_type = u8;
-pub type btAlignedAllocator_const_pointer<T> = *mut T;
-pub type btAlignedAllocator_const_reference<T> = *mut T;
+pub type btAlignedAllocator_const_pointer<T> = *const T;
+pub type btAlignedAllocator_const_reference<T> = *const T;
 pub type btAlignedAllocator_pointer<T> = *mut T;
 pub type btAlignedAllocator_reference<T> = *mut T;
 pub type btAlignedAllocator_value_type<T> = T;
@@ -17896,8 +17896,8 @@ pub struct btSolveProjectedGaussSeidel {
 pub type idScalar = btScalar;
 pub type btSizeType = ::std::os::raw::c_int;
 pub type b3AlignedAllocator_self_type = u8;
-pub type b3AlignedAllocator_const_pointer<T> = *mut T;
-pub type b3AlignedAllocator_const_reference<T> = *mut T;
+pub type b3AlignedAllocator_const_pointer<T> = *const T;
+pub type b3AlignedAllocator_const_reference<T> = *const T;
 pub type b3AlignedAllocator_pointer<T> = *mut T;
 pub type b3AlignedAllocator_reference<T> = *mut T;
 pub type b3AlignedAllocator_value_type<T> = T;
@@ -18671,7 +18671,7 @@ extern "C" {
     pub fn btInverseDynamics_MultiBodyTree_setUserPtr(
         this: *mut btInverseDynamics_MultiBodyTree,
         body_index: ::std::os::raw::c_int,
-        user_ptr: *const ::std::os::raw::c_void,
+        user_ptr: *mut ::std::os::raw::c_void,
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
@@ -19135,7 +19135,7 @@ impl btInverseDynamics_MultiBodyTree {
     pub unsafe fn setUserPtr(
         &mut self,
         body_index: ::std::os::raw::c_int,
-        user_ptr: *const ::std::os::raw::c_void,
+        user_ptr: *mut ::std::os::raw::c_void,
     ) -> ::std::os::raw::c_int {
         btInverseDynamics_MultiBodyTree_setUserPtr(self, body_index, user_ptr)
     }
@@ -19658,7 +19658,7 @@ extern "C" {
     pub fn btInverseDynamics_MultiBodyTree_MultiBodyImpl_setUserPtr(
         this: *mut btInverseDynamics_MultiBodyTree_MultiBodyImpl,
         body_index: ::std::os::raw::c_int,
-        user_ptr: *const ::std::os::raw::c_void,
+        user_ptr: *mut ::std::os::raw::c_void,
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
@@ -20070,7 +20070,7 @@ impl btInverseDynamics_MultiBodyTree_MultiBodyImpl {
     pub unsafe fn setUserPtr(
         &mut self,
         body_index: ::std::os::raw::c_int,
-        user_ptr: *const ::std::os::raw::c_void,
+        user_ptr: *mut ::std::os::raw::c_void,
     ) -> ::std::os::raw::c_int {
         btInverseDynamics_MultiBodyTree_MultiBodyImpl_setUserPtr(self, body_index, user_ptr)
     }

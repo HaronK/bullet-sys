@@ -238,9 +238,9 @@ pub struct std_allocator {
 pub type std_allocator_size_type = usize;
 pub type std_allocator_difference_type = isize;
 pub type std_allocator_pointer<_Tp> = *mut _Tp;
-pub type std_allocator_const_pointer<_Tp> = *mut _Tp;
+pub type std_allocator_const_pointer<_Tp> = *const _Tp;
 pub type std_allocator_reference<_Tp> = *mut _Tp;
-pub type std_allocator_const_reference<_Tp> = *mut _Tp;
+pub type std_allocator_const_reference<_Tp> = *const _Tp;
 pub type std_allocator_value_type<_Tp> = _Tp;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -352,9 +352,9 @@ pub struct __gnu_cxx_new_allocator {
 pub type __gnu_cxx_new_allocator_size_type = usize;
 pub type __gnu_cxx_new_allocator_difference_type = isize;
 pub type __gnu_cxx_new_allocator_pointer<_Tp> = *mut _Tp;
-pub type __gnu_cxx_new_allocator_const_pointer<_Tp> = *mut _Tp;
+pub type __gnu_cxx_new_allocator_const_pointer<_Tp> = *const _Tp;
 pub type __gnu_cxx_new_allocator_reference<_Tp> = *mut _Tp;
-pub type __gnu_cxx_new_allocator_const_reference<_Tp> = *mut _Tp;
+pub type __gnu_cxx_new_allocator_const_reference<_Tp> = *const _Tp;
 pub type __gnu_cxx_new_allocator_value_type<_Tp> = _Tp;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -477,8 +477,8 @@ extern "C" {
     );
 }
 pub type b3AlignedAllocator_self_type = u8;
-pub type b3AlignedAllocator_const_pointer<T> = *mut T;
-pub type b3AlignedAllocator_const_reference<T> = *mut T;
+pub type b3AlignedAllocator_const_pointer<T> = *const T;
+pub type b3AlignedAllocator_const_reference<T> = *const T;
 pub type b3AlignedAllocator_pointer<T> = *mut T;
 pub type b3AlignedAllocator_reference<T> = *mut T;
 pub type b3AlignedAllocator_value_type<T> = T;
