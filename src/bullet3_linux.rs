@@ -384,6 +384,10 @@ pub struct __gnu_cxx___alloc_traits_rebind {
     pub _address: u8,
 }
 pub type __gnu_cxx___alloc_traits_rebind_other = __gnu_cxx___alloc_traits__Base_type;
+pub type __int8_t = ::std::os::raw::c_schar;
+pub type __uint8_t = ::std::os::raw::c_uchar;
+pub type __int16_t = ::std::os::raw::c_short;
+pub type __uint16_t = ::std::os::raw::c_ushort;
 pub type __int32_t = ::std::os::raw::c_int;
 pub type __uint32_t = ::std::os::raw::c_uint;
 pub type __int64_t = ::std::os::raw::c_long;
@@ -4978,10 +4982,338 @@ pub struct b3GrahamVector3 {
 pub struct b3AngleCompareFunc {
     pub m_anchor: b3Vector3,
 }
+pub type cl_char = i8;
+pub type cl_uchar = u8;
+pub type cl_short = i16;
+pub type cl_ushort = u16;
 pub type cl_int = i32;
 pub type cl_uint = u32;
 pub type cl_long = i64;
 pub type cl_ulong = u64;
+pub type cl_half = u16;
+pub type cl_float = f32;
+pub type cl_double = f64;
+pub type cl_GLuint = ::std::os::raw::c_uint;
+pub type cl_GLint = ::std::os::raw::c_int;
+pub type cl_GLenum = ::std::os::raw::c_uint;
+pub type __cl_float4 = [f32; 4usize];
+pub type __cl_uchar16 = [cl_uchar; 16usize];
+pub type __cl_char16 = [cl_char; 16usize];
+pub type __cl_ushort8 = [cl_ushort; 8usize];
+pub type __cl_short8 = [cl_short; 8usize];
+pub type __cl_uint4 = [cl_uint; 4usize];
+pub type __cl_int4 = [cl_int; 4usize];
+pub type __cl_ulong2 = [cl_ulong; 2usize];
+pub type __cl_long2 = [cl_long; 2usize];
+pub type __cl_double2 = [cl_double; 2usize];
+pub type __cl_uchar8 = [cl_uchar; 8usize];
+pub type __cl_char8 = [cl_char; 8usize];
+pub type __cl_ushort4 = [cl_ushort; 4usize];
+pub type __cl_short4 = [cl_short; 4usize];
+pub type __cl_uint2 = [cl_uint; 2usize];
+pub type __cl_int2 = [cl_int; 2usize];
+pub type __cl_ulong1 = [cl_ulong; 1usize];
+pub type __cl_long1 = [cl_long; 1usize];
+pub type __cl_float2 = [cl_float; 2usize];
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_char2 {
+    pub s: [cl_char; 2usize],
+    _bindgen_union_align: u16,
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_char4 {
+    pub s: [cl_char; 4usize],
+    _bindgen_union_align: u32,
+}
+pub type cl_char3 = cl_char4;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_char8 {
+    pub s: [cl_char; 8usize],
+    pub v8: __cl_char8,
+    _bindgen_union_align: u64,
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_char16 {
+    pub s: [cl_char; 16usize],
+    pub v8: [__cl_char8; 2usize],
+    pub v16: __cl_char16,
+    _bindgen_union_align: [u8; 16usize],
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_uchar2 {
+    pub s: [cl_uchar; 2usize],
+    _bindgen_union_align: u16,
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_uchar4 {
+    pub s: [cl_uchar; 4usize],
+    _bindgen_union_align: u32,
+}
+pub type cl_uchar3 = cl_uchar4;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_uchar8 {
+    pub s: [cl_uchar; 8usize],
+    pub v8: __cl_uchar8,
+    _bindgen_union_align: u64,
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_uchar16 {
+    pub s: [cl_uchar; 16usize],
+    pub v8: [__cl_uchar8; 2usize],
+    pub v16: __cl_uchar16,
+    _bindgen_union_align: [u8; 16usize],
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_short2 {
+    pub s: [cl_short; 2usize],
+    _bindgen_union_align: u32,
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_short4 {
+    pub s: [cl_short; 4usize],
+    pub v4: __cl_short4,
+    _bindgen_union_align: u64,
+}
+pub type cl_short3 = cl_short4;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_short8 {
+    pub s: [cl_short; 8usize],
+    pub v4: [__cl_short4; 2usize],
+    pub v8: __cl_short8,
+    _bindgen_union_align: [u8; 16usize],
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_short16 {
+    pub s: [cl_short; 16usize],
+    pub v4: [__cl_short4; 4usize],
+    pub v8: [__cl_short8; 2usize],
+    _bindgen_union_align: [u8; 32usize],
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_ushort2 {
+    pub s: [cl_ushort; 2usize],
+    _bindgen_union_align: u32,
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_ushort4 {
+    pub s: [cl_ushort; 4usize],
+    pub v4: __cl_ushort4,
+    _bindgen_union_align: u64,
+}
+pub type cl_ushort3 = cl_ushort4;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_ushort8 {
+    pub s: [cl_ushort; 8usize],
+    pub v4: [__cl_ushort4; 2usize],
+    pub v8: __cl_ushort8,
+    _bindgen_union_align: [u8; 16usize],
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_ushort16 {
+    pub s: [cl_ushort; 16usize],
+    pub v4: [__cl_ushort4; 4usize],
+    pub v8: [__cl_ushort8; 2usize],
+    _bindgen_union_align: [u8; 32usize],
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_int2 {
+    pub s: [cl_int; 2usize],
+    pub v2: __cl_int2,
+    _bindgen_union_align: u64,
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_int4 {
+    pub s: [cl_int; 4usize],
+    pub v2: [__cl_int2; 2usize],
+    pub v4: __cl_int4,
+    _bindgen_union_align: [u8; 16usize],
+}
+pub type cl_int3 = cl_int4;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_int8 {
+    pub s: [cl_int; 8usize],
+    pub v2: [__cl_int2; 4usize],
+    pub v4: [__cl_int4; 2usize],
+    _bindgen_union_align: [u8; 32usize],
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_int16 {
+    pub s: [cl_int; 16usize],
+    pub v2: [__cl_int2; 8usize],
+    pub v4: [__cl_int4; 4usize],
+    _bindgen_union_align: [u8; 64usize],
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_uint2 {
+    pub s: [cl_uint; 2usize],
+    pub v2: __cl_uint2,
+    _bindgen_union_align: u64,
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_uint4 {
+    pub s: [cl_uint; 4usize],
+    pub v2: [__cl_uint2; 2usize],
+    pub v4: __cl_uint4,
+    _bindgen_union_align: [u8; 16usize],
+}
+pub type cl_uint3 = cl_uint4;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_uint8 {
+    pub s: [cl_uint; 8usize],
+    pub v2: [__cl_uint2; 4usize],
+    pub v4: [__cl_uint4; 2usize],
+    _bindgen_union_align: [u8; 32usize],
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_uint16 {
+    pub s: [cl_uint; 16usize],
+    pub v2: [__cl_uint2; 8usize],
+    pub v4: [__cl_uint4; 4usize],
+    _bindgen_union_align: [u8; 64usize],
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_long2 {
+    pub s: [cl_long; 2usize],
+    pub v2: __cl_long2,
+    _bindgen_union_align: [u8; 16usize],
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_long4 {
+    pub s: [cl_long; 4usize],
+    pub v2: [__cl_long2; 2usize],
+    _bindgen_union_align: [u8; 32usize],
+}
+pub type cl_long3 = cl_long4;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_long8 {
+    pub s: [cl_long; 8usize],
+    pub v2: [__cl_long2; 4usize],
+    _bindgen_union_align: [u8; 64usize],
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_long16 {
+    pub s: [cl_long; 16usize],
+    pub v2: [__cl_long2; 8usize],
+    _bindgen_union_align: [u8; 128usize],
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_ulong2 {
+    pub s: [cl_ulong; 2usize],
+    pub v2: __cl_ulong2,
+    _bindgen_union_align: [u8; 16usize],
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_ulong4 {
+    pub s: [cl_ulong; 4usize],
+    pub v2: [__cl_ulong2; 2usize],
+    _bindgen_union_align: [u8; 32usize],
+}
+pub type cl_ulong3 = cl_ulong4;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_ulong8 {
+    pub s: [cl_ulong; 8usize],
+    pub v2: [__cl_ulong2; 4usize],
+    _bindgen_union_align: [u8; 64usize],
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_ulong16 {
+    pub s: [cl_ulong; 16usize],
+    pub v2: [__cl_ulong2; 8usize],
+    _bindgen_union_align: [u8; 128usize],
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_float2 {
+    pub s: [cl_float; 2usize],
+    pub v2: __cl_float2,
+    _bindgen_union_align: u64,
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_float4 {
+    pub s: [cl_float; 4usize],
+    pub v2: [__cl_float2; 2usize],
+    pub v4: __cl_float4,
+    _bindgen_union_align: [u8; 16usize],
+}
+pub type cl_float3 = cl_float4;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_float8 {
+    pub s: [cl_float; 8usize],
+    pub v2: [__cl_float2; 4usize],
+    pub v4: [__cl_float4; 2usize],
+    _bindgen_union_align: [u8; 32usize],
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_float16 {
+    pub s: [cl_float; 16usize],
+    pub v2: [__cl_float2; 8usize],
+    pub v4: [__cl_float4; 4usize],
+    _bindgen_union_align: [u8; 64usize],
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_double2 {
+    pub s: [cl_double; 2usize],
+    pub v2: __cl_double2,
+    _bindgen_union_align: [u8; 16usize],
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_double4 {
+    pub s: [cl_double; 4usize],
+    pub v2: [__cl_double2; 2usize],
+    _bindgen_union_align: [u8; 32usize],
+}
+pub type cl_double3 = cl_double4;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_double8 {
+    pub s: [cl_double; 8usize],
+    pub v2: [__cl_double2; 4usize],
+    _bindgen_union_align: [u8; 64usize],
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union cl_double16 {
+    pub s: [cl_double; 16usize],
+    pub v2: [__cl_double2; 8usize],
+    _bindgen_union_align: [u8; 128usize],
+}
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _cl_platform_id {
@@ -5025,11 +5357,955 @@ pub struct _cl_kernel {
     _unused: [u8; 0],
 }
 pub type cl_kernel = *mut _cl_kernel;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _cl_event {
+    _unused: [u8; 0],
+}
+pub type cl_event = *mut _cl_event;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _cl_sampler {
+    _unused: [u8; 0],
+}
+pub type cl_sampler = *mut _cl_sampler;
 pub type cl_bool = cl_uint;
 pub type cl_bitfield = cl_ulong;
 pub type cl_device_type = cl_bitfield;
+pub type cl_platform_info = cl_uint;
+pub type cl_device_info = cl_uint;
+pub type cl_device_fp_config = cl_bitfield;
+pub type cl_device_mem_cache_type = cl_uint;
 pub type cl_device_local_mem_type = cl_uint;
+pub type cl_device_exec_capabilities = cl_bitfield;
 pub type cl_command_queue_properties = cl_bitfield;
+pub type cl_context_properties = isize;
+pub type cl_context_info = cl_uint;
+pub type cl_command_queue_info = cl_uint;
+pub type cl_channel_order = cl_uint;
+pub type cl_channel_type = cl_uint;
+pub type cl_mem_flags = cl_bitfield;
+pub type cl_mem_object_type = cl_uint;
+pub type cl_mem_info = cl_uint;
+pub type cl_image_info = cl_uint;
+pub type cl_buffer_create_type = cl_uint;
+pub type cl_addressing_mode = cl_uint;
+pub type cl_filter_mode = cl_uint;
+pub type cl_sampler_info = cl_uint;
+pub type cl_map_flags = cl_bitfield;
+pub type cl_program_info = cl_uint;
+pub type cl_program_build_info = cl_uint;
+pub type cl_build_status = cl_int;
+pub type cl_kernel_info = cl_uint;
+pub type cl_kernel_work_group_info = cl_uint;
+pub type cl_event_info = cl_uint;
+pub type cl_command_type = cl_uint;
+pub type cl_profiling_info = cl_uint;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _cl_image_format {
+    pub image_channel_order: cl_channel_order,
+    pub image_channel_data_type: cl_channel_type,
+}
+pub type cl_image_format = _cl_image_format;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _cl_buffer_region {
+    pub origin: usize,
+    pub size: usize,
+}
+pub type cl_buffer_region = _cl_buffer_region;
+
+pub type PFNCLGETPLATFORMIDS = ::std::option::Option<
+    unsafe extern "C" fn(arg1: cl_uint, arg2: *mut cl_platform_id, arg3: *mut cl_uint) -> cl_int,
+>;
+pub type PFNCLGETPLATFORMINFO = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_platform_id,
+        arg2: cl_platform_info,
+        arg3: usize,
+        arg4: *mut ::std::os::raw::c_void,
+        arg5: *mut usize,
+    ) -> cl_int,
+>;
+pub type PFNCLGETDEVICEIDS = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_platform_id,
+        arg2: cl_device_type,
+        arg3: cl_uint,
+        arg4: *mut cl_device_id,
+        arg5: *mut cl_uint,
+    ) -> cl_int,
+>;
+pub type PFNCLGETDEVICEINFO = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_device_id,
+        arg2: cl_device_info,
+        arg3: usize,
+        arg4: *mut ::std::os::raw::c_void,
+        arg5: *mut usize,
+    ) -> cl_int,
+>;
+pub type PFNCLCREATECONTEXT = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: *const cl_context_properties,
+        arg2: cl_uint,
+        arg3: *const cl_device_id,
+        arg4: ::std::option::Option<
+            unsafe extern "C" fn(
+                arg1: *const ::std::os::raw::c_char,
+                arg2: *const ::std::os::raw::c_void,
+                arg3: usize,
+                arg4: *mut ::std::os::raw::c_void,
+            ),
+        >,
+        arg5: *mut ::std::os::raw::c_void,
+        arg6: *mut cl_int,
+    ) -> cl_context,
+>;
+pub type PFNCLCREATECONTEXTFROMTYPE = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: *const cl_context_properties,
+        arg2: cl_device_type,
+        arg3: ::std::option::Option<
+            unsafe extern "C" fn(
+                arg1: *const ::std::os::raw::c_char,
+                arg2: *const ::std::os::raw::c_void,
+                arg3: usize,
+                arg4: *mut ::std::os::raw::c_void,
+            ),
+        >,
+        arg4: *mut ::std::os::raw::c_void,
+        arg5: *mut cl_int,
+    ) -> cl_context,
+>;
+pub type PFNCLRETAINCONTEXT =
+    ::std::option::Option<unsafe extern "C" fn(arg1: cl_context) -> cl_int>;
+pub type PFNCLRELEASECONTEXT =
+    ::std::option::Option<unsafe extern "C" fn(arg1: cl_context) -> cl_int>;
+pub type PFNCLGETCONTEXTINFO = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_context,
+        arg2: cl_context_info,
+        arg3: usize,
+        arg4: *mut ::std::os::raw::c_void,
+        arg5: *mut usize,
+    ) -> cl_int,
+>;
+pub type PFNCLCREATECOMMANDQUEUE = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_context,
+        arg2: cl_device_id,
+        arg3: cl_command_queue_properties,
+        arg4: *mut cl_int,
+    ) -> cl_command_queue,
+>;
+pub type PFNCLRETAINCOMMANDQUEUE =
+    ::std::option::Option<unsafe extern "C" fn(arg1: cl_command_queue) -> cl_int>;
+pub type PFNCLRELEASECOMMANDQUEUE =
+    ::std::option::Option<unsafe extern "C" fn(arg1: cl_command_queue) -> cl_int>;
+pub type PFNCLGETCOMMANDQUEUEINFO = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_command_queue,
+        arg2: cl_command_queue_info,
+        arg3: usize,
+        arg4: *mut ::std::os::raw::c_void,
+        arg5: *mut usize,
+    ) -> cl_int,
+>;
+pub type PFNCLCREATEBUFFER = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_context,
+        arg2: cl_mem_flags,
+        arg3: usize,
+        arg4: *mut ::std::os::raw::c_void,
+        arg5: *mut cl_int,
+    ) -> cl_mem,
+>;
+pub type PFNCLCREATESUBBUFFER = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_mem,
+        arg2: cl_mem_flags,
+        arg3: cl_buffer_create_type,
+        arg4: *const ::std::os::raw::c_void,
+        arg5: *mut cl_int,
+    ) -> cl_mem,
+>;
+pub type PFNCLCREATEIMAGE2D = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_context,
+        arg2: cl_mem_flags,
+        arg3: *const cl_image_format,
+        arg4: usize,
+        arg5: usize,
+        arg6: usize,
+        arg7: *mut ::std::os::raw::c_void,
+        arg8: *mut cl_int,
+    ) -> cl_mem,
+>;
+pub type PFNCLCREATEIMAGE3D = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_context,
+        arg2: cl_mem_flags,
+        arg3: *const cl_image_format,
+        arg4: usize,
+        arg5: usize,
+        arg6: usize,
+        arg7: usize,
+        arg8: usize,
+        arg9: *mut ::std::os::raw::c_void,
+        arg10: *mut cl_int,
+    ) -> cl_mem,
+>;
+pub type PFNCLRETAINMEMOBJECT = ::std::option::Option<unsafe extern "C" fn(arg1: cl_mem) -> cl_int>;
+pub type PFNCLRELEASEMEMOBJECT =
+    ::std::option::Option<unsafe extern "C" fn(arg1: cl_mem) -> cl_int>;
+pub type PFNCLGETSUPPORTEDIMAGEFORMATS = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_context,
+        arg2: cl_mem_flags,
+        arg3: cl_mem_object_type,
+        arg4: cl_uint,
+        arg5: *mut cl_image_format,
+        arg6: *mut cl_uint,
+    ) -> cl_int,
+>;
+pub type PFNCLGETMEMOBJECTINFO = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_mem,
+        arg2: cl_mem_info,
+        arg3: usize,
+        arg4: *mut ::std::os::raw::c_void,
+        arg5: *mut usize,
+    ) -> cl_int,
+>;
+pub type PFNCLGETIMAGEINFO = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_mem,
+        arg2: cl_image_info,
+        arg3: usize,
+        arg4: *mut ::std::os::raw::c_void,
+        arg5: *mut usize,
+    ) -> cl_int,
+>;
+pub type PFNCLSETMEMOBJECTDESTRUCTORCALLBACK = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_mem,
+        arg2: ::std::option::Option<
+            unsafe extern "C" fn(arg1: cl_mem, arg2: *mut ::std::os::raw::c_void),
+        >,
+        arg3: *mut ::std::os::raw::c_void,
+    ) -> cl_int,
+>;
+pub type PFNCLCREATESAMPLER = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_context,
+        arg2: cl_bool,
+        arg3: cl_addressing_mode,
+        arg4: cl_filter_mode,
+        arg5: *mut cl_int,
+    ) -> cl_sampler,
+>;
+pub type PFNCLRETAINSAMPLER =
+    ::std::option::Option<unsafe extern "C" fn(arg1: cl_sampler) -> cl_int>;
+pub type PFNCLRELEASESAMPLER =
+    ::std::option::Option<unsafe extern "C" fn(arg1: cl_sampler) -> cl_int>;
+pub type PFNCLGETSAMPLERINFO = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_sampler,
+        arg2: cl_sampler_info,
+        arg3: usize,
+        arg4: *mut ::std::os::raw::c_void,
+        arg5: *mut usize,
+    ) -> cl_int,
+>;
+pub type PFNCLCREATEPROGRAMWITHSOURCE = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_context,
+        arg2: cl_uint,
+        arg3: *mut *const ::std::os::raw::c_char,
+        arg4: *const usize,
+        arg5: *mut cl_int,
+    ) -> cl_program,
+>;
+pub type PFNCLCREATEPROGRAMWITHBINARY = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_context,
+        arg2: cl_uint,
+        arg3: *const cl_device_id,
+        arg4: *const usize,
+        arg5: *mut *const ::std::os::raw::c_uchar,
+        arg6: *mut cl_int,
+        arg7: *mut cl_int,
+    ) -> cl_program,
+>;
+pub type PFNCLRETAINPROGRAM =
+    ::std::option::Option<unsafe extern "C" fn(arg1: cl_program) -> cl_int>;
+pub type PFNCLRELEASEPROGRAM =
+    ::std::option::Option<unsafe extern "C" fn(arg1: cl_program) -> cl_int>;
+pub type PFNCLBUILDPROGRAM = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_program,
+        arg2: cl_uint,
+        arg3: *const cl_device_id,
+        arg4: *const ::std::os::raw::c_char,
+        arg5: ::std::option::Option<
+            unsafe extern "C" fn(arg1: cl_program, arg2: *mut ::std::os::raw::c_void),
+        >,
+        arg6: *mut ::std::os::raw::c_void,
+    ) -> cl_int,
+>;
+pub type PFNCLUNLOADCOMPILER = ::std::option::Option<unsafe extern "C" fn() -> cl_int>;
+pub type PFNCLGETPROGRAMINFO = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_program,
+        arg2: cl_program_info,
+        arg3: usize,
+        arg4: *mut ::std::os::raw::c_void,
+        arg5: *mut usize,
+    ) -> cl_int,
+>;
+pub type PFNCLGETPROGRAMBUILDINFO = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_program,
+        arg2: cl_device_id,
+        arg3: cl_program_build_info,
+        arg4: usize,
+        arg5: *mut ::std::os::raw::c_void,
+        arg6: *mut usize,
+    ) -> cl_int,
+>;
+pub type PFNCLCREATEKERNEL = ::std::option::Option<
+    unsafe extern "C" fn(arg1: cl_program, arg2: *const ::std::os::raw::c_char, arg3: *mut cl_int)
+        -> cl_kernel,
+>;
+pub type PFNCLCREATEKERNELSINPROGRAM = ::std::option::Option<
+    unsafe extern "C" fn(arg1: cl_program, arg2: cl_uint, arg3: *mut cl_kernel, arg4: *mut cl_uint)
+        -> cl_int,
+>;
+pub type PFNCLRETAINKERNEL = ::std::option::Option<unsafe extern "C" fn(arg1: cl_kernel) -> cl_int>;
+pub type PFNCLRELEASEKERNEL =
+    ::std::option::Option<unsafe extern "C" fn(arg1: cl_kernel) -> cl_int>;
+pub type PFNCLSETKERNELARG = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_kernel,
+        arg2: cl_uint,
+        arg3: usize,
+        arg4: *const ::std::os::raw::c_void,
+    ) -> cl_int,
+>;
+pub type PFNCLGETKERNELINFO = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_kernel,
+        arg2: cl_kernel_info,
+        arg3: usize,
+        arg4: *mut ::std::os::raw::c_void,
+        arg5: *mut usize,
+    ) -> cl_int,
+>;
+pub type PFNCLGETKERNELWORKGROUPINFO = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_kernel,
+        arg2: cl_device_id,
+        arg3: cl_kernel_work_group_info,
+        arg4: usize,
+        arg5: *mut ::std::os::raw::c_void,
+        arg6: *mut usize,
+    ) -> cl_int,
+>;
+pub type PFNCLWAITFOREVENTS =
+    ::std::option::Option<unsafe extern "C" fn(arg1: cl_uint, arg2: *const cl_event) -> cl_int>;
+pub type PFNCLGETEVENTINFO = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_event,
+        arg2: cl_event_info,
+        arg3: usize,
+        arg4: *mut ::std::os::raw::c_void,
+        arg5: *mut usize,
+    ) -> cl_int,
+>;
+pub type PFNCLCREATEUSEREVENT =
+    ::std::option::Option<unsafe extern "C" fn(arg1: cl_context, arg2: *mut cl_int) -> cl_event>;
+pub type PFNCLRETAINEVENT = ::std::option::Option<unsafe extern "C" fn(arg1: cl_event) -> cl_int>;
+pub type PFNCLRELEASEEVENT = ::std::option::Option<unsafe extern "C" fn(arg1: cl_event) -> cl_int>;
+pub type PFNCLSETUSEREVENTSTATUS =
+    ::std::option::Option<unsafe extern "C" fn(arg1: cl_event, arg2: cl_int) -> cl_int>;
+pub type PFNCLSETEVENTCALLBACK = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_event,
+        arg2: cl_int,
+        arg3: ::std::option::Option<
+            unsafe extern "C" fn(arg1: cl_event, arg2: cl_int, arg3: *mut ::std::os::raw::c_void),
+        >,
+        arg4: *mut ::std::os::raw::c_void,
+    ) -> cl_int,
+>;
+pub type PFNCLGETEVENTPROFILINGINFO = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_event,
+        arg2: cl_profiling_info,
+        arg3: usize,
+        arg4: *mut ::std::os::raw::c_void,
+        arg5: *mut usize,
+    ) -> cl_int,
+>;
+pub type PFNCLFLUSH = ::std::option::Option<unsafe extern "C" fn(arg1: cl_command_queue) -> cl_int>;
+pub type PFNCLFINISH =
+    ::std::option::Option<unsafe extern "C" fn(arg1: cl_command_queue) -> cl_int>;
+pub type PFNCLENQUEUEREADBUFFER = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_command_queue,
+        arg2: cl_mem,
+        arg3: cl_bool,
+        arg4: usize,
+        arg5: usize,
+        arg6: *mut ::std::os::raw::c_void,
+        arg7: cl_uint,
+        arg8: *const cl_event,
+        arg9: *mut cl_event,
+    ) -> cl_int,
+>;
+pub type PFNCLENQUEUEREADBUFFERRECT = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_command_queue,
+        arg2: cl_mem,
+        arg3: cl_bool,
+        arg4: *const usize,
+        arg5: *const usize,
+        arg6: *const usize,
+        arg7: usize,
+        arg8: usize,
+        arg9: usize,
+        arg10: usize,
+        arg11: *mut ::std::os::raw::c_void,
+        arg12: cl_uint,
+        arg13: *const cl_event,
+        arg14: *mut cl_event,
+    ) -> cl_int,
+>;
+pub type PFNCLENQUEUEWRITEBUFFER = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_command_queue,
+        arg2: cl_mem,
+        arg3: cl_bool,
+        arg4: usize,
+        arg5: usize,
+        arg6: *const ::std::os::raw::c_void,
+        arg7: cl_uint,
+        arg8: *const cl_event,
+        arg9: *mut cl_event,
+    ) -> cl_int,
+>;
+pub type PFNCLENQUEUEWRITEBUFFERRECT = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_command_queue,
+        arg2: cl_mem,
+        arg3: cl_bool,
+        arg4: *const usize,
+        arg5: *const usize,
+        arg6: *const usize,
+        arg7: usize,
+        arg8: usize,
+        arg9: usize,
+        arg10: usize,
+        arg11: *const ::std::os::raw::c_void,
+        arg12: cl_uint,
+        arg13: *const cl_event,
+        arg14: *mut cl_event,
+    ) -> cl_int,
+>;
+pub type PFNCLENQUEUECOPYBUFFER = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_command_queue,
+        arg2: cl_mem,
+        arg3: cl_mem,
+        arg4: usize,
+        arg5: usize,
+        arg6: usize,
+        arg7: cl_uint,
+        arg8: *const cl_event,
+        arg9: *mut cl_event,
+    ) -> cl_int,
+>;
+pub type PFNCLENQUEUECOPYBUFFERRECT = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_command_queue,
+        arg2: cl_mem,
+        arg3: cl_mem,
+        arg4: *const usize,
+        arg5: *const usize,
+        arg6: *const usize,
+        arg7: usize,
+        arg8: usize,
+        arg9: usize,
+        arg10: usize,
+        arg11: cl_uint,
+        arg12: *const cl_event,
+        arg13: *mut cl_event,
+    ) -> cl_int,
+>;
+pub type PFNCLENQUEUEREADIMAGE = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_command_queue,
+        arg2: cl_mem,
+        arg3: cl_bool,
+        arg4: *const usize,
+        arg5: *const usize,
+        arg6: usize,
+        arg7: usize,
+        arg8: *mut ::std::os::raw::c_void,
+        arg9: cl_uint,
+        arg10: *const cl_event,
+        arg11: *mut cl_event,
+    ) -> cl_int,
+>;
+pub type PFNCLENQUEUEWRITEIMAGE = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_command_queue,
+        arg2: cl_mem,
+        arg3: cl_bool,
+        arg4: *const usize,
+        arg5: *const usize,
+        arg6: usize,
+        arg7: usize,
+        arg8: *const ::std::os::raw::c_void,
+        arg9: cl_uint,
+        arg10: *const cl_event,
+        arg11: *mut cl_event,
+    ) -> cl_int,
+>;
+pub type PFNCLENQUEUECOPYIMAGE = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_command_queue,
+        arg2: cl_mem,
+        arg3: cl_mem,
+        arg4: *const usize,
+        arg5: *const usize,
+        arg6: *const usize,
+        arg7: cl_uint,
+        arg8: *const cl_event,
+        arg9: *mut cl_event,
+    ) -> cl_int,
+>;
+pub type PFNCLENQUEUECOPYIMAGETOBUFFER = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_command_queue,
+        arg2: cl_mem,
+        arg3: cl_mem,
+        arg4: *const usize,
+        arg5: *const usize,
+        arg6: usize,
+        arg7: cl_uint,
+        arg8: *const cl_event,
+        arg9: *mut cl_event,
+    ) -> cl_int,
+>;
+pub type PFNCLENQUEUECOPYBUFFERTOIMAGE = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_command_queue,
+        arg2: cl_mem,
+        arg3: cl_mem,
+        arg4: usize,
+        arg5: *const usize,
+        arg6: *const usize,
+        arg7: cl_uint,
+        arg8: *const cl_event,
+        arg9: *mut cl_event,
+    ) -> cl_int,
+>;
+pub type PFNCLENQUEUEMAPBUFFER = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_command_queue,
+        arg2: cl_mem,
+        arg3: cl_bool,
+        arg4: cl_map_flags,
+        arg5: usize,
+        arg6: usize,
+        arg7: cl_uint,
+        arg8: *const cl_event,
+        arg9: *mut cl_event,
+        arg10: *mut cl_int,
+    ) -> *mut ::std::os::raw::c_void,
+>;
+pub type PFNCLENQUEUEMAPIMAGE = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_command_queue,
+        arg2: cl_mem,
+        arg3: cl_bool,
+        arg4: cl_map_flags,
+        arg5: *const usize,
+        arg6: *const usize,
+        arg7: *mut usize,
+        arg8: *mut usize,
+        arg9: cl_uint,
+        arg10: *const cl_event,
+        arg11: *mut cl_event,
+        arg12: *mut cl_int,
+    ) -> *mut ::std::os::raw::c_void,
+>;
+pub type PFNCLENQUEUEUNMAPMEMOBJECT = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_command_queue,
+        arg2: cl_mem,
+        arg3: *mut ::std::os::raw::c_void,
+        arg4: cl_uint,
+        arg5: *const cl_event,
+        arg6: *mut cl_event,
+    ) -> cl_int,
+>;
+pub type PFNCLENQUEUENDRANGEKERNEL = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_command_queue,
+        arg2: cl_kernel,
+        arg3: cl_uint,
+        arg4: *const usize,
+        arg5: *const usize,
+        arg6: *const usize,
+        arg7: cl_uint,
+        arg8: *const cl_event,
+        arg9: *mut cl_event,
+    ) -> cl_int,
+>;
+pub type PFNCLENQUEUETASK = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_command_queue,
+        arg2: cl_kernel,
+        arg3: cl_uint,
+        arg4: *const cl_event,
+        arg5: *mut cl_event,
+    ) -> cl_int,
+>;
+pub type PFNCLENQUEUENATIVEKERNEL = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: cl_command_queue,
+        user_func: ::std::option::Option<
+            unsafe extern "C" fn(arg1: *mut ::std::os::raw::c_void),
+        >,
+        arg2: *mut ::std::os::raw::c_void,
+        arg3: usize,
+        arg4: cl_uint,
+        arg5: *const cl_mem,
+        arg6: *mut *const ::std::os::raw::c_void,
+        arg7: cl_uint,
+        arg8: *const cl_event,
+        arg9: *mut cl_event,
+    ) -> cl_int,
+>;
+pub type PFNCLENQUEUEMARKER = ::std::option::Option<
+    unsafe extern "C" fn(arg1: cl_command_queue, arg2: *mut cl_event) -> cl_int,
+>;
+pub type PFNCLENQUEUEWAITFOREVENTS = ::std::option::Option<
+    unsafe extern "C" fn(arg1: cl_command_queue, arg2: cl_uint, arg3: *const cl_event) -> cl_int,
+>;
+pub type PFNCLENQUEUEBARRIER =
+    ::std::option::Option<unsafe extern "C" fn(arg1: cl_command_queue) -> cl_int>;
+pub type PFNCLGETEXTENSIONFUNCTIONADDRESS = ::std::option::Option<
+    unsafe extern "C" fn(arg1: *const ::std::os::raw::c_char) -> *mut ::std::os::raw::c_void,
+>;
+extern "C" {
+    #[link_name = "\u{1}__clewGetPlatformIDs"]
+    pub static mut __clewGetPlatformIDs: PFNCLGETPLATFORMIDS;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewGetPlatformInfo"]
+    pub static mut __clewGetPlatformInfo: PFNCLGETPLATFORMINFO;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewGetDeviceIDs"]
+    pub static mut __clewGetDeviceIDs: PFNCLGETDEVICEIDS;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewGetDeviceInfo"]
+    pub static mut __clewGetDeviceInfo: PFNCLGETDEVICEINFO;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewCreateContext"]
+    pub static mut __clewCreateContext: PFNCLCREATECONTEXT;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewCreateContextFromType"]
+    pub static mut __clewCreateContextFromType: PFNCLCREATECONTEXTFROMTYPE;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewRetainContext"]
+    pub static mut __clewRetainContext: PFNCLRETAINCONTEXT;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewReleaseContext"]
+    pub static mut __clewReleaseContext: PFNCLRELEASECONTEXT;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewGetContextInfo"]
+    pub static mut __clewGetContextInfo: PFNCLGETCONTEXTINFO;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewCreateCommandQueue"]
+    pub static mut __clewCreateCommandQueue: PFNCLCREATECOMMANDQUEUE;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewRetainCommandQueue"]
+    pub static mut __clewRetainCommandQueue: PFNCLRETAINCOMMANDQUEUE;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewReleaseCommandQueue"]
+    pub static mut __clewReleaseCommandQueue: PFNCLRELEASECOMMANDQUEUE;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewGetCommandQueueInfo"]
+    pub static mut __clewGetCommandQueueInfo: PFNCLGETCOMMANDQUEUEINFO;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewCreateBuffer"]
+    pub static mut __clewCreateBuffer: PFNCLCREATEBUFFER;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewCreateSubBuffer"]
+    pub static mut __clewCreateSubBuffer: PFNCLCREATESUBBUFFER;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewCreateImage2D"]
+    pub static mut __clewCreateImage2D: PFNCLCREATEIMAGE2D;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewCreateImage3D"]
+    pub static mut __clewCreateImage3D: PFNCLCREATEIMAGE3D;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewRetainMemObject"]
+    pub static mut __clewRetainMemObject: PFNCLRETAINMEMOBJECT;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewReleaseMemObject"]
+    pub static mut __clewReleaseMemObject: PFNCLRELEASEMEMOBJECT;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewGetSupportedImageFormats"]
+    pub static mut __clewGetSupportedImageFormats: PFNCLGETSUPPORTEDIMAGEFORMATS;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewGetMemObjectInfo"]
+    pub static mut __clewGetMemObjectInfo: PFNCLGETMEMOBJECTINFO;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewGetImageInfo"]
+    pub static mut __clewGetImageInfo: PFNCLGETIMAGEINFO;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewSetMemObjectDestructorCallback"]
+    pub static mut __clewSetMemObjectDestructorCallback: PFNCLSETMEMOBJECTDESTRUCTORCALLBACK;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewCreateSampler"]
+    pub static mut __clewCreateSampler: PFNCLCREATESAMPLER;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewRetainSampler"]
+    pub static mut __clewRetainSampler: PFNCLRETAINSAMPLER;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewReleaseSampler"]
+    pub static mut __clewReleaseSampler: PFNCLRELEASESAMPLER;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewGetSamplerInfo"]
+    pub static mut __clewGetSamplerInfo: PFNCLGETSAMPLERINFO;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewCreateProgramWithSource"]
+    pub static mut __clewCreateProgramWithSource: PFNCLCREATEPROGRAMWITHSOURCE;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewCreateProgramWithBinary"]
+    pub static mut __clewCreateProgramWithBinary: PFNCLCREATEPROGRAMWITHBINARY;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewRetainProgram"]
+    pub static mut __clewRetainProgram: PFNCLRETAINPROGRAM;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewReleaseProgram"]
+    pub static mut __clewReleaseProgram: PFNCLRELEASEPROGRAM;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewBuildProgram"]
+    pub static mut __clewBuildProgram: PFNCLBUILDPROGRAM;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewUnloadCompiler"]
+    pub static mut __clewUnloadCompiler: PFNCLUNLOADCOMPILER;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewGetProgramInfo"]
+    pub static mut __clewGetProgramInfo: PFNCLGETPROGRAMINFO;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewGetProgramBuildInfo"]
+    pub static mut __clewGetProgramBuildInfo: PFNCLGETPROGRAMBUILDINFO;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewCreateKernel"]
+    pub static mut __clewCreateKernel: PFNCLCREATEKERNEL;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewCreateKernelsInProgram"]
+    pub static mut __clewCreateKernelsInProgram: PFNCLCREATEKERNELSINPROGRAM;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewRetainKernel"]
+    pub static mut __clewRetainKernel: PFNCLRETAINKERNEL;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewReleaseKernel"]
+    pub static mut __clewReleaseKernel: PFNCLRELEASEKERNEL;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewSetKernelArg"]
+    pub static mut __clewSetKernelArg: PFNCLSETKERNELARG;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewGetKernelInfo"]
+    pub static mut __clewGetKernelInfo: PFNCLGETKERNELINFO;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewGetKernelWorkGroupInfo"]
+    pub static mut __clewGetKernelWorkGroupInfo: PFNCLGETKERNELWORKGROUPINFO;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewWaitForEvents"]
+    pub static mut __clewWaitForEvents: PFNCLWAITFOREVENTS;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewGetEventInfo"]
+    pub static mut __clewGetEventInfo: PFNCLGETEVENTINFO;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewCreateUserEvent"]
+    pub static mut __clewCreateUserEvent: PFNCLCREATEUSEREVENT;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewRetainEvent"]
+    pub static mut __clewRetainEvent: PFNCLRETAINEVENT;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewReleaseEvent"]
+    pub static mut __clewReleaseEvent: PFNCLRELEASEEVENT;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewSetUserEventStatus"]
+    pub static mut __clewSetUserEventStatus: PFNCLSETUSEREVENTSTATUS;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewSetEventCallback"]
+    pub static mut __clewSetEventCallback: PFNCLSETEVENTCALLBACK;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewGetEventProfilingInfo"]
+    pub static mut __clewGetEventProfilingInfo: PFNCLGETEVENTPROFILINGINFO;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewFlush"]
+    pub static mut __clewFlush: PFNCLFLUSH;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewFinish"]
+    pub static mut __clewFinish: PFNCLFINISH;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewEnqueueReadBuffer"]
+    pub static mut __clewEnqueueReadBuffer: PFNCLENQUEUEREADBUFFER;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewEnqueueReadBufferRect"]
+    pub static mut __clewEnqueueReadBufferRect: PFNCLENQUEUEREADBUFFERRECT;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewEnqueueWriteBuffer"]
+    pub static mut __clewEnqueueWriteBuffer: PFNCLENQUEUEWRITEBUFFER;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewEnqueueWriteBufferRect"]
+    pub static mut __clewEnqueueWriteBufferRect: PFNCLENQUEUEWRITEBUFFERRECT;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewEnqueueCopyBuffer"]
+    pub static mut __clewEnqueueCopyBuffer: PFNCLENQUEUECOPYBUFFER;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewEnqueueCopyBufferRect"]
+    pub static mut __clewEnqueueCopyBufferRect: PFNCLENQUEUECOPYBUFFERRECT;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewEnqueueReadImage"]
+    pub static mut __clewEnqueueReadImage: PFNCLENQUEUEREADIMAGE;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewEnqueueWriteImage"]
+    pub static mut __clewEnqueueWriteImage: PFNCLENQUEUEWRITEIMAGE;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewEnqueueCopyImage"]
+    pub static mut __clewEnqueueCopyImage: PFNCLENQUEUECOPYIMAGE;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewEnqueueCopyImageToBuffer"]
+    pub static mut __clewEnqueueCopyImageToBuffer: PFNCLENQUEUECOPYIMAGETOBUFFER;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewEnqueueCopyBufferToImage"]
+    pub static mut __clewEnqueueCopyBufferToImage: PFNCLENQUEUECOPYBUFFERTOIMAGE;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewEnqueueMapBuffer"]
+    pub static mut __clewEnqueueMapBuffer: PFNCLENQUEUEMAPBUFFER;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewEnqueueMapImage"]
+    pub static mut __clewEnqueueMapImage: PFNCLENQUEUEMAPIMAGE;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewEnqueueUnmapMemObject"]
+    pub static mut __clewEnqueueUnmapMemObject: PFNCLENQUEUEUNMAPMEMOBJECT;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewEnqueueNDRangeKernel"]
+    pub static mut __clewEnqueueNDRangeKernel: PFNCLENQUEUENDRANGEKERNEL;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewEnqueueTask"]
+    pub static mut __clewEnqueueTask: PFNCLENQUEUETASK;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewEnqueueNativeKernel"]
+    pub static mut __clewEnqueueNativeKernel: PFNCLENQUEUENATIVEKERNEL;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewEnqueueMarker"]
+    pub static mut __clewEnqueueMarker: PFNCLENQUEUEMARKER;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewEnqueueWaitForEvents"]
+    pub static mut __clewEnqueueWaitForEvents: PFNCLENQUEUEWAITFOREVENTS;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewEnqueueBarrier"]
+    pub static mut __clewEnqueueBarrier: PFNCLENQUEUEBARRIER;
+}
+extern "C" {
+    #[link_name = "\u{1}__clewGetExtensionFunctionAddress"]
+    pub static mut __clewGetExtensionFunctionAddress: PFNCLGETEXTENSIONFUNCTIONADDRESS;
+}
+extern "C" {
+    /// ! \brief Load OpenCL dynamic library and set function entry points
+    pub fn clewInit(arg1: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    /// ! \brief Exit clew and unload OpenCL dynamic library
+    pub fn clewExit();
+}
+extern "C" {
+    /// ! \brief Convert an OpenCL error code to its string equivalent
+    pub fn clewErrorString(error: cl_int) -> *const ::std::os::raw::c_char;
+}
 /// just make sure that the b3Aabb is 16-byte aligned
 #[repr(C)]
 #[derive(Copy, Clone)]

@@ -12,7 +12,7 @@ fn main() {
 
     if cfg!(feature = "bind") {
         bind("bullet", "bt.+");
-        bind("bullet3", "b3.+");
+        bind("bullet3", "b3.+|cl_.+|clew.+");
     }
 }
 
