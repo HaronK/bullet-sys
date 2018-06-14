@@ -105,6 +105,308 @@ pub const btGeneric6DofSpringConstraintDataName: &'static [u8; 41usize] =
 pub const btGeneric6DofSpring2ConstraintDataName: &'static [u8; 42usize] =
     b"btGeneric6DofSpring2ConstraintDoubleData2\0";
 pub const btGearConstraintDataName: &'static [u8; 27usize] = b"btGearConstraintDoubleData\0";
+pub type std_string = std_basic_string<::std::os::raw::c_char>;
+#[repr(C)]
+pub struct std_basic_string<_CharT> {
+    pub _M_dataplus: std_basic_string__Alloc_hider,
+    pub _M_string_length: std_basic_string_size_type,
+    pub __bindgen_anon_1: std_basic_string__bindgen_ty_2<_CharT>,
+    pub _phantom_0: ::std::marker::PhantomData<::std::cell::UnsafeCell<_CharT>>,
+}
+pub type std_basic_string__Char_alloc_type = __gnu_cxx___alloc_traits;
+pub type std_basic_string__Alloc_traits = __gnu_cxx___alloc_traits;
+pub type std_basic_string_traits_type<_Traits> = _Traits;
+pub type std_basic_string_value_type = [u8; 0usize];
+pub type std_basic_string_allocator_type = std_basic_string__Char_alloc_type;
+pub type std_basic_string_size_type = std_basic_string__Alloc_traits;
+pub type std_basic_string_difference_type = std_basic_string__Alloc_traits;
+pub type std_basic_string_reference = std_basic_string__Alloc_traits;
+pub type std_basic_string_const_reference = std_basic_string__Alloc_traits;
+pub type std_basic_string_pointer = std_basic_string__Alloc_traits;
+pub type std_basic_string_const_pointer = std_basic_string__Alloc_traits;
+pub type std_basic_string_iterator = __gnu_cxx___normal_iterator<std_basic_string_pointer>;
+pub type std_basic_string_const_iterator =
+    __gnu_cxx___normal_iterator<std_basic_string_const_pointer>;
+pub type std_basic_string_const_reverse_iterator =
+    std_reverse_iterator<std_basic_string_const_iterator>;
+pub type std_basic_string_reverse_iterator = std_reverse_iterator<std_basic_string_iterator>;
+pub type std_basic_string___const_iterator = std_basic_string_const_iterator;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std_basic_string__Alloc_hider {
+    pub _M_p: std_basic_string_pointer,
+}
+pub const std_basic_string__S_local_capacity: std_basic_string__bindgen_ty_1 = 0;
+pub type std_basic_string__bindgen_ty_1 = i32;
+#[repr(C)]
+pub union std_basic_string__bindgen_ty_2<_CharT> {
+    pub _M_local_buf: *mut _CharT,
+    pub _M_allocated_capacity: std_basic_string_size_type,
+    _bindgen_union_align: u64,
+    pub _phantom_0: ::std::marker::PhantomData<::std::cell::UnsafeCell<_CharT>>,
+}
+pub type std_integral_constant_value_type<_Tp> = _Tp;
+pub type std_integral_constant_type = u8;
+pub type std_true_type = u8;
+pub type std_false_type = u8;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std___and_ {
+    pub _address: u8,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std_is_empty {
+    pub _address: u8,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std_make_unsigned {
+    pub _address: u8,
+}
+pub type std_make_unsigned_type = u8;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std___detector {
+    pub _address: u8,
+}
+pub type std___detector_value_t = std_false_type;
+pub type std___detector_type<_Default> = _Default;
+pub type std___detected_or = std___detector;
+pub type std___detected_or_t = std___detected_or;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std_iterator {
+    pub _address: u8,
+}
+pub type std_iterator_iterator_category<_Category> = _Category;
+pub type std_iterator_value_type<_Tp> = _Tp;
+pub type std_iterator_difference_type<_Distance> = _Distance;
+pub type std_iterator_pointer<_Pointer> = _Pointer;
+pub type std_iterator_reference<_Reference> = _Reference;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std___iterator_traits {
+    pub _address: u8,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std_iterator_traits {
+    pub _address: u8,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std___undefined {
+    _unused: [u8; 0],
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std___get_first_arg {
+    pub _address: u8,
+}
+pub type std___get_first_arg_type = std___undefined;
+pub type std___get_first_arg_t = std___get_first_arg;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std___replace_first_arg {
+    pub _address: u8,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std_pointer_traits {
+    pub _address: u8,
+}
+pub type std_pointer_traits___element_type = [u8; 0usize];
+pub type std_pointer_traits___difference_type = [u8; 0usize];
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std_pointer_traits___rebind {
+    pub _address: u8,
+}
+pub type std_pointer_traits_pointer<_Ptr> = _Ptr;
+pub type std_pointer_traits_element_type = std___detected_or_t;
+pub type std_pointer_traits_difference_type = std___detected_or_t;
+pub type std_pointer_traits_rebind = std_pointer_traits___rebind;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std_reverse_iterator<_Iterator> {
+    pub current: _Iterator,
+    pub _phantom_0: ::std::marker::PhantomData<::std::cell::UnsafeCell<_Iterator>>,
+}
+pub type std_reverse_iterator___traits_type = std_iterator_traits;
+pub type std_reverse_iterator_iterator_type<_Iterator> = _Iterator;
+pub type std_reverse_iterator_difference_type = std_reverse_iterator___traits_type;
+pub type std_reverse_iterator_pointer = std_reverse_iterator___traits_type;
+pub type std_reverse_iterator_reference = std_reverse_iterator___traits_type;
+pub type std_streamoff = ::std::os::raw::c_long;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std_fpos<_StateT> {
+    pub _M_off: std_streamoff,
+    pub _M_state: _StateT,
+    pub _phantom_0: ::std::marker::PhantomData<::std::cell::UnsafeCell<_StateT>>,
+}
+pub type std_streampos = std_fpos<mbstate_t>;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std_char_traits {
+    pub _address: u8,
+}
+pub type std___allocator_base = __gnu_cxx_new_allocator;
+#[repr(C)]
+#[derive(Debug)]
+pub struct std_allocator {
+    pub _address: u8,
+}
+pub type std_allocator_size_type = usize;
+pub type std_allocator_difference_type = isize;
+pub type std_allocator_pointer<_Tp> = *mut _Tp;
+pub type std_allocator_const_pointer<_Tp> = *const _Tp;
+pub type std_allocator_reference<_Tp> = *mut _Tp;
+pub type std_allocator_const_reference<_Tp> = *const _Tp;
+pub type std_allocator_value_type<_Tp> = _Tp;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std_allocator_rebind {
+    pub _address: u8,
+}
+pub type std_allocator_rebind_other = std_allocator;
+pub type std_allocator_propagate_on_container_move_assignment = std_true_type;
+pub type std_allocator_is_always_equal = std_true_type;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std___allocator_traits_base {
+    pub _address: u8,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std___allocator_traits_base___rebind {
+    pub _address: u8,
+}
+pub type std___allocator_traits_base___pointer = [u8; 0usize];
+pub type std___allocator_traits_base___c_pointer = [u8; 0usize];
+pub type std___allocator_traits_base___v_pointer = [u8; 0usize];
+pub type std___allocator_traits_base___cv_pointer = [u8; 0usize];
+pub type std___allocator_traits_base___pocca = [u8; 0usize];
+pub type std___allocator_traits_base___pocma = [u8; 0usize];
+pub type std___allocator_traits_base___pocs = [u8; 0usize];
+pub type std___allocator_traits_base___equal = [u8; 0usize];
+pub type std___alloc_rebind = std___allocator_traits_base;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std_allocator_traits {
+    pub _address: u8,
+}
+pub type std_allocator_traits_allocator_type<_Alloc> = _Alloc;
+pub type std_allocator_traits_value_type = [u8; 0usize];
+pub type std_allocator_traits_pointer = std___detected_or_t;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std_allocator_traits__Ptr {
+    pub _address: u8,
+}
+pub type std_allocator_traits__Ptr_type = [u8; 0usize];
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std_allocator_traits__Diff {
+    pub _address: u8,
+}
+pub type std_allocator_traits__Diff_type = std_pointer_traits;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std_allocator_traits__Size {
+    pub _address: u8,
+}
+pub type std_allocator_traits_const_pointer = [u8; 0usize];
+pub type std_allocator_traits_void_pointer = std_allocator_traits__Ptr;
+pub type std_allocator_traits_const_void_pointer = std_allocator_traits__Ptr;
+pub type std_allocator_traits_difference_type = [u8; 0usize];
+pub type std_allocator_traits_size_type = [u8; 0usize];
+pub type std_allocator_traits_propagate_on_container_copy_assignment = std___detected_or_t;
+pub type std_allocator_traits_propagate_on_container_move_assignment = std___detected_or_t;
+pub type std_allocator_traits_propagate_on_container_swap = std___detected_or_t;
+pub type std_allocator_traits_is_always_equal = std___detected_or_t;
+pub type std_allocator_traits_rebind_alloc = std___alloc_rebind;
+pub type std_allocator_traits_rebind_traits = std_allocator_traits;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std_allocator_traits___construct_helper {
+    pub _address: u8,
+}
+pub type std_allocator_traits___construct_helper_type<_Alloc> = _Alloc;
+pub type std_allocator_traits___has_construct = std_allocator_traits___construct_helper;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct __gnu_cxx___normal_iterator<_Iterator> {
+    pub _M_current: _Iterator,
+    pub _phantom_0: ::std::marker::PhantomData<::std::cell::UnsafeCell<_Iterator>>,
+}
+pub type __gnu_cxx___normal_iterator___traits_type = std_iterator_traits;
+pub type __gnu_cxx___normal_iterator_iterator_type<_Iterator> = _Iterator;
+pub type __gnu_cxx___normal_iterator_iterator_category = __gnu_cxx___normal_iterator___traits_type;
+pub type __gnu_cxx___normal_iterator_value_type = __gnu_cxx___normal_iterator___traits_type;
+pub type __gnu_cxx___normal_iterator_difference_type = __gnu_cxx___normal_iterator___traits_type;
+pub type __gnu_cxx___normal_iterator_reference = __gnu_cxx___normal_iterator___traits_type;
+pub type __gnu_cxx___normal_iterator_pointer = __gnu_cxx___normal_iterator___traits_type;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct __gnu_cxx__Char_types {
+    pub _address: u8,
+}
+pub type __gnu_cxx__Char_types_int_type = ::std::os::raw::c_ulong;
+pub type __gnu_cxx__Char_types_pos_type = std_streampos;
+pub type __gnu_cxx__Char_types_off_type = std_streamoff;
+pub type __gnu_cxx__Char_types_state_type = mbstate_t;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct __gnu_cxx_char_traits {
+    pub _address: u8,
+}
+pub type __gnu_cxx_char_traits_char_type<_CharT> = _CharT;
+pub type __gnu_cxx_char_traits_int_type = __gnu_cxx__Char_types;
+pub type __gnu_cxx_char_traits_pos_type = __gnu_cxx__Char_types;
+pub type __gnu_cxx_char_traits_off_type = __gnu_cxx__Char_types;
+pub type __gnu_cxx_char_traits_state_type = __gnu_cxx__Char_types;
+#[repr(C)]
+#[derive(Debug)]
+pub struct __gnu_cxx_new_allocator {
+    pub _address: u8,
+}
+pub type __gnu_cxx_new_allocator_size_type = usize;
+pub type __gnu_cxx_new_allocator_difference_type = isize;
+pub type __gnu_cxx_new_allocator_pointer<_Tp> = *mut _Tp;
+pub type __gnu_cxx_new_allocator_const_pointer<_Tp> = *const _Tp;
+pub type __gnu_cxx_new_allocator_reference<_Tp> = *mut _Tp;
+pub type __gnu_cxx_new_allocator_const_reference<_Tp> = *const _Tp;
+pub type __gnu_cxx_new_allocator_value_type<_Tp> = _Tp;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct __gnu_cxx_new_allocator_rebind {
+    pub _address: u8,
+}
+pub type __gnu_cxx_new_allocator_rebind_other = __gnu_cxx_new_allocator;
+pub type __gnu_cxx_new_allocator_propagate_on_container_move_assignment = std_true_type;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct __gnu_cxx___alloc_traits {
+    pub _address: u8,
+}
+pub type __gnu_cxx___alloc_traits_allocator_type<_Alloc> = _Alloc;
+pub type __gnu_cxx___alloc_traits__Base_type = std_allocator_traits;
+pub type __gnu_cxx___alloc_traits_value_type = __gnu_cxx___alloc_traits__Base_type;
+pub type __gnu_cxx___alloc_traits_pointer = __gnu_cxx___alloc_traits__Base_type;
+pub type __gnu_cxx___alloc_traits_const_pointer = __gnu_cxx___alloc_traits__Base_type;
+pub type __gnu_cxx___alloc_traits_size_type = __gnu_cxx___alloc_traits__Base_type;
+pub type __gnu_cxx___alloc_traits_difference_type = __gnu_cxx___alloc_traits__Base_type;
+pub type __gnu_cxx___alloc_traits_reference = *mut __gnu_cxx___alloc_traits_value_type;
+pub type __gnu_cxx___alloc_traits_const_reference = *const __gnu_cxx___alloc_traits_value_type;
+pub type __gnu_cxx___alloc_traits___is_custom_pointer = std___and_;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct __gnu_cxx___alloc_traits_rebind {
+    pub _address: u8,
+}
+pub type __gnu_cxx___alloc_traits_rebind_other = __gnu_cxx___alloc_traits__Base_type;
 pub type btScalar = f64;
 #[repr(C)]
 #[derive(Copy, Clone)]
@@ -217,6 +519,19 @@ pub struct btQuaternionFloatData {
 #[derive(Debug, Copy, Clone)]
 pub struct btQuaternionDoubleData {
     pub m_floats: [f64; 4usize],
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct __mbstate_t {
+    pub __count: ::std::os::raw::c_int,
+    pub __value: __mbstate_t__bindgen_ty_1,
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union __mbstate_t__bindgen_ty_1 {
+    pub __wch: ::std::os::raw::c_uint,
+    pub __wchb: [::std::os::raw::c_char; 4usize],
+    _bindgen_union_align: u32,
 }
 /// @brief The btMatrix3x3 class implements a 3x3 rotation matrix, to perform linear algebra in combination with btQuaternion, btTransform and btVector3.
 /// Make sure to only include a pure orthogonal matrix without scaling.
@@ -1927,11 +2242,15 @@ extern "C" {
         dispatcher: *mut btDispatcher,
     );
 }
+pub type wint_t = ::std::os::raw::c_uint;
+pub type mbstate_t = __mbstate_t;
+extern "C" {
+    pub fn btowc(__c: ::std::os::raw::c_int) -> wint_t;
+}
 /// very basic hashable string implementation, compatible with btHashMap
 #[repr(C)]
-#[derive(Debug, Copy, Clone)]
 pub struct btHashString {
-    pub m_string: *const ::std::os::raw::c_char,
+    pub m_string1: std_string,
     pub m_hash: ::std::os::raw::c_uint,
 }
 #[repr(C)]
@@ -4252,6 +4571,15 @@ extern "C" {
     );
 }
 extern "C" {
+    #[link_name = "\u{1}_ZN28btHashedOverlappingPairCache26processAllOverlappingPairsEP17btOverlapCallbackP12btDispatcherRK16btDispatcherInfo"]
+    pub fn btHashedOverlappingPairCache_processAllOverlappingPairs1(
+        this: *mut ::std::os::raw::c_void,
+        callback: *mut btOverlapCallback,
+        dispatcher: *mut btDispatcher,
+        dispatchInfo: *const btDispatcherInfo,
+    );
+}
+extern "C" {
     #[link_name = "\u{1}_ZN28btHashedOverlappingPairCache20cleanOverlappingPairER16btBroadphasePairP12btDispatcher"]
     pub fn btHashedOverlappingPairCache_cleanOverlappingPair(
         this: *mut ::std::os::raw::c_void,
@@ -5666,6 +5994,13 @@ extern "C" {
     ) -> bool;
 }
 extern "C" {
+    #[link_name = "\u{1}_ZN23btPolyhedralConvexShape21setPolyhedralFeaturesER18btConvexPolyhedron"]
+    pub fn btPolyhedralConvexShape_setPolyhedralFeatures(
+        this: *mut ::std::os::raw::c_void,
+        polyhedron: *mut btConvexPolyhedron,
+    );
+}
+extern "C" {
     #[link_name = "\u{1}_ZNK23btPolyhedralConvexShape37localGetSupportingVertexWithoutMarginERK9btVector3"]
     pub fn btPolyhedralConvexShape_localGetSupportingVertexWithoutMargin(
         this: *mut ::std::os::raw::c_void,
@@ -5991,6 +6326,10 @@ extern "C" {
     pub fn btConvexPolyhedron_initialize(this: *mut btConvexPolyhedron);
 }
 extern "C" {
+    #[link_name = "\u{1}_ZN18btConvexPolyhedron11initialize2Ev"]
+    pub fn btConvexPolyhedron_initialize2(this: *mut btConvexPolyhedron);
+}
+extern "C" {
     #[link_name = "\u{1}_ZNK18btConvexPolyhedron15testContainmentEv"]
     pub fn btConvexPolyhedron_testContainment(this: *const btConvexPolyhedron) -> bool;
 }
@@ -6014,6 +6353,10 @@ impl btConvexPolyhedron {
     #[inline]
     pub unsafe fn initialize(&mut self) {
         btConvexPolyhedron_initialize(self)
+    }
+    #[inline]
+    pub unsafe fn initialize2(&mut self) {
+        btConvexPolyhedron_initialize2(self)
     }
     #[inline]
     pub unsafe fn testContainment(&self) -> bool {
