@@ -14,7 +14,7 @@ mod tests {
     use super::bullet::*;
 
     #[test]
-    pub fn test() {
+    fn test() {
         unsafe {
             let mut ghostObject = btPairCachingGhostObject::new();
             let boxHalfExtents = btVector3::new1(&1f64, &1f64, &1f64);
