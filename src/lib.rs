@@ -6,13 +6,8 @@
 #![allow(missing_docs)]
 #![warn(unused_extern_crates)]
 
-pub mod bullet {
-    include!("bullet.rs");
-}
-
-pub mod bullet3 {
-    include!("bullet3.rs");
-}
+pub mod bullet;
+pub mod bullet3;
 
 #[cfg(test)]
 mod tests {
