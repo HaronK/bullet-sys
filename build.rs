@@ -2,7 +2,7 @@ extern crate bindgen;
 extern crate cmake;
 
 use cmake::Config;
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 use std::process::Command;
 
 fn main() {
@@ -10,10 +10,8 @@ fn main() {
         cmake_build();
     }
 
-    if cfg!(feature = "bind") {
-        bind("bullet", "bt.+");
-        bind("bullet3", "b3.+|cl_.+|clew.+");
-    }
+    bind("bullet", "bt.+");
+    bind("bullet3", "b3.+|cl_.+|clew.+");
 }
 
 fn cmake_build() {
@@ -112,6 +110,12 @@ fn cmake_build_target(build_tests: &str, build_examples: &str) -> (PathBuf, Path
 }
 
 fn bind(prefix: &str, templ: &str) {
+    let out_path = Path::new("src").join(format!("{}.rs", prefix));
+
+    if out_path.exists() && !cfg!(feature = "bind") {
+        return;
+    }
+
     let bindings = bindgen::Builder::default()
         .layout_tests(cfg!(feature = "layout_tests"))
         .clang_arg(r"-v")
@@ -133,7 +137,6 @@ fn bind(prefix: &str, templ: &str) {
         .generate()
         .expect("Unable to generate bindings");
 
-    let out_path = PathBuf::from("src").join(format!("{}.rs", prefix));
     bindings
         .write_to_file(out_path)
         .expect(&format!("Couldn't write bindings for {}!", prefix));
