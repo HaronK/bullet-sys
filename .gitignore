@@ -15,3 +15,8 @@ Cargo.lock
 Cargo.lock
 __bindgen.cpp
 __bindgen.ii
+
+src/bullet_linux.rs
+src/bullet3_linux.rs
+src/bullet_windows.rs
+src/bullet3_windows.rs

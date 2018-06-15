@@ -90,6 +90,7 @@ fn cmake_build_linux(build_tests: &str, build_examples: &str) -> (PathBuf, PathB
         .define("BUILD_BULLET2_DEMOS", build_examples)
         .define("USE_GRAPHICAL_BENCHMARK", "OFF")
         .define("USE_DOUBLE_PRECISION", "ON")
+        .cxxflag("-fkeep-inline-functions")
         //.env("VERBOSE", "1")
         .build();
 
@@ -109,6 +110,7 @@ fn cmake_build_windows(build_tests: &str, build_examples: &str) -> (PathBuf, Pat
         .define("USE_DOUBLE_PRECISION", "ON")
         .define("CMAKE_C_FLAGS_DEBUG", " /nologo /MDd")
         .define("CMAKE_CXX_FLAGS_DEBUG", " /nologo /MDd")
+        .cxxflag("-fkeep-inline-functions")
         //.define("WIN32", "ON")
         //.target("x86_64-pc-windows-gnu")
         .generator("Visual Studio 14 2015 Win64")
@@ -137,6 +139,7 @@ fn bind(prefix: &str, templ: &str) {
         .clang_arg(r"-DHAS_SOCKLEN_T")
         .clang_arg(r"-DPHYSICS_SERVER_DIRECT")
         .clang_arg(r"-DB3_USE_CLEW")
+        .generate_inline_functions(true)
         .header(format!("{}.h", prefix))
         .whitelist_type(templ)
         .whitelist_function(templ)
