@@ -79,6 +79,49 @@ where
         }
     }
 }
+#[repr(C)]
+pub struct __BindgenUnionField<T>(::std::marker::PhantomData<T>);
+impl<T> __BindgenUnionField<T> {
+    #[inline]
+    pub fn new() -> Self {
+        __BindgenUnionField(::std::marker::PhantomData)
+    }
+    #[inline]
+    pub unsafe fn as_ref(&self) -> &T {
+        ::std::mem::transmute(self)
+    }
+    #[inline]
+    pub unsafe fn as_mut(&mut self) -> &mut T {
+        ::std::mem::transmute(self)
+    }
+}
+impl<T> ::std::default::Default for __BindgenUnionField<T> {
+    #[inline]
+    fn default() -> Self {
+        Self::new()
+    }
+}
+impl<T> ::std::clone::Clone for __BindgenUnionField<T> {
+    #[inline]
+    fn clone(&self) -> Self {
+        Self::new()
+    }
+}
+impl<T> ::std::marker::Copy for __BindgenUnionField<T> {}
+impl<T> ::std::fmt::Debug for __BindgenUnionField<T> {
+    fn fmt(&self, fmt: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        fmt.write_str("__BindgenUnionField")
+    }
+}
+impl<T> ::std::hash::Hash for __BindgenUnionField<T> {
+    fn hash<H: ::std::hash::Hasher>(&self, _state: &mut H) {}
+}
+impl<T> ::std::cmp::PartialEq for __BindgenUnionField<T> {
+    fn eq(&self, _other: &__BindgenUnionField<T>) -> bool {
+        true
+    }
+}
+impl<T> ::std::cmp::Eq for __BindgenUnionField<T> {}
 pub const btVector3DataName: &'static [u8; 20usize] = b"btVector3DoubleData\0";
 pub const btQuaternionDataName: &'static [u8; 23usize] = b"btQuaternionDoubleData\0";
 pub const btPersistentManifoldDataName: &'static [u8; 31usize] =
@@ -106,6 +149,275 @@ pub const btGeneric6DofSpring2ConstraintDataName: &'static [u8; 42usize] =
     b"btGeneric6DofSpring2ConstraintDoubleData2\0";
 pub const btGearConstraintDataName: &'static [u8; 27usize] = b"btGearConstraintDoubleData\0";
 pub type wint_t = ::std::os::raw::c_ushort;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _Mbstatet {
+    pub _Wchar: ::std::os::raw::c_ulong,
+    pub _Byte: ::std::os::raw::c_ushort,
+    pub _State: ::std::os::raw::c_ushort,
+}
+pub type std_integral_constant_value_type<_Ty> = _Ty;
+pub type std_integral_constant_type = u8;
+pub type std_bool_constant = u8;
+pub type std_true_type = u8;
+pub type std_false_type = u8;
+pub type std_conditional_type<_Ty2> = _Ty2;
+pub type std_conditional_t = u8;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std_disjunction {
+    pub _base: std_false_type,
+}
+pub type std__Disjunction_t = std_disjunction;
+pub type std_streamoff = ::std::os::raw::c_longlong;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std_fpos<_Statetype> {
+    pub _Myoff: std_streamoff,
+    pub _Fpos: fpos_t,
+    pub _Mystate: _Statetype,
+    pub _phantom_0: ::std::marker::PhantomData<::std::cell::UnsafeCell<_Statetype>>,
+}
+pub type std_streampos = std_fpos<_Mbstatet>;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std__Char_traits {
+    pub _address: u8,
+}
+pub type std__Char_traits_char_type<_Elem> = _Elem;
+pub type std__Char_traits_int_type<_Int_type> = _Int_type;
+pub type std__Char_traits_pos_type = std_streampos;
+pub type std__Char_traits_off_type = std_streamoff;
+pub type std__Char_traits_state_type = _Mbstatet;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std_char_traits {
+    pub _address: u8,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std__Container_base0 {
+    pub _address: u8,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std__Iterator_base0 {
+    pub _address: u8,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std__Container_proxy {
+    pub _Mycont: *const std__Container_base12,
+    pub _Myfirstiter: *mut std__Iterator_base12,
+}
+#[repr(C)]
+#[derive(Debug)]
+pub struct std__Container_base12 {
+    pub _Myproxy: *mut std__Container_proxy,
+}
+extern "C" {
+    #[link_name = "\u{1}?_Orphan_all@_Container_base12@std@@QEAAXXZ"]
+    pub fn std__Container_base12__Orphan_all(this: *mut std__Container_base12);
+}
+extern "C" {
+    #[link_name = "\u{1}?_Swap_all@_Container_base12@std@@QEAAXAEAU12@@Z"]
+    pub fn std__Container_base12__Swap_all(
+        this: *mut std__Container_base12,
+        arg1: *mut std__Container_base12,
+    );
+}
+impl std__Container_base12 {
+    #[inline]
+    pub unsafe fn _Orphan_all(&mut self) {
+        std__Container_base12__Orphan_all(self)
+    }
+    #[inline]
+    pub unsafe fn _Swap_all(&mut self, arg1: *mut std__Container_base12) {
+        std__Container_base12__Swap_all(self, arg1)
+    }
+}
+#[repr(C)]
+#[derive(Debug)]
+pub struct std__Iterator_base12 {
+    pub _Myproxy: *mut std__Container_proxy,
+    pub _Mynextiter: *mut std__Iterator_base12,
+}
+pub type std__Container_base = std__Container_base0;
+pub type std__Iterator_base = std__Iterator_base0;
+pub type std__Compressed_pair__Mybase<_Ty1> = _Ty1;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std_input_iterator_tag {
+    pub _address: u8,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std_forward_iterator_tag {
+    pub _address: u8,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std_bidirectional_iterator_tag {
+    pub _address: u8,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std_random_access_iterator_tag {
+    pub _address: u8,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std__Iterator_traits_base {
+    pub _address: u8,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std_iterator_traits {
+    pub _address: u8,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std_reverse_iterator<_RanIt> {
+    pub current: _RanIt,
+    pub _phantom_0: ::std::marker::PhantomData<::std::cell::UnsafeCell<_RanIt>>,
+}
+pub type std_reverse_iterator_iterator_category = std_iterator_traits;
+pub type std_reverse_iterator_value_type = std_iterator_traits;
+pub type std_reverse_iterator_difference_type = std_iterator_traits;
+pub type std_reverse_iterator_pointer = std_iterator_traits;
+pub type std_reverse_iterator_reference = std_iterator_traits;
+pub type std_reverse_iterator_iterator_type<_RanIt> = _RanIt;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std_allocator_traits {
+    pub _address: u8,
+}
+pub type std__Rebind_alloc_t = std_allocator_traits;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std_allocator {
+    pub _address: u8,
+}
+pub type std_allocator__Not_user_specialized = ::std::os::raw::c_void;
+pub type std_allocator_value_type<_Ty> = _Ty;
+pub type std_allocator_pointer<_Ty> = *mut _Ty;
+pub type std_allocator_const_pointer<_Ty> = *const _Ty;
+pub type std_allocator_reference<_Ty> = *mut _Ty;
+pub type std_allocator_const_reference<_Ty> = *const _Ty;
+pub type std_allocator_size_type = usize;
+pub type std_allocator_difference_type = isize;
+pub type std_allocator_propagate_on_container_move_assignment = std_true_type;
+pub type std_allocator_is_always_equal = std_true_type;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std_allocator_rebind {
+    pub _address: u8,
+}
+pub type std_allocator_rebind_other = std_allocator;
+#[repr(C)]
+pub struct std__String_const_iterator {
+    pub _Ptr: std__String_const_iterator_pointer,
+}
+pub type std__String_const_iterator_iterator_category = std_random_access_iterator_tag;
+pub type std__String_const_iterator_value_type = [u8; 0usize];
+pub type std__String_const_iterator_difference_type = [u8; 0usize];
+pub type std__String_const_iterator_pointer = [u8; 0usize];
+pub type std__String_const_iterator_reference = *const std__String_const_iterator_value_type;
+pub type std__String_const_iterator__Unchecked_type = std__String_const_iterator_pointer;
+#[repr(C)]
+pub struct std__String_iterator {
+    pub _base: std__String_const_iterator,
+}
+pub type std__String_iterator__Mybase = std__String_const_iterator;
+pub type std__String_iterator_iterator_category = std_random_access_iterator_tag;
+pub type std__String_iterator_value_type = [u8; 0usize];
+pub type std__String_iterator_difference_type = [u8; 0usize];
+pub type std__String_iterator_pointer = [u8; 0usize];
+pub type std__String_iterator_reference = *mut std__String_iterator_value_type;
+pub type std__String_iterator__Unchecked_type = std__String_iterator_pointer;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct std__String_base_types {
+    pub _address: u8,
+}
+pub type std__String_base_types__Alty = std__Rebind_alloc_t;
+pub type std__String_base_types__Alty_traits = std_allocator_traits;
+pub type std__String_base_types__Val_types = std_conditional_t;
+#[repr(C)]
+pub struct std__String_val {
+    pub _Bx: std__String_val__Bxty,
+    pub _Mysize: std__String_val_size_type,
+    pub _Myres: std__String_val_size_type,
+}
+pub type std__String_val_value_type = [u8; 0usize];
+pub type std__String_val_size_type = [u8; 0usize];
+pub type std__String_val_difference_type = [u8; 0usize];
+pub type std__String_val_pointer = [u8; 0usize];
+pub type std__String_val_const_pointer = [u8; 0usize];
+pub type std__String_val_reference = *mut std__String_val_value_type;
+pub type std__String_val_const_reference = *const std__String_val_value_type;
+pub const std__String_val__BUF_SIZE: std__String_val__bindgen_ty_1 = 0;
+pub type std__String_val__bindgen_ty_1 = i32;
+pub const std__String_val__ALLOC_MASK: std__String_val__bindgen_ty_2 = 0;
+pub type std__String_val__bindgen_ty_2 = i32;
+#[repr(C)]
+pub struct std__String_val__Bxty {
+    pub _Buf: __BindgenUnionField<*mut std__String_val_value_type>,
+    pub _Ptr: __BindgenUnionField<std__String_val_pointer>,
+    pub _Alias: __BindgenUnionField<*mut ::std::os::raw::c_char>,
+    pub bindgen_union_field: u64,
+}
+#[repr(C)]
+#[derive(Debug)]
+pub struct std__String_alloc {
+    pub _Mypair: u8,
+}
+pub type std__String_alloc__Alty = [u8; 0usize];
+pub type std__String_alloc__Alty_traits = [u8; 0usize];
+pub type std__String_alloc__Alproxy = std__Rebind_alloc_t;
+pub type std__String_alloc__Alproxy_traits = std_allocator_traits;
+pub type std__String_alloc__Val_types = [u8; 0usize];
+pub type std__String_alloc__Mydata_t = std__String_val;
+pub type std__String_alloc__Bxty = [u8; 0usize];
+pub type std__String_alloc_value_type = [u8; 0usize];
+pub type std__String_alloc_size_type = [u8; 0usize];
+pub type std__String_alloc_difference_type = [u8; 0usize];
+pub type std__String_alloc_pointer = [u8; 0usize];
+pub type std__String_alloc_const_pointer = [u8; 0usize];
+pub type std__String_alloc_reference = *mut std__String_alloc_value_type;
+pub type std__String_alloc_const_reference = *const std__String_alloc_value_type;
+pub type std__String_alloc_iterator = std__String_iterator;
+pub type std__String_alloc_const_iterator = std__String_const_iterator;
+pub const std__String_alloc__BUF_SIZE: std__String_alloc__bindgen_ty_1 = 0;
+pub type std__String_alloc__bindgen_ty_1 = i32;
+pub const std__String_alloc__ALLOC_MASK: std__String_alloc__bindgen_ty_2 = 0;
+pub type std__String_alloc__bindgen_ty_2 = i32;
+#[repr(C)]
+#[derive(Debug)]
+pub struct std_basic_string {
+    pub _base: std__String_alloc,
+}
+pub type std_basic_string__Mybase = std__String_alloc;
+pub type std_basic_string_traits_type<_Traits> = _Traits;
+pub type std_basic_string_allocator_type<_Alloc> = _Alloc;
+pub type std_basic_string__Alty = std_basic_string__Mybase;
+pub type std_basic_string__Alty_traits = std_basic_string__Mybase;
+pub type std_basic_string__Mydata_t = std_basic_string__Mybase;
+pub type std_basic_string_value_type = std_basic_string__Mybase;
+pub type std_basic_string_size_type = std_basic_string__Mybase;
+pub type std_basic_string_difference_type = std_basic_string__Mybase;
+pub type std_basic_string_pointer = std_basic_string__Mybase;
+pub type std_basic_string_const_pointer = std_basic_string__Mybase;
+pub type std_basic_string_reference = *mut std_basic_string_value_type;
+pub type std_basic_string_const_reference = *const std_basic_string_value_type;
+pub type std_basic_string_iterator = std_basic_string__Mybase;
+pub type std_basic_string_const_iterator = std_basic_string__Mybase;
+pub type std_basic_string_reverse_iterator = std_reverse_iterator<std_basic_string_iterator>;
+pub type std_basic_string_const_reverse_iterator =
+    std_reverse_iterator<std_basic_string_const_iterator>;
+pub type std_basic_string__Use_memcpy_move = std_bool_constant;
+pub type std_basic_string__Is_elem_cptr = std__Disjunction_t;
+pub type std_string = std_basic_string;
 pub type btScalar = f64;
 #[repr(C)]
 #[derive(Copy, Clone)]
@@ -219,6 +531,7 @@ pub struct btQuaternionFloatData {
 pub struct btQuaternionDoubleData {
     pub m_floats: [f64; 4usize],
 }
+pub type fpos_t = ::std::os::raw::c_longlong;
 /// @brief The btMatrix3x3 class implements a 3x3 rotation matrix, to perform linear algebra in combination with btQuaternion, btTransform and btVector3.
 /// Make sure to only include a pure orthogonal matrix without scaling.
 #[repr(C)]
@@ -1933,11 +2246,14 @@ extern "C" {
         dispatcher: *mut btDispatcher,
     );
 }
+extern "C" {
+    pub fn btowc(_Ch: ::std::os::raw::c_int) -> wint_t;
+}
 /// very basic hashable string implementation, compatible with btHashMap
 #[repr(C)]
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug)]
 pub struct btHashString {
-    pub m_string: *const ::std::os::raw::c_char,
+    pub m_string1: std_string,
     pub m_hash: ::std::os::raw::c_uint,
 }
 #[repr(C)]
@@ -4060,6 +4376,15 @@ extern "C" {
     );
 }
 extern "C" {
+    #[link_name = "\u{1}?processAllOverlappingPairs@btHashedOverlappingPairCache@@UEAAXPEAUbtOverlapCallback@@PEAVbtDispatcher@@AEBUbtDispatcherInfo@@@Z"]
+    pub fn btHashedOverlappingPairCache_processAllOverlappingPairs1(
+        this: *mut ::std::os::raw::c_void,
+        callback: *mut btOverlapCallback,
+        dispatcher: *mut btDispatcher,
+        dispatchInfo: *const btDispatcherInfo,
+    );
+}
+extern "C" {
     #[link_name = "\u{1}?cleanOverlappingPair@btHashedOverlappingPairCache@@UEAAXAEAUbtBroadphasePair@@PEAVbtDispatcher@@@Z"]
     pub fn btHashedOverlappingPairCache_cleanOverlappingPair(
         this: *mut ::std::os::raw::c_void,
@@ -5484,6 +5809,13 @@ extern "C" {
     ) -> bool;
 }
 extern "C" {
+    #[link_name = "\u{1}?setPolyhedralFeatures@btPolyhedralConvexShape@@UEAAXAEAVbtConvexPolyhedron@@@Z"]
+    pub fn btPolyhedralConvexShape_setPolyhedralFeatures(
+        this: *mut ::std::os::raw::c_void,
+        polyhedron: *mut btConvexPolyhedron,
+    );
+}
+extern "C" {
     #[link_name = "\u{1}?localGetSupportingVertexWithoutMargin@btPolyhedralConvexShape@@UEBA?AVbtVector3@@AEBV2@@Z"]
     pub fn btPolyhedralConvexShape_localGetSupportingVertexWithoutMargin(
         this: *mut ::std::os::raw::c_void,
@@ -5814,6 +6146,10 @@ extern "C" {
     pub fn btConvexPolyhedron_initialize(this: *mut btConvexPolyhedron);
 }
 extern "C" {
+    #[link_name = "\u{1}?initialize2@btConvexPolyhedron@@QEAAXXZ"]
+    pub fn btConvexPolyhedron_initialize2(this: *mut btConvexPolyhedron);
+}
+extern "C" {
     #[link_name = "\u{1}?testContainment@btConvexPolyhedron@@QEBA_NXZ"]
     pub fn btConvexPolyhedron_testContainment(this: *const btConvexPolyhedron) -> bool;
 }
@@ -5837,6 +6173,10 @@ impl btConvexPolyhedron {
     #[inline]
     pub unsafe fn initialize(&mut self) {
         btConvexPolyhedron_initialize(self)
+    }
+    #[inline]
+    pub unsafe fn initialize2(&mut self) {
+        btConvexPolyhedron_initialize2(self)
     }
     #[inline]
     pub unsafe fn testContainment(&self) -> bool {
@@ -17565,9 +17905,6 @@ pub struct btDantzigSolver {
     pub m_hi: btAlignedObjectArray<btScalar>,
     pub m_dependencies: btAlignedObjectArray<::std::os::raw::c_int>,
     pub m_scratchMemory: btDantzigScratchMemory,
-}
-extern "C" {
-    pub fn btowc(_Ch: ::std::os::raw::c_int) -> wint_t;
 }
 #[repr(C)]
 pub struct btLemkeAlgorithm__bindgen_vtable(::std::os::raw::c_void);
