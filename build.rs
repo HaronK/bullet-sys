@@ -16,16 +16,6 @@ fn main() {
     }
 }
 
-fn get_os_name() -> String {
-    if cfg!(target_os = "linux") {
-        "linux".to_owned()
-    } else if cfg!(target_os = "windows") {
-        "windows".to_owned()
-    } else {
-        panic!("Unsupported OS!");
-    }
-}
-
 fn cmake_build() {
     let run_tests = cfg!(feature = "ctest");
     let build_tests = if run_tests { "ON" } else { "OFF" };
@@ -37,13 +27,7 @@ fn cmake_build() {
         "OFF"
     };
 
-    let (tests_path, libs_path) = if cfg!(target_os = "linux") {
-        cmake_build_linux(build_tests, build_examples)
-    } else if cfg!(target_os = "windows") {
-        cmake_build_windows(build_tests, build_examples)
-    } else {
-        panic!("Unsupported OS!");
-    };
+    let (tests_path, libs_path) = cmake_build_target(build_tests, build_examples);
 
     if run_tests {
         let _ = Command::new("ctest")
@@ -81,7 +65,8 @@ fn cmake_build() {
     }
 }
 
-fn cmake_build_linux(build_tests: &str, build_examples: &str) -> (PathBuf, PathBuf) {
+#[cfg(target_os = "linux")]
+fn cmake_build_target(build_tests: &str, build_examples: &str) -> (PathBuf, PathBuf) {
     let dst = Config::new("bullet")
         .define("BUILD_PYBULLET", "OFF")
         .define("BUILD_PYBULLET_NUMPY", "OFF")
@@ -97,7 +82,8 @@ fn cmake_build_linux(build_tests: &str, build_examples: &str) -> (PathBuf, PathB
     (dst.join("build"), dst.join("lib"))
 }
 
-fn cmake_build_windows(build_tests: &str, build_examples: &str) -> (PathBuf, PathBuf) {
+#[cfg(target_os = "windows")]
+fn cmake_build_target(build_tests: &str, build_examples: &str) -> (PathBuf, PathBuf) {
     let dst = Config::new("bullet_wrapper")
         .define("BUILD_PYBULLET", "OFF")
         .define("BUILD_PYBULLET_NUMPY", "OFF")
@@ -147,7 +133,7 @@ fn bind(prefix: &str, templ: &str) {
         .generate()
         .expect("Unable to generate bindings");
 
-    let out_path = PathBuf::from("src").join(format!("{}_{}.rs", prefix, get_os_name()));
+    let out_path = PathBuf::from("src").join(format!("{}.rs", prefix));
     bindings
         .write_to_file(out_path)
         .expect(&format!("Couldn't write bindings for {}!", prefix));
