@@ -61,6 +61,10 @@ fn cmake_build() {
     for lib in libs {
         println!("cargo:rustc-link-lib=static={}", lib);
     }
+
+    if cfg!(target_os = "linux") {
+        println!("cargo:rustc-link-lib=stdc++");
+    }
 }
 
 #[cfg(target_os = "linux")]
