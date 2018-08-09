@@ -86,7 +86,9 @@ fn cmake_build_target(build_tests: &str, build_examples: &str) -> (PathBuf, Path
 
 #[cfg(target_os = "windows")]
 fn cmake_build_target(build_tests: &str, build_examples: &str) -> (PathBuf, PathBuf) {
+    let is_debug = cfg!(debug_assertions);
     let dst = Config::new("bullet_wrapper")
+        .define("CMAKE_BUILD_TYPE", if is_debug { "Debug" } else { "Release" })
         .define("BUILD_PYBULLET", "OFF")
         .define("BUILD_PYBULLET_NUMPY", "OFF")
         .define("CMAKE_DEBUG_POSTFIX", "")
@@ -96,15 +98,16 @@ fn cmake_build_target(build_tests: &str, build_examples: &str) -> (PathBuf, Path
         .define("BUILD_BULLET2_DEMOS", build_examples)
         .define("USE_GRAPHICAL_BENCHMARK", "OFF")
         .define("USE_DOUBLE_PRECISION", "ON")
-        .define("CMAKE_C_FLAGS_DEBUG", " /nologo /MDd")
-        .define("CMAKE_CXX_FLAGS_DEBUG", " /nologo /MDd")
+        .define("CMAKE_C_FLAGS_DEBUG", " /nologo /MTd")
+        .define("CMAKE_CXX_FLAGS_DEBUG", " /nologo /MTd")
         .cxxflag("-fkeep-inline-functions")
+        .env("VERBOSE", "1")
         //.define("WIN32", "ON")
         //.target("x86_64-pc-windows-gnu")
         .generator("Visual Studio 14 2015 Win64")
         .build();
 
-    let libs_path = if cfg!(debug_assertions) {
+    let libs_path = if is_debug {
         r"build\lib\Debug"
     } else {
         r"build\lib\Release"
